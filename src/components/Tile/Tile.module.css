@@ -1,0 +1,83 @@
+/* Tileコンポーネントのスタイル */
+
+.tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+}
+
+/* サイズバリエーション */
+.tile.small {
+  width: 32px;
+  height: 44px;
+}
+
+.tile.medium {
+  width: 48px;
+  height: 66px;
+}
+
+.tile.large {
+  width: 64px;
+  height: 88px;
+}
+
+/* 画像スタイル */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* クリック可能な状態 */
+.tile.clickable {
+  cursor: pointer;
+}
+
+.tile.clickable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tile.clickable:active {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 選択状態 */
+.tile.selected {
+  outline: 3px solid #4a90e2;
+  outline-offset: 2px;
+  transform: translateY(-6px);
+  box-shadow: 0 6px 12px rgba(74, 144, 226, 0.4);
+}
+
+.tile.selected:hover {
+  transform: translateY(-8px);
+}
+
+/* 無効状態 */
+.tile.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tile.disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* キーボードフォーカス */
+.tile:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.tile.disabled:focus-visible {
+  outline: 2px solid #999;
+}
