@@ -1,67 +1,50 @@
-'use client';
-
-import { useState, useMemo } from 'react';
-import { Hand } from '@/lib/hand/types';
-import { TileType } from '@/lib/tiles';
-import { calculateShanten, getEffectiveTiles } from '@/lib/shanten';
-import { TileSelector } from '@/components/TileSelector';
-import { Hand as HandComponent } from '@/components/Hand';
-import { ShantenDisplay } from '@/components/ShantenDisplay';
+import Link from 'next/link';
 import styles from './page.module.css';
 
-export default function Home(): JSX.Element {
-  const [hand, setHand] = useState<Hand>([]);
-
-  // 牌を追加
-  const addTile = (tile: TileType) => {
-    if (hand.length < 13) {
-      setHand([...hand, tile]);
-    }
-  };
-
-  // 牌を削除
-  const removeTile = (tile: TileType) => {
-    const index = hand.indexOf(tile);
-    if (index !== -1) {
-      const newHand = [...hand];
-      newHand.splice(index, 1);
-      setHand(newHand);
-    }
-  };
-
-  // 向聴数を自動計算
-  const shantenResult = useMemo(() => {
-    if (hand.length === 0) {
-      return { shanten: 8, isReady: false, isComplete: false };
-    }
-    return calculateShanten(hand);
-  }, [hand]);
-
-  // 有効牌を自動計算
-  const effectiveTiles = useMemo(() => {
-    if (hand.length === 0 || shantenResult.isComplete) {
-      return [];
-    }
-    return getEffectiveTiles(hand);
-  }, [hand, shantenResult.isComplete]);
-
+export default function Home() {
   return (
     <main className={styles.container}>
       <header className={styles.header}>
-        <h1 className={styles.title}>麻雀向聴数計算</h1>
+        <h1 className={styles.title}>麻雀練習アプリ</h1>
         <p className={styles.description}>
-          牌を選択して手牌を作成すると、向聴数と有効牌が自動的に表示されます
+          向聴数計算、点数計算、クイズなど、麻雀の実力向上をサポートする総合練習アプリです
         </p>
       </header>
 
-      <div className={styles.content}>
-        <TileSelector hand={hand} onSelect={addTile} />
-        <HandComponent hand={hand} onRemove={removeTile} />
-        <ShantenDisplay
-          result={shantenResult}
-          effectiveTiles={effectiveTiles}
-        />
+      <div className={styles.features}>
+        <Link href="/efficiency" className={styles.card}>
+          <div className={styles.cardIcon}>📊</div>
+          <h2 className={styles.cardTitle}>牌効率計算</h2>
+          <p className={styles.cardDescription}>
+            手牌から向聴数と有効牌を自動計算。牌効率の基礎を学べます。
+          </p>
+          <div className={styles.cardBadge}>Phase 1</div>
+        </Link>
+
+        <Link href="/quiz" className={styles.card}>
+          <div className={styles.cardIcon}>🎯</div>
+          <h2 className={styles.cardTitle}>向聴数クイズ</h2>
+          <p className={styles.cardDescription}>
+            手牌を見て何向聴かを当てるクイズ。向聴数の感覚を鍛えます。
+          </p>
+          <div className={styles.cardBadge}>Phase 3</div>
+        </Link>
+
+        <Link href="/quiz/scoring" className={styles.card}>
+          <div className={styles.cardIcon}>💰</div>
+          <h2 className={styles.cardTitle}>点数計算クイズ</h2>
+          <p className={styles.cardDescription}>
+            和了手牌から点数を計算。役の認識と点数計算をマスター。
+          </p>
+          <div className={styles.cardBadge}>Phase 2</div>
+        </Link>
       </div>
+
+      <footer className={styles.footer}>
+        <p className={styles.footerText}>
+          各機能をクリックして、麻雀の実力を向上させましょう！
+        </p>
+      </footer>
     </main>
   );
 }
