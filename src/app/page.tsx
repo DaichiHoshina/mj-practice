@@ -30,6 +30,15 @@ export default function Home() {
           <div className={styles.cardBadge}>Phase 3</div>
         </Link>
 
+        <Link href="/quiz/efficiency" className={styles.card}>
+          <div className={styles.cardIcon}>🎲</div>
+          <h2 className={styles.cardTitle}>牌効率クイズ</h2>
+          <p className={styles.cardDescription}>
+            どの牌を切るべきかを選ぶクイズ。最適な打牌を学びます。
+          </p>
+          <div className={styles.cardBadge}>New</div>
+        </Link>
+
         <Link href="/quiz/scoring" className={styles.card}>
           <div className={styles.cardIcon}>💰</div>
           <h2 className={styles.cardTitle}>点数計算クイズ</h2>

@@ -8,6 +8,7 @@ import hardPart1Questions from '@/data/questions/hard-part1.json';
 import hardPart2Questions from '@/data/questions/hard-part2.json';
 import scoringEasyQuestions from '@/data/questions/scoring-easy.json';
 import scoringSampleQuestions from '@/data/questions/scoring-sample.json';
+import efficiencyEasyQuestions from '@/data/questions/efficiency-easy.json';
 
 /**
  * すべての問題をマージ
@@ -116,5 +117,46 @@ export function loadMixedScoringQuestions(
   count = 10
 ): readonly ScoringQuestion[] {
   const shuffled = shuffleArray(allScoringQuestions);
+  return shuffled.slice(0, Math.min(count, shuffled.length));
+}
+
+/**
+ * すべてのEfficiency問題をマージ
+ */
+const allEfficiencyQuestions: Question[] = [
+  ...efficiencyEasyQuestions,
+] as Question[];
+
+/**
+ * 指定された難易度のEfficiency問題を読み込み
+ * @param difficulty - 問題の難易度
+ * @param count - 問題数（デフォルト10問）
+ * @returns シャッフルされた問題のリスト
+ */
+export function loadEfficiencyQuestions(
+  difficulty: QuizDifficulty,
+  count = 10
+): readonly Question[] {
+  const filteredQuestions = allEfficiencyQuestions.filter(
+    (q) => q.difficulty === difficulty
+  );
+
+  if (filteredQuestions.length === 0) {
+    throw new Error(
+      `No efficiency questions found for difficulty: ${difficulty}`
+    );
+  }
+
+  const shuffled = shuffleArray(filteredQuestions);
+  return shuffled.slice(0, Math.min(count, shuffled.length));
+}
+
+/**
+ * すべての難易度からEfficiency問題をミックスして読み込み
+ * @param count - 問題数（デフォルト10問）
+ * @returns シャッフルされた問題のリスト
+ */
+export function loadMixedEfficiencyQuestions(count = 10): readonly Question[] {
+  const shuffled = shuffleArray(allEfficiencyQuestions);
   return shuffled.slice(0, Math.min(count, shuffled.length));
 }

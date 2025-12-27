@@ -6,10 +6,11 @@ import rehypeSanitize from 'rehype-sanitize';
 import {
   QuizSession,
   QuizDifficulty,
+  QuizCategory,
   createQuizSession,
   calculateQuizResult,
 } from '@/lib/quiz';
-import { loadQuestions } from '@/lib/quiz/loader';
+import { loadQuestions, loadEfficiencyQuestions } from '@/lib/quiz/loader';
 import { DifficultySelector } from './DifficultySelector';
 import { QuestionDisplay } from './QuestionDisplay';
 import { ChoiceButton } from './ChoiceButton';
@@ -18,10 +19,14 @@ import styles from './QuizGame.module.css';
 
 type GameState = 'selection' | 'playing' | 'feedback' | 'finished';
 
+interface QuizGameProps {
+  readonly category?: QuizCategory;
+}
+
 /**
  * クイズゲーム全体を管理するコンポーネント
  */
-export function QuizGame() {
+export function QuizGame({ category = 'shanten' }: QuizGameProps) {
   const [gameState, setGameState] = useState<GameState>('selection');
   const [session, setSession] = useState<QuizSession | null>(null);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
@@ -36,7 +41,10 @@ export function QuizGame() {
 
   // 難易度選択ハンドラ
   const handleDifficultySelect = (difficulty: QuizDifficulty) => {
-    const questions = loadQuestions(difficulty, 10);
+    const questions =
+      category === 'effective'
+        ? loadEfficiencyQuestions(difficulty, 10)
+        : loadQuestions(difficulty, 10);
     const newSession = createQuizSession(questions);
     setSession(newSession);
     setGameState('playing');

@@ -1,0 +1,152 @@
+[
+  {
+    "id": "eff-e001",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["1m", "2m", "3m", "4m", "5m", "6m", "7m", "8m", "9m", "1p", "1p", "1p", "2p"],
+    "correctAnswer": "d",
+    "choices": [
+      {"id": "a", "label": "1mを切る", "tile": "1m"},
+      {"id": "b", "label": "9mを切る", "tile": "9m"},
+      {"id": "c", "label": "1pを切る", "tile": "1p"},
+      {"id": "d", "label": "2pを切る", "tile": "2p"}
+    ],
+    "explanation": "既にテンパイしており、3p待ちの単騎待ちです。2pは不要なので切ります。"
+  },
+  {
+    "id": "eff-e002",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "8m", "2p", "3p", "4p", "5s", "6s", "7s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "2mを切る", "tile": "2m"},
+      {"id": "b", "label": "8mを切る", "tile": "8m"},
+      {"id": "c", "label": "2pを切る", "tile": "2p"},
+      {"id": "d", "label": "5sを切る", "tile": "5s"}
+    ],
+    "explanation": "234m・567mと2面子あり、8mは孤立牌です。雀頭候補もなく、受け入れが少ないため8mを切ります。"
+  },
+  {
+    "id": "eff-e003",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["1m", "1m", "2m", "3m", "4m", "5m", "6m", "7p", "8p", "9p", "5s", "6s", "7s"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "1mを切る", "tile": "1m"},
+      {"id": "b", "label": "6mを切る", "tile": "6m"},
+      {"id": "c", "label": "7pを切る", "tile": "7p"},
+      {"id": "d", "label": "5sを切る", "tile": "5s"}
+    ],
+    "explanation": "789pは辺張受けの弱い形です。11m雀頭、234m・345m（または456m）の形を残し、7pを切って受け入れを広げます。"
+  },
+  {
+    "id": "eff-e004",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["3m", "4m", "5m", "6m", "7m", "8m", "2p", "2p", "4p", "5p", "6p", "7s", "8s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "3mを切る", "tile": "3m"},
+      {"id": "b", "label": "8mを切る", "tile": "8m"},
+      {"id": "c", "label": "2pを切る", "tile": "2p"},
+      {"id": "d", "label": "7sを切る", "tile": "7s"}
+    ],
+    "explanation": "456m・678mと形が良いため、3mは不要です。22p雀頭、456p、78s塔子の形を活かします。"
+  },
+  {
+    "id": "eff-e005",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["1m", "1m", "1m", "3m", "4m", "5m", "6m", "7m", "8m", "2p", "3p", "4p", "5s"],
+    "correctAnswer": "d",
+    "choices": [
+      {"id": "a", "label": "1mを切る", "tile": "1m"},
+      {"id": "b", "label": "3mを切る", "tile": "3m"},
+      {"id": "c", "label": "8mを切る", "tile": "8m"},
+      {"id": "d", "label": "5sを切る", "tile": "5s"}
+    ],
+    "explanation": "111m刻子、345m・678m・234pと4面子あり、5sは孤立牌です。雀頭候補もないため5sを切ります。"
+  },
+  {
+    "id": "eff-e006",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "8m", "9m", "1p", "2p", "3p", "4p", "5p"],
+    "correctAnswer": "d",
+    "choices": [
+      {"id": "a", "label": "2mを切る", "tile": "2m"},
+      {"id": "b", "label": "5mを切る", "tile": "5m"},
+      {"id": "c", "label": "9mを切る", "tile": "9m"},
+      {"id": "d", "label": "1pを切る", "tile": "1p"}
+    ],
+    "explanation": "234m・567m・345pと3面子、89m塔子の形。1pは辺張でしか使えず、2-5pの受け入れが広いため1pを切ります。"
+  },
+  {
+    "id": "eff-e007",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["4m", "5m", "6m", "7m", "8m", "9m", "3p", "4p", "5p", "6p", "7p", "8p", "9p"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "4mを切る", "tile": "4m"},
+      {"id": "b", "label": "9mを切る", "tile": "9m"},
+      {"id": "c", "label": "3pを切る", "tile": "3p"},
+      {"id": "d", "label": "9pを切る", "tile": "9p"}
+    ],
+    "explanation": "456m・789m、456p・678pと4面子作れますが、雀頭がありません。3pと9pが辺張で弱く、3pを切って形を整えます。"
+  },
+  {
+    "id": "eff-e008",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["1m", "2m", "3m", "4m", "5m", "6m", "7p", "7p", "8p", "9p", "5s", "6s", "7s"],
+    "correctAnswer": "d",
+    "choices": [
+      {"id": "a", "label": "1mを切る", "tile": "1m"},
+      {"id": "b", "label": "6mを切る", "tile": "6m"},
+      {"id": "c", "label": "7pを切る", "tile": "7p"},
+      {"id": "d", "label": "9pを切る", "tile": "9p"}
+    ],
+    "explanation": "123m・456m、77p雀頭、567sと形が良いです。9pは辺張でしか使えず、受け入れが少ないため切ります。"
+  },
+  {
+    "id": "eff-e009",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["2m", "2m", "3m", "4m", "5m", "6m", "7m", "8m", "2p", "3p", "4p", "6s", "7s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "2mを切る", "tile": "2m"},
+      {"id": "b", "label": "8mを切る", "tile": "8m"},
+      {"id": "c", "label": "2pを切る", "tile": "2p"},
+      {"id": "d", "label": "6sを切る", "tile": "6s"}
+    ],
+    "explanation": "22m雀頭、345m（または234m）、234p、67s塔子の形。8mは孤立気味で受け入れが少ないため切ります。"
+  },
+  {
+    "id": "eff-e010",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["3m", "4m", "5m", "6m", "7m", "8m", "9m", "3p", "4p", "5p", "6p", "7p", "1s"],
+    "correctAnswer": "d",
+    "choices": [
+      {"id": "a", "label": "3mを切る", "tile": "3m"},
+      {"id": "b", "label": "9mを切る", "tile": "9m"},
+      {"id": "c", "label": "3pを切る", "tile": "3p"},
+      {"id": "d", "label": "1sを切る", "tile": "1s"}
+    ],
+    "explanation": "345m・678m・345p・567pと4面子あり、1sは孤立牌で雀頭候補もありません。1sを切ります。"
+  }
+]
