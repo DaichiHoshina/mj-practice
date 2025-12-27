@@ -9,7 +9,7 @@ import { Hand as HandComponent } from '@/components/Hand';
 import { ShantenDisplay } from '@/components/ShantenDisplay';
 import styles from './page.module.css';
 
-export default function EfficiencyPage(): JSX.Element {
+export default function EfficiencyPage() {
   const [hand, setHand] = useState<Hand>([]);
 
   // 牌を追加
