@@ -99,7 +99,9 @@ export function ScoringFeedback({
           </div>
           <div className={styles.fuTotal}>
             <span className={styles.fuLabel}>合計:</span>
-            <span className={styles.fuValue}>{question.correctAnswer.fu}符</span>
+            <span className={styles.fuValue}>
+              {question.correctAnswer.fu}符
+            </span>
           </div>
         </div>
       </div>

@@ -34,13 +34,20 @@ describe('calculateFu', () => {
 
   it('七対子は25符固定', () => {
     const hand = [
-      TileType.MAN1, TileType.MAN1,
-      TileType.MAN2, TileType.MAN2,
-      TileType.MAN3, TileType.MAN3,
-      TileType.MAN4, TileType.MAN4,
-      TileType.PIN1, TileType.PIN1,
-      TileType.PIN2, TileType.PIN2,
-      TileType.SOU1, TileType.SOU1,
+      TileType.MAN1,
+      TileType.MAN1,
+      TileType.MAN2,
+      TileType.MAN2,
+      TileType.MAN3,
+      TileType.MAN3,
+      TileType.MAN4,
+      TileType.MAN4,
+      TileType.PIN1,
+      TileType.PIN1,
+      TileType.PIN2,
+      TileType.PIN2,
+      TileType.SOU1,
+      TileType.SOU1,
     ];
 
     const yakuResult: YakuResult = {
@@ -64,11 +71,20 @@ describe('calculateFu', () => {
 
   it('平和ツモは20符固定', () => {
     const hand = [
-      TileType.MAN1, TileType.MAN2, TileType.MAN3,
-      TileType.MAN4, TileType.MAN5, TileType.MAN6,
-      TileType.PIN1, TileType.PIN2, TileType.PIN3,
-      TileType.PIN4, TileType.PIN5, TileType.PIN6,
-      TileType.SOU2, TileType.SOU2,
+      TileType.MAN1,
+      TileType.MAN2,
+      TileType.MAN3,
+      TileType.MAN4,
+      TileType.MAN5,
+      TileType.MAN6,
+      TileType.PIN1,
+      TileType.PIN2,
+      TileType.PIN3,
+      TileType.PIN4,
+      TileType.PIN5,
+      TileType.PIN6,
+      TileType.SOU2,
+      TileType.SOU2,
     ];
 
     const yakuResult: YakuResult = {
@@ -88,7 +104,7 @@ describe('calculateFu', () => {
     const result = calculateFu(
       hand,
       yakuResult,
-      createWinContext({ isTsumo: true, winningTile: TileType.SOU2 }),
+      createWinContext({ isTsumo: true, winningTile: TileType.SOU2 })
     );
 
     expect(result.total).toBe(20);
@@ -98,11 +114,20 @@ describe('calculateFu', () => {
 
   it('25符は30符に切り上げ', () => {
     const hand = [
-      TileType.MAN1, TileType.MAN2, TileType.MAN3,
-      TileType.MAN4, TileType.MAN4, TileType.MAN4,
-      TileType.PIN1, TileType.PIN2, TileType.PIN3,
-      TileType.PIN4, TileType.PIN5, TileType.PIN6,
-      TileType.SOU2, TileType.SOU2,
+      TileType.MAN1,
+      TileType.MAN2,
+      TileType.MAN3,
+      TileType.MAN4,
+      TileType.MAN4,
+      TileType.MAN4,
+      TileType.PIN1,
+      TileType.PIN2,
+      TileType.PIN3,
+      TileType.PIN4,
+      TileType.PIN5,
+      TileType.PIN6,
+      TileType.SOU2,
+      TileType.SOU2,
     ];
 
     const yakuResult = createYakuResult(['riichi']);
@@ -113,7 +138,7 @@ describe('calculateFu', () => {
       createWinContext({
         isTsumo: false,
         winningTile: TileType.PIN4,
-      }),
+      })
     );
 
     expect(result.total % 10).toBe(0);
@@ -122,11 +147,20 @@ describe('calculateFu', () => {
 
   it('35符は40符に切り上げ', () => {
     const hand = [
-      TileType.MAN1, TileType.MAN1, TileType.MAN1,
-      TileType.MAN2, TileType.MAN2, TileType.MAN2,
-      TileType.PIN1, TileType.PIN2, TileType.PIN3,
-      TileType.PIN4, TileType.PIN5, TileType.PIN6,
-      TileType.SOU2, TileType.SOU2,
+      TileType.MAN1,
+      TileType.MAN1,
+      TileType.MAN1,
+      TileType.MAN2,
+      TileType.MAN2,
+      TileType.MAN2,
+      TileType.PIN1,
+      TileType.PIN2,
+      TileType.PIN3,
+      TileType.PIN4,
+      TileType.PIN5,
+      TileType.PIN6,
+      TileType.SOU2,
+      TileType.SOU2,
     ];
 
     const yakuResult = createYakuResult(['riichi']);
@@ -137,7 +171,7 @@ describe('calculateFu', () => {
       createWinContext({
         isTsumo: false,
         winningTile: TileType.MAN1,
-      }),
+      })
     );
 
     expect(result.total % 10).toBe(0);
@@ -145,11 +179,20 @@ describe('calculateFu', () => {
 
   it('45符は50符に切り上げ', () => {
     const hand = [
-      TileType.MAN1, TileType.MAN1, TileType.MAN1,
-      TileType.MAN2, TileType.MAN2, TileType.MAN2,
-      TileType.PIN1, TileType.PIN1, TileType.PIN1,
-      TileType.PIN2, TileType.PIN3, TileType.PIN4,
-      TileType.SOU2, TileType.SOU2,
+      TileType.MAN1,
+      TileType.MAN1,
+      TileType.MAN1,
+      TileType.MAN2,
+      TileType.MAN2,
+      TileType.MAN2,
+      TileType.PIN1,
+      TileType.PIN1,
+      TileType.PIN1,
+      TileType.PIN2,
+      TileType.PIN3,
+      TileType.PIN4,
+      TileType.SOU2,
+      TileType.SOU2,
     ];
 
     const yakuResult = createYakuResult(['riichi']);
@@ -160,7 +203,7 @@ describe('calculateFu', () => {
       createWinContext({
         isTsumo: false,
         winningTile: TileType.PIN1,
-      }),
+      })
     );
 
     expect(result.total % 10).toBe(0);
@@ -168,11 +211,20 @@ describe('calculateFu', () => {
 
   it('副底は常に20符', () => {
     const hand = [
-      TileType.MAN1, TileType.MAN2, TileType.MAN3,
-      TileType.MAN4, TileType.MAN5, TileType.MAN6,
-      TileType.PIN1, TileType.PIN2, TileType.PIN3,
-      TileType.PIN4, TileType.PIN5, TileType.PIN6,
-      TileType.SOU2, TileType.SOU2,
+      TileType.MAN1,
+      TileType.MAN2,
+      TileType.MAN3,
+      TileType.MAN4,
+      TileType.MAN5,
+      TileType.MAN6,
+      TileType.PIN1,
+      TileType.PIN2,
+      TileType.PIN3,
+      TileType.PIN4,
+      TileType.PIN5,
+      TileType.PIN6,
+      TileType.SOU2,
+      TileType.SOU2,
     ];
 
     const yakuResult = createYakuResult(['riichi']);
@@ -180,7 +232,7 @@ describe('calculateFu', () => {
     const result = calculateFu(
       hand,
       yakuResult,
-      createWinContext({ isTsumo: false, winningTile: TileType.PIN4 }),
+      createWinContext({ isTsumo: false, winningTile: TileType.PIN4 })
     );
 
     expect(result.base).toBe(20);
@@ -188,11 +240,20 @@ describe('calculateFu', () => {
 
   it('役牌の雀頭は2符', () => {
     const hand = [
-      TileType.MAN1, TileType.MAN2, TileType.MAN3,
-      TileType.MAN4, TileType.MAN5, TileType.MAN6,
-      TileType.PIN1, TileType.PIN2, TileType.PIN3,
-      TileType.PIN4, TileType.PIN5, TileType.PIN6,
-      TileType.HAKU, TileType.HAKU,
+      TileType.MAN1,
+      TileType.MAN2,
+      TileType.MAN3,
+      TileType.MAN4,
+      TileType.MAN5,
+      TileType.MAN6,
+      TileType.PIN1,
+      TileType.PIN2,
+      TileType.PIN3,
+      TileType.PIN4,
+      TileType.PIN5,
+      TileType.PIN6,
+      TileType.HAKU,
+      TileType.HAKU,
     ];
 
     const yakuResult: YakuResult = {
@@ -212,7 +273,7 @@ describe('calculateFu', () => {
     const result = calculateFu(
       hand,
       yakuResult,
-      createWinContext({ isTsumo: false, winningTile: TileType.PIN4 }),
+      createWinContext({ isTsumo: false, winningTile: TileType.PIN4 })
     );
 
     expect(result.jantouFu).toBe(2);
@@ -220,11 +281,20 @@ describe('calculateFu', () => {
 
   it('中張牌の雀頭は0符', () => {
     const hand = [
-      TileType.MAN1, TileType.MAN2, TileType.MAN3,
-      TileType.MAN4, TileType.MAN5, TileType.MAN6,
-      TileType.PIN1, TileType.PIN2, TileType.PIN3,
-      TileType.PIN4, TileType.PIN5, TileType.PIN6,
-      TileType.SOU2, TileType.SOU2,
+      TileType.MAN1,
+      TileType.MAN2,
+      TileType.MAN3,
+      TileType.MAN4,
+      TileType.MAN5,
+      TileType.MAN6,
+      TileType.PIN1,
+      TileType.PIN2,
+      TileType.PIN3,
+      TileType.PIN4,
+      TileType.PIN5,
+      TileType.PIN6,
+      TileType.SOU2,
+      TileType.SOU2,
     ];
 
     const yakuResult = createYakuResult(['riichi']);
@@ -232,7 +302,7 @@ describe('calculateFu', () => {
     const result = calculateFu(
       hand,
       yakuResult,
-      createWinContext({ isTsumo: false, winningTile: TileType.PIN4 }),
+      createWinContext({ isTsumo: false, winningTile: TileType.PIN4 })
     );
 
     expect(result.jantouFu).toBe(0);
@@ -240,11 +310,20 @@ describe('calculateFu', () => {
 
   it('通常のツモ和了は2符', () => {
     const hand = [
-      TileType.MAN1, TileType.MAN2, TileType.MAN3,
-      TileType.MAN4, TileType.MAN5, TileType.MAN6,
-      TileType.PIN1, TileType.PIN2, TileType.PIN3,
-      TileType.PIN4, TileType.PIN5, TileType.PIN6,
-      TileType.SOU2, TileType.SOU2,
+      TileType.MAN1,
+      TileType.MAN2,
+      TileType.MAN3,
+      TileType.MAN4,
+      TileType.MAN5,
+      TileType.MAN6,
+      TileType.PIN1,
+      TileType.PIN2,
+      TileType.PIN3,
+      TileType.PIN4,
+      TileType.PIN5,
+      TileType.PIN6,
+      TileType.SOU2,
+      TileType.SOU2,
     ];
 
     const yakuResult = createYakuResult(['riichi']);
@@ -252,7 +331,7 @@ describe('calculateFu', () => {
     const result = calculateFu(
       hand,
       yakuResult,
-      createWinContext({ isTsumo: true, winningTile: TileType.SOU2 }),
+      createWinContext({ isTsumo: true, winningTile: TileType.SOU2 })
     );
 
     expect(result.tsumoFu).toBe(2);
@@ -260,11 +339,20 @@ describe('calculateFu', () => {
 
   it('平和ツモはツモ符なし', () => {
     const hand = [
-      TileType.MAN1, TileType.MAN2, TileType.MAN3,
-      TileType.MAN4, TileType.MAN5, TileType.MAN6,
-      TileType.PIN1, TileType.PIN2, TileType.PIN3,
-      TileType.PIN4, TileType.PIN5, TileType.PIN6,
-      TileType.SOU2, TileType.SOU2,
+      TileType.MAN1,
+      TileType.MAN2,
+      TileType.MAN3,
+      TileType.MAN4,
+      TileType.MAN5,
+      TileType.MAN6,
+      TileType.PIN1,
+      TileType.PIN2,
+      TileType.PIN3,
+      TileType.PIN4,
+      TileType.PIN5,
+      TileType.PIN6,
+      TileType.SOU2,
+      TileType.SOU2,
     ];
 
     const yakuResult: YakuResult = {
@@ -284,7 +372,7 @@ describe('calculateFu', () => {
     const result = calculateFu(
       hand,
       yakuResult,
-      createWinContext({ isTsumo: true, winningTile: TileType.SOU2 }),
+      createWinContext({ isTsumo: true, winningTile: TileType.SOU2 })
     );
 
     expect(result.tsumoFu).toBe(0);
@@ -292,11 +380,20 @@ describe('calculateFu', () => {
 
   it('門前ロン和了は10符', () => {
     const hand = [
-      TileType.MAN1, TileType.MAN2, TileType.MAN3,
-      TileType.MAN4, TileType.MAN5, TileType.MAN6,
-      TileType.PIN1, TileType.PIN2, TileType.PIN3,
-      TileType.PIN4, TileType.PIN5, TileType.PIN6,
-      TileType.SOU2, TileType.SOU2,
+      TileType.MAN1,
+      TileType.MAN2,
+      TileType.MAN3,
+      TileType.MAN4,
+      TileType.MAN5,
+      TileType.MAN6,
+      TileType.PIN1,
+      TileType.PIN2,
+      TileType.PIN3,
+      TileType.PIN4,
+      TileType.PIN5,
+      TileType.PIN6,
+      TileType.SOU2,
+      TileType.SOU2,
     ];
 
     const yakuResult = createYakuResult(['riichi']);
@@ -304,7 +401,7 @@ describe('calculateFu', () => {
     const result = calculateFu(
       hand,
       yakuResult,
-      createWinContext({ isTsumo: false, winningTile: TileType.PIN4 }),
+      createWinContext({ isTsumo: false, winningTile: TileType.PIN4 })
     );
 
     expect(result.menzenRonFu).toBe(10);
@@ -312,11 +409,20 @@ describe('calculateFu', () => {
 
   it('ツモ和了は門前ロン符なし', () => {
     const hand = [
-      TileType.MAN1, TileType.MAN2, TileType.MAN3,
-      TileType.MAN4, TileType.MAN5, TileType.MAN6,
-      TileType.PIN1, TileType.PIN2, TileType.PIN3,
-      TileType.PIN4, TileType.PIN5, TileType.PIN6,
-      TileType.SOU2, TileType.SOU2,
+      TileType.MAN1,
+      TileType.MAN2,
+      TileType.MAN3,
+      TileType.MAN4,
+      TileType.MAN5,
+      TileType.MAN6,
+      TileType.PIN1,
+      TileType.PIN2,
+      TileType.PIN3,
+      TileType.PIN4,
+      TileType.PIN5,
+      TileType.PIN6,
+      TileType.SOU2,
+      TileType.SOU2,
     ];
 
     const yakuResult = createYakuResult(['riichi']);
@@ -324,7 +430,7 @@ describe('calculateFu', () => {
     const result = calculateFu(
       hand,
       yakuResult,
-      createWinContext({ isTsumo: true, winningTile: TileType.SOU2 }),
+      createWinContext({ isTsumo: true, winningTile: TileType.SOU2 })
     );
 
     expect(result.menzenRonFu).toBe(0);
@@ -332,11 +438,20 @@ describe('calculateFu', () => {
 
   it('順子は0符', () => {
     const hand = [
-      TileType.MAN1, TileType.MAN2, TileType.MAN3,
-      TileType.MAN4, TileType.MAN5, TileType.MAN6,
-      TileType.PIN1, TileType.PIN2, TileType.PIN3,
-      TileType.PIN4, TileType.PIN5, TileType.PIN6,
-      TileType.SOU2, TileType.SOU2,
+      TileType.MAN1,
+      TileType.MAN2,
+      TileType.MAN3,
+      TileType.MAN4,
+      TileType.MAN5,
+      TileType.MAN6,
+      TileType.PIN1,
+      TileType.PIN2,
+      TileType.PIN3,
+      TileType.PIN4,
+      TileType.PIN5,
+      TileType.PIN6,
+      TileType.SOU2,
+      TileType.SOU2,
     ];
 
     const yakuResult = createYakuResult(['riichi']);
@@ -344,19 +459,30 @@ describe('calculateFu', () => {
     const result = calculateFu(
       hand,
       yakuResult,
-      createWinContext({ isTsumo: false, winningTile: TileType.PIN4 }),
+      createWinContext({ isTsumo: false, winningTile: TileType.PIN4 })
     );
 
-    expect(result.mentsuFu.every((m) => m.type === 'shuntsu' && m.fu === 0)).toBe(true);
+    expect(
+      result.mentsuFu.every((m) => m.type === 'shuntsu' && m.fu === 0)
+    ).toBe(true);
   });
 
   it('基本的な符計算が10単位に丸められる', () => {
     const hand = [
-      TileType.MAN1, TileType.MAN2, TileType.MAN3,
-      TileType.MAN4, TileType.MAN5, TileType.MAN6,
-      TileType.PIN1, TileType.PIN2, TileType.PIN3,
-      TileType.PIN4, TileType.PIN5, TileType.PIN6,
-      TileType.SOU2, TileType.SOU2,
+      TileType.MAN1,
+      TileType.MAN2,
+      TileType.MAN3,
+      TileType.MAN4,
+      TileType.MAN5,
+      TileType.MAN6,
+      TileType.PIN1,
+      TileType.PIN2,
+      TileType.PIN3,
+      TileType.PIN4,
+      TileType.PIN5,
+      TileType.PIN6,
+      TileType.SOU2,
+      TileType.SOU2,
     ];
 
     const yakuResult = createYakuResult(['riichi']);
@@ -364,7 +490,7 @@ describe('calculateFu', () => {
     const result = calculateFu(
       hand,
       yakuResult,
-      createWinContext({ isTsumo: false, winningTile: TileType.PIN4 }),
+      createWinContext({ isTsumo: false, winningTile: TileType.PIN4 })
     );
 
     expect(result.total % 10).toBe(0);
@@ -372,11 +498,20 @@ describe('calculateFu', () => {
 
   it('メンツ分割失敗時のフォールバック', () => {
     const hand = [
-      TileType.MAN1, TileType.MAN2, TileType.MAN3,
-      TileType.MAN4, TileType.MAN5, TileType.MAN6,
-      TileType.PIN1, TileType.PIN2, TileType.PIN3,
-      TileType.PIN4, TileType.PIN5, TileType.PIN6,
-      TileType.SOU1, TileType.SOU2,
+      TileType.MAN1,
+      TileType.MAN2,
+      TileType.MAN3,
+      TileType.MAN4,
+      TileType.MAN5,
+      TileType.MAN6,
+      TileType.PIN1,
+      TileType.PIN2,
+      TileType.PIN3,
+      TileType.PIN4,
+      TileType.PIN5,
+      TileType.PIN6,
+      TileType.SOU1,
+      TileType.SOU2,
     ];
 
     const yakuResult = createYakuResult(['riichi']);
@@ -384,7 +519,7 @@ describe('calculateFu', () => {
     const result = calculateFu(
       hand,
       yakuResult,
-      createWinContext({ isTsumo: false, winningTile: TileType.PIN4 }),
+      createWinContext({ isTsumo: false, winningTile: TileType.PIN4 })
     );
 
     expect(result.base).toBe(20);

@@ -59,9 +59,7 @@ function parseTile(tileStr: string): TileType {
 /**
  * テスト用ヘルパー：WinContextを構築
  */
-function buildContext(
-  questionData: (typeof sampleQuestions)[0],
-): WinContext {
+function buildContext(questionData: (typeof sampleQuestions)[0]): WinContext {
   return {
     winningTile: parseTile(questionData.winningTile),
     isTsumo: questionData.isTsumo,
@@ -87,7 +85,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
      */
     it('問題1: リーチ・ツモのみの基本形 → 正常に計算される', () => {
       const question = sampleQuestions[0];
-      const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+      const hand = question.hand.map((t) =>
+        parseTile(t)
+      ) as readonly TileType[];
       const context = buildContext(question);
 
       const yakuResult = detectYaku(hand, context);
@@ -96,7 +96,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
         fuBreakdown.total,
         yakuResult.totalHan,
         context.isDealer,
-        context.isTsumo,
+        context.isTsumo
       );
 
       expect(hand).toHaveLength(14);
@@ -113,7 +113,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
      */
     it('問題2: タンヤオ・役牌の複合 → 正常に計算される', () => {
       const question = sampleQuestions[1];
-      const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+      const hand = question.hand.map((t) =>
+        parseTile(t)
+      ) as readonly TileType[];
       const context = buildContext(question);
 
       const yakuResult = detectYaku(hand, context);
@@ -122,7 +124,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
         fuBreakdown.total,
         yakuResult.totalHan,
         context.isDealer,
-        context.isTsumo,
+        context.isTsumo
       );
 
       expect(hand).toHaveLength(14);
@@ -137,7 +139,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
      */
     it('問題3: リーチ・タンヤオ・複合役 → 正常に計算される', () => {
       const question = sampleQuestions[2];
-      const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+      const hand = question.hand.map((t) =>
+        parseTile(t)
+      ) as readonly TileType[];
       const context = buildContext(question);
 
       const yakuResult = detectYaku(hand, context);
@@ -146,7 +150,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
         fuBreakdown.total,
         yakuResult.totalHan,
         context.isDealer,
-        context.isTsumo,
+        context.isTsumo
       );
 
       expect(hand).toHaveLength(14);
@@ -163,7 +167,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
      */
     it('問題4: 三色同順・平和・ツモの複合 → 平和ツモで20符', () => {
       const question = sampleQuestions[3];
-      const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+      const hand = question.hand.map((t) =>
+        parseTile(t)
+      ) as readonly TileType[];
       const context = buildContext(question);
 
       const yakuResult = detectYaku(hand, context);
@@ -172,7 +178,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
         fuBreakdown.total,
         yakuResult.totalHan,
         context.isDealer,
-        context.isTsumo,
+        context.isTsumo
       );
 
       expect(hand).toHaveLength(14);
@@ -187,7 +193,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
      */
     it('問題5: 親の清一色跳満 → 清一色で高翻数', () => {
       const question = sampleQuestions[4];
-      const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+      const hand = question.hand.map((t) =>
+        parseTile(t)
+      ) as readonly TileType[];
       const context = buildContext(question);
 
       const yakuResult = detectYaku(hand, context);
@@ -196,7 +204,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
         fuBreakdown.total,
         yakuResult.totalHan,
         context.isDealer,
-        context.isTsumo,
+        context.isTsumo
       );
 
       expect(hand).toHaveLength(14);
@@ -210,7 +218,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
   describe('フロー全体の正合性チェック', () => {
     it('全サンプル問題でエラーなく処理できる', () => {
       for (const question of sampleQuestions) {
-        const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+        const hand = question.hand.map((t) =>
+          parseTile(t)
+        ) as readonly TileType[];
         const context = buildContext(question);
 
         expect(() => {
@@ -220,7 +230,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
             fuBreakdown.total,
             yakuResult.totalHan,
             context.isDealer,
-            context.isTsumo,
+            context.isTsumo
           );
 
           expect(yakuResult).toHaveProperty('yakuList');
@@ -234,7 +244,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
 
     it('役の翻数と符が正しい範囲にある', () => {
       for (const question of sampleQuestions) {
-        const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+        const hand = question.hand.map((t) =>
+          parseTile(t)
+        ) as readonly TileType[];
         const context = buildContext(question);
 
         const yakuResult = detectYaku(hand, context);
@@ -249,7 +261,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
 
     it('計算された点数が100点単位である', () => {
       for (const question of sampleQuestions) {
-        const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+        const hand = question.hand.map((t) =>
+          parseTile(t)
+        ) as readonly TileType[];
         const context = buildContext(question);
 
         const yakuResult = detectYaku(hand, context);
@@ -258,7 +272,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
           fuBreakdown.total,
           yakuResult.totalHan,
           context.isDealer,
-          context.isTsumo,
+          context.isTsumo
         );
 
         expect(scoreResult.score % 100).toBe(0);
@@ -267,7 +281,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
 
     it('支払い内訳が和了形式に応じて正しい', () => {
       for (const question of sampleQuestions) {
-        const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+        const hand = question.hand.map((t) =>
+          parseTile(t)
+        ) as readonly TileType[];
         const context = buildContext(question);
 
         const yakuResult = detectYaku(hand, context);
@@ -276,7 +292,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
           fuBreakdown.total,
           yakuResult.totalHan,
           context.isDealer,
-          context.isTsumo,
+          context.isTsumo
         );
 
         if (question.isTsumo) {
@@ -355,11 +371,10 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
 
         expect(result.score % 100).toBe(0);
         expect(result.score).toBeGreaterThan(0);
-        
       }
     });
   });
-});/**
+}); /**
  * 統合テスト: 役判定 → 符計算 → 点数計算の全フロー
  * サンプル問題5問で実装の整合性を検証
  */
@@ -420,9 +435,7 @@ function parseTile(tileStr: string): TileType {
 /**
  * テスト用ヘルパー：WinContextを構築
  */
-function buildContext(
-  questionData: (typeof sampleQuestions)[0],
-): WinContext {
+function buildContext(questionData: (typeof sampleQuestions)[0]): WinContext {
   return {
     winningTile: parseTile(questionData.winningTile),
     isTsumo: questionData.isTsumo,
@@ -448,7 +461,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
      */
     it('問題1: リーチ・ツモのみの基本形 → 正常に計算される', () => {
       const question = sampleQuestions[0];
-      const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+      const hand = question.hand.map((t) =>
+        parseTile(t)
+      ) as readonly TileType[];
       const context = buildContext(question);
 
       const yakuResult = detectYaku(hand, context);
@@ -457,7 +472,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
         fuBreakdown.total,
         yakuResult.totalHan,
         context.isDealer,
-        context.isTsumo,
+        context.isTsumo
       );
 
       expect(hand).toHaveLength(14);
@@ -474,7 +489,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
      */
     it('問題2: タンヤオ・役牌の複合 → 正常に計算される', () => {
       const question = sampleQuestions[1];
-      const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+      const hand = question.hand.map((t) =>
+        parseTile(t)
+      ) as readonly TileType[];
       const context = buildContext(question);
 
       const yakuResult = detectYaku(hand, context);
@@ -483,7 +500,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
         fuBreakdown.total,
         yakuResult.totalHan,
         context.isDealer,
-        context.isTsumo,
+        context.isTsumo
       );
 
       expect(hand).toHaveLength(14);
@@ -498,7 +515,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
      */
     it('問題3: リーチ・タンヤオ・複合役 → 正常に計算される', () => {
       const question = sampleQuestions[2];
-      const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+      const hand = question.hand.map((t) =>
+        parseTile(t)
+      ) as readonly TileType[];
       const context = buildContext(question);
 
       const yakuResult = detectYaku(hand, context);
@@ -507,7 +526,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
         fuBreakdown.total,
         yakuResult.totalHan,
         context.isDealer,
-        context.isTsumo,
+        context.isTsumo
       );
 
       expect(hand).toHaveLength(14);
@@ -524,7 +543,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
      */
     it('問題4: 三色同順・平和・ツモの複合 → 平和ツモで20符', () => {
       const question = sampleQuestions[3];
-      const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+      const hand = question.hand.map((t) =>
+        parseTile(t)
+      ) as readonly TileType[];
       const context = buildContext(question);
 
       const yakuResult = detectYaku(hand, context);
@@ -533,7 +554,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
         fuBreakdown.total,
         yakuResult.totalHan,
         context.isDealer,
-        context.isTsumo,
+        context.isTsumo
       );
 
       expect(hand).toHaveLength(14);
@@ -548,7 +569,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
      */
     it('問題5: 親の清一色跳満 → 清一色で高翻数', () => {
       const question = sampleQuestions[4];
-      const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+      const hand = question.hand.map((t) =>
+        parseTile(t)
+      ) as readonly TileType[];
       const context = buildContext(question);
 
       const yakuResult = detectYaku(hand, context);
@@ -557,7 +580,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
         fuBreakdown.total,
         yakuResult.totalHan,
         context.isDealer,
-        context.isTsumo,
+        context.isTsumo
       );
 
       expect(hand).toHaveLength(14);
@@ -571,7 +594,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
   describe('フロー全体の正合性チェック', () => {
     it('全サンプル問題でエラーなく処理できる', () => {
       for (const question of sampleQuestions) {
-        const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+        const hand = question.hand.map((t) =>
+          parseTile(t)
+        ) as readonly TileType[];
         const context = buildContext(question);
 
         expect(() => {
@@ -581,7 +606,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
             fuBreakdown.total,
             yakuResult.totalHan,
             context.isDealer,
-            context.isTsumo,
+            context.isTsumo
           );
 
           expect(yakuResult).toHaveProperty('yakuList');
@@ -595,7 +620,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
 
     it('役の翻数と符が正しい範囲にある', () => {
       for (const question of sampleQuestions) {
-        const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+        const hand = question.hand.map((t) =>
+          parseTile(t)
+        ) as readonly TileType[];
         const context = buildContext(question);
 
         const yakuResult = detectYaku(hand, context);
@@ -610,7 +637,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
 
     it('計算された点数が100点単位である', () => {
       for (const question of sampleQuestions) {
-        const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+        const hand = question.hand.map((t) =>
+          parseTile(t)
+        ) as readonly TileType[];
         const context = buildContext(question);
 
         const yakuResult = detectYaku(hand, context);
@@ -619,7 +648,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
           fuBreakdown.total,
           yakuResult.totalHan,
           context.isDealer,
-          context.isTsumo,
+          context.isTsumo
         );
 
         expect(scoreResult.score % 100).toBe(0);
@@ -628,7 +657,9 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
 
     it('支払い内訳が和了形式に応じて正しい', () => {
       for (const question of sampleQuestions) {
-        const hand = question.hand.map((t) => parseTile(t)) as readonly TileType[];
+        const hand = question.hand.map((t) =>
+          parseTile(t)
+        ) as readonly TileType[];
         const context = buildContext(question);
 
         const yakuResult = detectYaku(hand, context);
@@ -637,7 +668,7 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
           fuBreakdown.total,
           yakuResult.totalHan,
           context.isDealer,
-          context.isTsumo,
+          context.isTsumo
         );
 
         if (question.isTsumo) {
@@ -716,7 +747,6 @@ describe('Integration: 役判定 → 符計算 → 点数計算', () => {
 
         expect(result.score % 100).toBe(0);
         expect(result.score).toBeGreaterThan(0);
-        
       }
     });
   });

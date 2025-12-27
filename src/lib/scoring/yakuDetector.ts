@@ -3,9 +3,13 @@
  * 手牌から役を判定し、翻数を計算
  */
 
-import { TileType, NUMBER_TILES, HONOR_TILES } from '../tiles';
+import {
+  TileType,
+  NUMBER_TILES as _NUMBER_TILES,
+  HONOR_TILES as _HONOR_TILES,
+} from '../tiles';
 import { YAKU_DEFINITIONS } from './constants';
-import { Yaku, YakuResult, WinContext } from './types';
+import { type Yaku as _Yaku, YakuResult, WinContext } from './types';
 
 /** メンツの型 */
 type Mentsu = {
@@ -43,7 +47,7 @@ function getTileNumber(tile: TileType): number | null {
 /** 手牌をメンツに分割 */
 function splitMentsu(
   hand: readonly TileType[],
-  winningTile: TileType,
+  _winningTile: TileType
 ): Mentsu[] | null {
   const normalized = hand.map(normalizeTile);
   const tiles = [...normalized];
@@ -141,7 +145,7 @@ function detectTanyao(hand: readonly TileType[]): boolean {
 function detectPinfu(
   mentsu: Mentsu[],
   hand: readonly TileType[],
-  jantou: TileType,
+  jantou: TileType
 ): boolean {
   // 全て順子か確認
   const isAllShuntsu = mentsu.every((m) => m.type === 'shuntsu');
@@ -191,8 +195,7 @@ function detectIkkitsuukan(mentsu: Mentsu[]): boolean {
   for (const suit of ['man', 'pin', 'sou'] as const) {
     const shuntsu = mentsu.filter(
       (m) =>
-        m.type === 'shuntsu' &&
-        m.tiles.every((t) => getTileSuit(t) === suit),
+        m.type === 'shuntsu' && m.tiles.every((t) => getTileSuit(t) === suit)
     );
 
     const nums = new Set<number>();
@@ -245,14 +248,14 @@ function detectToitoi(mentsu: Mentsu[]): boolean {
 function detectSanankou(
   mentsu: Mentsu[],
   winningTile: TileType,
-  isTsumo: boolean,
+  isTsumo: boolean
 ): boolean {
   if (!isTsumo) return false;
 
   const ankou = mentsu.filter(
     (m) =>
       (m.type === 'koutsu' || m.type === 'kantsu') &&
-      !m.tiles.includes(winningTile),
+      !m.tiles.includes(winningTile)
   );
 
   return ankou.length >= 3;
@@ -367,14 +370,14 @@ function detectKokushimusou(hand: readonly TileType[]): boolean {
 function detectSuuankou(
   mentsu: Mentsu[],
   winningTile: TileType,
-  isTsumo: boolean,
+  isTsumo: boolean
 ): boolean {
   if (!isTsumo) return false;
 
   const ankou = mentsu.filter(
     (m) =>
       (m.type === 'koutsu' || m.type === 'kantsu') &&
-      !m.tiles.includes(winningTile),
+      !m.tiles.includes(winningTile)
   );
 
   return ankou.length === 4;
@@ -382,7 +385,11 @@ function detectSuuankou(
 
 /** 役判定：大三元 */
 function detectDaisangen(mentsu: Mentsu[]): boolean {
-  const sangenTiles: TileType[] = [TileType.HAKU, TileType.HATSU, TileType.CHUN];
+  const sangenTiles: TileType[] = [
+    TileType.HAKU,
+    TileType.HATSU,
+    TileType.CHUN,
+  ];
   const kotsuTiles = new Set<TileType>();
 
   for (const m of mentsu) {
@@ -451,11 +458,12 @@ function detectJunchan(mentsu: Mentsu[], jantou: TileType): boolean {
 }
 
 /** 役判定：小三元 */
-function detectShousangen(
-  mentsu: Mentsu[],
-  jantou: TileType,
-): boolean {
-  const sangenTiles: TileType[] = [TileType.HAKU, TileType.HATSU, TileType.CHUN];
+function detectShousangen(mentsu: Mentsu[], jantou: TileType): boolean {
+  const sangenTiles: TileType[] = [
+    TileType.HAKU,
+    TileType.HATSU,
+    TileType.CHUN,
+  ];
   const kotsuTiles = new Set<TileType>();
   let jantouIsSangen = false;
 
@@ -484,7 +492,7 @@ function detectShousangen(
  */
 export function detectYaku(
   hand: readonly TileType[],
-  context: WinContext,
+  context: WinContext
 ): YakuResult {
   const yakuIds = new Set<string>();
 
@@ -571,25 +579,13 @@ export function detectYaku(
   if (detectIkkitsuukan(mentsu)) yakuIds.add('ikkitsuukan');
   if (detectSanshokuDoujun(mentsu)) yakuIds.add('sanshoku_doujun');
   if (detectToitoi(mentsu)) yakuIds.add('toitoi');
-  if (
-    detectSanankou(
-      mentsu,
-      context.winningTile,
-      context.isTsumo,
-    )
-  )
+  if (detectSanankou(mentsu, context.winningTile, context.isTsumo))
     yakuIds.add('sanankou');
   if (detectChanta(mentsu, jantou)) yakuIds.add('chanta');
   if (detectHonitsu(hand)) yakuIds.add('honitsu');
   if (detectChinitsu(hand)) yakuIds.add('chinitsu');
   if (detectJunchan(mentsu, jantou)) yakuIds.add('junchan');
-  if (
-    detectSuuankou(
-      mentsu,
-      context.winningTile,
-      context.isTsumo,
-    )
-  )
+  if (detectSuuankou(mentsu, context.winningTile, context.isTsumo))
     yakuIds.add('suuankou');
   if (detectDaisangen(mentsu)) yakuIds.add('daisangen');
   if (detectSankantsu(mentsu)) yakuIds.add('sankantsu');

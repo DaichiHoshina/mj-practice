@@ -41,7 +41,10 @@ function getTileNumber(tile: TileType): number | null {
 }
 
 /** 手牌をメンツに分割 */
-function splitMentsu(hand: readonly TileType[], winningTile: TileType): Mentsu[] | null {
+function splitMentsu(
+  hand: readonly TileType[],
+  _winningTile: TileType
+): Mentsu[] | null {
   const normalized = hand.map(normalizeTile);
   const tiles = [...normalized];
 
@@ -165,7 +168,7 @@ function determineMachiType(
   hand: readonly TileType[],
   mentsu: Mentsu[],
   jantou: TileType,
-  winningTile: TileType,
+  winningTile: TileType
 ): MachiType {
   const normalized = hand.map(normalizeTile);
 
@@ -220,7 +223,7 @@ function determineMachiType(
 function calculateMentsuFu(
   mentsu: Mentsu[],
   winningTile: TileType,
-  isTsumo: boolean,
+  _isTsumo: boolean
 ): MentsuFuItem[] {
   const result: MentsuFuItem[] = [];
 
@@ -300,14 +303,10 @@ function calculateMentsuFu(
 export function calculateFu(
   hand: readonly TileType[],
   yakuResult: YakuResult,
-  context: WinContext,
+  context: WinContext
 ): FuBreakdown {
   // 七対子は25符固定
-  if (
-    yakuResult.yakuList.some(
-      (yaku) => yaku.id === 'chiitoitsu',
-    )
-  ) {
+  if (yakuResult.yakuList.some((yaku) => yaku.id === 'chiitoitsu')) {
     return {
       base: FU_TABLE.BASE,
       mentsuFu: [],
@@ -350,7 +349,11 @@ export function calculateFu(
   }
 
   // 面子符を計算
-  const mentsuFu = calculateMentsuFu(mentsu, context.winningTile, context.isTsumo);
+  const mentsuFu = calculateMentsuFu(
+    mentsu,
+    context.winningTile,
+    context.isTsumo
+  );
   const mentsuFuTotal = mentsuFu.reduce((sum, item) => sum + item.fu, 0);
 
   // 雀頭符（役牌の場合のみ）
@@ -359,8 +362,17 @@ export function calculateFu(
   // 待ち符
   let machiFu = 0;
   if (!context.isTsumo) {
-    const machiType = determineMachiType(hand, mentsu, jantou, context.winningTile);
-    if (machiType === 'penchan' || machiType === 'kanchan' || machiType === 'tanki') {
+    const machiType = determineMachiType(
+      hand,
+      mentsu,
+      jantou,
+      context.winningTile
+    );
+    if (
+      machiType === 'penchan' ||
+      machiType === 'kanchan' ||
+      machiType === 'tanki'
+    ) {
       machiFu = FU_TABLE.MACHI;
     }
   }
@@ -385,12 +397,16 @@ export function calculateFu(
     FU_TABLE.BASE + mentsuFuTotal + jantouFu + machiFu + tsumoFu + menzenRonFu;
 
   // 平和ツモは20符固定
-  if (context.isTsumo && yakuResult.yakuList.some((yaku) => yaku.id === 'pinfu')) {
+  if (
+    context.isTsumo &&
+    yakuResult.yakuList.some((yaku) => yaku.id === 'pinfu')
+  ) {
     rawTotal = 20;
   }
 
   // 10符単位に切り上げ
-  const total = Math.ceil(rawTotal / FU_TABLE.ROUND_UP_UNIT) * FU_TABLE.ROUND_UP_UNIT;
+  const total =
+    Math.ceil(rawTotal / FU_TABLE.ROUND_UP_UNIT) * FU_TABLE.ROUND_UP_UNIT;
 
   return {
     base: FU_TABLE.BASE,
