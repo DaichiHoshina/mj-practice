@@ -3,7 +3,7 @@ import { TileType } from '../tiles';
 /**
  * クイズのカテゴリ
  */
-export type QuizCategory = 'shanten' | 'effective' | 'wait';
+export type QuizCategory = 'shanten' | 'effective' | 'wait' | 'scoring';
 
 /**
  * クイズの難易度

@@ -1,0 +1,147 @@
+[
+  {
+    "id": "scoring-easy-001",
+    "category": "scoring",
+    "difficulty": "easy",
+    "title": "リーチ・ツモのみの基本形",
+    "hand": ["2m","3m","4m","5m","6m","7m","3p","4p","5p","6s","7s","8s","1z","1z"],
+    "winningTile": "1z",
+    "isDealer": false,
+    "isTsumo": true,
+    "isRiichi": true,
+    "dora": ["9m"],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 1000,
+      "yaku": ["リーチ", "ツモ"],
+      "fu": 30,
+      "han": 2
+    },
+    "choices": [
+      {"id": "a", "label": "1000点", "score": 1000},
+      {"id": "b", "label": "1300点", "score": 1300},
+      {"id": "c", "label": "2000点", "score": 2000},
+      {"id": "d", "label": "500点", "score": 500}
+    ],
+    "explanation": "リーチ(1翻) + ツモ(1翻) = 2翻30符。子のツモアガリは、親から500点、子から300点ずつ受け取り、合計1000点（300-500）となります。"
+  },
+  {
+    "id": "scoring-easy-002",
+    "category": "scoring",
+    "difficulty": "easy",
+    "title": "タンヤオ・役牌の複合",
+    "hand": ["2m","3m","4m","5p","6p","7p","2s","3s","4s","6s","7s","8s","5z","5z"],
+    "winningTile": "5z",
+    "isDealer": false,
+    "isTsumo": false,
+    "isRiichi": false,
+    "dora": ["1m"],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 2900,
+      "yaku": ["タンヤオ", "場風牌"],
+      "fu": 30,
+      "han": 2
+    },
+    "choices": [
+      {"id": "a", "label": "2900点", "score": 2900},
+      {"id": "b", "label": "3900点", "score": 3900},
+      {"id": "c", "label": "2000点", "score": 2000},
+      {"id": "d", "label": "1500点", "score": 1500}
+    ],
+    "explanation": "タンヤオ(1翻) + 場風牌の東(1翻) = 2翻30符。子のロンアガリは2900点です。自風牌でもあるため、ダブ東となりそうですが、この手牌では自風は南なので場風のみとなります。"
+  },
+  {
+    "id": "scoring-medium-001",
+    "category": "scoring",
+    "difficulty": "medium",
+    "title": "リーチ・タンヤオ・ドラ",
+    "hand": ["2m","3m","4m","3p","4p","5p","4s","5s","6s","5s","6s","7s","6z","6z"],
+    "winningTile": "6z",
+    "isDealer": false,
+    "isTsumo": true,
+    "isRiichi": true,
+    "dora": ["6z"],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 5200,
+      "yaku": ["リーチ", "ツモ", "タンヤオ", "ドラ1"],
+      "fu": 30,
+      "han": 4
+    },
+    "choices": [
+      {"id": "a", "label": "5200点", "score": 5200},
+      {"id": "b", "label": "3900点", "score": 3900},
+      {"id": "c", "label": "7700点", "score": 7700},
+      {"id": "d", "label": "8000点", "score": 8000}
+    ],
+    "explanation": "リーチ(1翻) + ツモ(1翻) + タンヤオ(1翻) + ドラ1(1翻) = 4翻30符。子の4翻ツモは1000-2000（合計5200点）です。あと1翻で満貫になるところでした。"
+  },
+  {
+    "id": "scoring-medium-002",
+    "category": "scoring",
+    "difficulty": "medium",
+    "title": "三色同順・平和の複合",
+    "hand": ["2m","3m","4m","2p","3p","4p","2s","3s","4s","5s","6s","7s","8s","8s"],
+    "winningTile": "7s",
+    "isDealer": false,
+    "isTsumo": true,
+    "isRiichi": false,
+    "dora": ["1m"],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 5800,
+      "yaku": ["三色同順", "平和", "ツモ"],
+      "fu": 20,
+      "han": 4
+    },
+    "choices": [
+      {"id": "a", "label": "5800点", "score": 5800},
+      {"id": "b", "label": "3900点", "score": 3900},
+      {"id": "c", "label": "5200点", "score": 5200},
+      {"id": "d", "label": "8000点", "score": 8000}
+    ],
+    "explanation": "三色同順(2翻) + 平和(1翻) + ツモ(1翻) = 4翻。平和ツモは20符のため、子の4翻20符ツモは1300-2600（合計5800点）です。234の三色同順が美しい形です。"
+  },
+  {
+    "id": "scoring-hard-001",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "親の清一色跳満",
+    "hand": ["1s","2s","3s","4s","5s","6s","7s","7s","7s","8s","8s","8s","9s","9s"],
+    "winningTile": "9s",
+    "isDealer": true,
+    "isTsumo": true,
+    "isRiichi": false,
+    "dora": ["2s"],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 18000,
+      "yaku": ["清一色", "ツモ"],
+      "fu": 40,
+      "han": 7
+    },
+    "choices": [
+      {"id": "a", "label": "18000点（跳満）", "score": 18000},
+      {"id": "b", "label": "12000点（満貫）", "score": 12000},
+      {"id": "c", "label": "24000点（倍満）", "score": 24000},
+      {"id": "d", "label": "16000点", "score": 16000}
+    ],
+    "explanation": "清一色(6翻) + ツモ(1翻) = 7翻。刻子があるため40符となります。親の7翻40符ツモは跳満で、全員から6000点ずつ受け取り合計18000点です。清一色は鳴くと5翻に下がるため、門前で仕上げました。"
+  }
+]

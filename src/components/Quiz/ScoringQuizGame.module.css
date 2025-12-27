@@ -1,0 +1,209 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.error {
+  padding: 2rem;
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+  text-align: center;
+  color: #856404;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.error button {
+  padding: 0.75rem 1.5rem;
+  background: #ffc107;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #000;
+  transition: background-color 0.2s;
+}
+
+.error button:hover {
+  background: #e0a800;
+}
+
+/* 選択肢ボタン群 */
+.choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+/* 選択肢ボタン */
+.choiceButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.choiceButton:hover:not(:disabled) {
+  border-color: #007bff;
+  background: #e7f3ff;
+}
+
+.choiceButton:disabled {
+  cursor: not-allowed;
+}
+
+.choiceButton.selected {
+  border-color: #007bff;
+  background: #e7f3ff;
+}
+
+.choiceButton.correct {
+  border-color: #28a745;
+  background: #d4edda;
+}
+
+.choiceButton.incorrect {
+  border-color: #dc3545;
+  background: #f8d7da;
+}
+
+/* スコア表示 */
+.score {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+.choiceButton.correct .score {
+  color: #28a745;
+}
+
+.choiceButton.incorrect .score {
+  color: #dc3545;
+}
+
+/* ラベル表示 */
+.label {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+}
+
+.choiceButton.correct .label {
+  color: #155724;
+}
+
+.choiceButton.incorrect .label {
+  color: #721c24;
+}
+
+/* フィードバック */
+.feedbackContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+}
+
+/* 次へボタン */
+.nextButton {
+  padding: 0.75rem 2rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  align-self: center;
+  min-width: 200px;
+}
+
+.nextButton:hover {
+  background: #0056b3;
+}
+
+.nextButton:active {
+  background: #003d82;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .container {
+    gap: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .choices {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .choiceButton {
+    padding: 1rem;
+  }
+
+  .score {
+    font-size: 1.25rem;
+  }
+
+  .label {
+    font-size: 0.8rem;
+  }
+
+  .feedbackContainer {
+    padding: 1rem;
+  }
+
+  .nextButton {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    gap: 1rem;
+    padding: 0.75rem;
+  }
+
+  .choices {
+    gap: 0.5rem;
+  }
+
+  .choiceButton {
+    padding: 0.75rem;
+  }
+
+  .score {
+    font-size: 1rem;
+  }
+
+  .label {
+    font-size: 0.75rem;
+  }
+
+  .feedbackContainer {
+    padding: 0.75rem;
+  }
+}

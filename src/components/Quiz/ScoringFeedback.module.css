@@ -1,0 +1,301 @@
+.container {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 24px;
+}
+
+/* 正解・不正解ヘッダー */
+.resultHeader {
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.correct {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  border-left: 4px solid #059669;
+}
+
+.incorrect {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  border-left: 4px solid #dc2626;
+}
+
+.resultTitle {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.correct .resultTitle {
+  color: #059669;
+}
+
+.incorrect .resultTitle {
+  color: #dc2626;
+}
+
+.selectedAnswer {
+  margin: 0;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* 正解セクション */
+.correctAnswer {
+  padding: 16px;
+  background-color: #fafafa;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 8px;
+}
+
+.answerDetails {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.scoreDisplay {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scoreLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.scoreValue {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1976d2;
+}
+
+.hanFuDisplay {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-radius: 8px;
+}
+
+.hanFu {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1565c0;
+}
+
+/* 役一覧セクション */
+.yakuSection {
+  margin-bottom: 24px;
+}
+
+.yakuList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.yakuItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #f9fafb;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.yakuName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.yakuHan {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1976d2;
+}
+
+.emptyMessage {
+  text-align: center;
+  padding: 16px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* 符内訳セクション */
+.fuSection {
+  margin-bottom: 24px;
+}
+
+.fuBreakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fuItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #f9fafb;
+  border-radius: 6px;
+}
+
+.fuTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-radius: 6px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.fuLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.fuValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.fuTotal .fuValue {
+  font-size: 16px;
+  color: #92400e;
+}
+
+/* 計算式セクション */
+.calculationSection {
+  margin-bottom: 24px;
+}
+
+.calculation {
+  padding: 16px;
+  background-color: #f0f9ff;
+  border-radius: 8px;
+  border: 1px solid #bae6fd;
+}
+
+.formula {
+  margin: 8px 0;
+  font-size: 14px;
+  font-family: 'Courier New', monospace;
+  color: #0c4a6e;
+  line-height: 1.6;
+}
+
+/* 解説セクション */
+.explanationSection {
+  margin-bottom: 0;
+}
+
+.explanation {
+  padding: 16px;
+  background-color: #fafafa;
+  border-radius: 8px;
+  line-height: 1.8;
+  color: #374151;
+}
+
+.explanation h1,
+.explanation h2,
+.explanation h3 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: #1f2937;
+}
+
+.explanation h1 {
+  font-size: 20px;
+}
+
+.explanation h2 {
+  font-size: 18px;
+}
+
+.explanation h3 {
+  font-size: 16px;
+}
+
+.explanation p {
+  margin: 12px 0;
+}
+
+.explanation ul,
+.explanation ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.explanation li {
+  margin: 6px 0;
+}
+
+.explanation code {
+  padding: 2px 6px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.explanation pre {
+  padding: 12px;
+  background-color: #1f2937;
+  color: #f9fafb;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.explanation pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .answerDetails {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .yakuList {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .formula {
+    font-size: 12px;
+  }
+
+  .scoreValue {
+    font-size: 20px;
+  }
+}

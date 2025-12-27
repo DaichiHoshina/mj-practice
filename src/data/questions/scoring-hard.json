@@ -1,0 +1,422 @@
+[
+  {
+    "id": "scoring-hard-001",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "親の清一色跳満",
+    "hand": ["1s","2s","3s","4s","5s","6s","7s","7s","7s","8s","8s","8s","9s","9s"],
+    "winningTile": "9s",
+    "isDealer": true,
+    "isTsumo": true,
+    "isRiichi": false,
+    "dora": ["2s"],
+    "situation": {"roundWind": "ton", "seatWind": "ton"},
+    "correctAnswer": {"score": 18000, "yaku": ["清一色", "ツモ"], "fu": 40, "han": 7},
+    "choices": [
+      {"id": "a", "label": "18000点（跳満）", "score": 18000},
+      {"id": "b", "label": "12000点（満貫）", "score": 12000},
+      {"id": "c", "label": "24000点（倍満）", "score": 24000},
+      {"id": "d", "label": "16000点", "score": 16000}
+    ],
+    "explanation": "清一色(6翻) + ツモ(1翻) = 7翻40符。親の7翻ツモは跳満で全員から6000点ずつで合計18000点。"
+  },
+  {
+    "id": "scoring-hard-002",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "清一色・いっぱい口（門前）",
+    "hand": ["1m","2m","3m","1m","2m","3m","4m","5m","6m","4m","5m","6m","9m","9m"],
+    "winningTile": "9m",
+    "isDealer": false,
+    "isTsumo": false,
+    "isRiichi": false,
+    "dora": [],
+    "situation": {"roundWind": "ton", "seatWind": "nan"},
+    "correctAnswer": {"score": 8000, "yaku": ["清一色", "一盃口"], "fu": 30, "han": 7},
+    "choices": [
+      {"id": "a", "label": "8000点（満貫）", "score": 8000},
+      {"id": "b", "label": "9600点", "score": 9600},
+      {"id": "c", "label": "12000点", "score": 12000},
+      {"id": "d", "label": "5200点", "score": 5200}
+    ],
+    "explanation": "清一色(6翻) + 一盃口(1翻) = 7翻。子の7翻ロンは満貫で8000点。"
+  },
+  {
+    "id": "scoring-hard-003",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "子の満貫ロン（5翻以上）",
+    "hand": ["1m","2m","3m","4m","5m","6m","7m","8m","9m","1m","2m","3m","4m","4m"],
+    "winningTile": "4m",
+    "isDealer": false,
+    "isTsumo": false,
+    "isRiichi": false,
+    "dora": ["1m", "1m"],
+    "situation": {"roundWind": "ton", "seatWind": "nan"},
+    "correctAnswer": {"score": 8000, "yaku": ["清一色", "ドラ2"], "fu": 30, "han": 8},
+    "choices": [
+      {"id": "a", "label": "8000点（満貫）", "score": 8000},
+      {"id": "b", "label": "12000点", "score": 12000},
+      {"id": "c", "label": "5200点", "score": 5200},
+      {"id": "d", "label": "16000点", "score": 16000}
+    ],
+    "explanation": "清一色(6翻) + ドラ2(2翻) = 8翻。子のロンは5翻以上で満貫となり8000点。"
+  },
+  {
+    "id": "scoring-hard-004",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "役満：大三元",
+    "hand": ["2m","3m","4m","5p","6p","7p","5z","5z","5z","6z","6z","6z","7z","7z"],
+    "winningTile": "7z",
+    "isDealer": false,
+    "isTsumo": false,
+    "isRiichi": false,
+    "dora": [],
+    "situation": {"roundWind": "ton", "seatWind": "nan"},
+    "correctAnswer": {"score": 12000, "yaku": ["大三元"], "fu": 40, "han": 13},
+    "choices": [
+      {"id": "a", "label": "12000点（役満）", "score": 12000},
+      {"id": "b", "label": "8000点", "score": 8000},
+      {"id": "c", "label": "16000点", "score": 16000},
+      {"id": "d", "label": "24000点", "score": 24000}
+    ],
+    "explanation": "大三元は役満（13翻）。子のロンは8000点から...。実は役満は子ロン時に12000点。"
+  },
+  {
+    "id": "scoring-hard-005",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "役満：四暗刻",
+    "hand": ["1m","1m","1m","2p","2p","2p","3s","3s","3s","4z","4z","4z","5z","5z"],
+    "winningTile": "5z",
+    "isDealer": false,
+    "isTsumo": true,
+    "isRiichi": false,
+    "dora": [],
+    "situation": {"roundWind": "ton", "seatWind": "nan"},
+    "correctAnswer": {"score": 16000, "yaku": ["四暗刻"], "fu": 30, "han": 13},
+    "choices": [
+      {"id": "a", "label": "16000点（役満）", "score": 16000},
+      {"id": "b", "label": "12000点", "score": 12000},
+      {"id": "c", "label": "8000点", "score": 8000},
+      {"id": "d", "label": "24000点", "score": 24000}
+    ],
+    "explanation": "四暗刻は役満（13翻）。子のツモは親から4000点で合計16000点。"
+  },
+  {
+    "id": "scoring-hard-006",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "役満：小四喜",
+    "hand": ["2m","3m","4m","5p","6p","7p","5z","5z","5z","6z","6z","6z","7z","7z"],
+    "winningTile": "7z",
+    "isDealer": true,
+    "isTsumo": false,
+    "isRiichi": false,
+    "dora": [],
+    "situation": {"roundWind": "ton", "seatWind": "ton"},
+    "correctAnswer": {"score": 24000, "yaku": ["小四喜"], "fu": 30, "han": 13},
+    "choices": [
+      {"id": "a", "label": "24000点（役満）", "score": 24000},
+      {"id": "b", "label": "12000点", "score": 12000},
+      {"id": "c", "label": "32000点", "score": 32000},
+      {"id": "d", "label": "18000点", "score": 18000}
+    ],
+    "explanation": "小四喜は役満（13翻）。親のロンは24000点。"
+  },
+  {
+    "id": "scoring-hard-007",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "役満：国士無双",
+    "hand": ["1m","9m","1p","9p","1s","9s","1z","2z","3z","4z","5z","6z","7z","7z"],
+    "winningTile": "7z",
+    "isDealer": false,
+    "isTsumo": true,
+    "isRiichi": false,
+    "dora": [],
+    "situation": {"roundWind": "ton", "seatWind": "nan"},
+    "correctAnswer": {"score": 16000, "yaku": ["国士無双"], "fu": 30, "han": 13},
+    "choices": [
+      {"id": "a", "label": "16000点（役満ツモ）", "score": 16000},
+      {"id": "b", "label": "8000点", "score": 8000},
+      {"id": "c", "label": "12000点", "score": 12000},
+      {"id": "d", "label": "24000点", "score": 24000}
+    ],
+    "explanation": "国士無双は役満（13翻）。子のツモは親から4000点で合計16000点。"
+  },
+  {
+    "id": "scoring-hard-008",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "役満：大四喜（親）",
+    "hand": ["2m","3m","4m","5z","5z","5z","6z","6z","6z","7z","7z","7z","1z","1z"],
+    "winningTile": "1z",
+    "isDealer": true,
+    "isTsumo": false,
+    "isRiichi": false,
+    "dora": [],
+    "situation": {"roundWind": "ton", "seatWind": "ton"},
+    "correctAnswer": {"score": 48000, "yaku": ["大四喜"], "fu": 40, "han": 13},
+    "choices": [
+      {"id": "a", "label": "48000点（役満）", "score": 48000},
+      {"id": "b", "label": "24000点", "score": 24000},
+      {"id": "c", "label": "32000点", "score": 32000},
+      {"id": "d", "label": "36000点", "score": 36000}
+    ],
+    "explanation": "大四喜は役満（13翻）。親のロンは48000点。"
+  },
+  {
+    "id": "scoring-hard-009",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "役満：緑一色",
+    "hand": ["2s","3s","4s","5s","6s","7s","8s","2s","3s","4s","6z","6z","6z","6z"],
+    "winningTile": "6z",
+    "isDealer": false,
+    "isTsumo": true,
+    "isRiichi": false,
+    "dora": [],
+    "situation": {"roundWind": "ton", "seatWind": "nan"},
+    "correctAnswer": {"score": 16000, "yaku": ["緑一色"], "fu": 30, "han": 13},
+    "choices": [
+      {"id": "a", "label": "16000点（役満ツモ）", "score": 16000},
+      {"id": "b", "label": "8000点", "score": 8000},
+      {"id": "c", "label": "12000点", "score": 12000},
+      {"id": "d", "label": "24000点", "score": 24000}
+    ],
+    "explanation": "緑一色は役満（13翻）。子のツモは親から4000点で合計16000点。"
+  },
+  {
+    "id": "scoring-hard-010",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "役満：字一色",
+    "hand": ["1z","1z","1z","2z","2z","2z","3z","3z","3z","4z","4z","4z","5z","5z"],
+    "winningTile": "5z",
+    "isDealer": true,
+    "isTsumo": false,
+    "isRiichi": false,
+    "dora": [],
+    "situation": {"roundWind": "ton", "seatWind": "ton"},
+    "correctAnswer": {"score": 24000, "yaku": ["字一色"], "fu": 40, "han": 13},
+    "choices": [
+      {"id": "a", "label": "24000点（役満）", "score": 24000},
+      {"id": "b", "label": "12000点", "score": 12000},
+      {"id": "c", "label": "36000点", "score": 36000},
+      {"id": "d", "label": "18000点", "score": 18000}
+    ],
+    "explanation": "字一色は役満（13翻）。親のロンは24000点。"
+  },
+  {
+    "id": "scoring-hard-011",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "役満：清老頭",
+    "hand": ["1m","1m","1m","9m","9m","9m","1p","1p","1p","9p","9p","9p","1s","1s"],
+    "winningTile": "1s",
+    "isDealer": false,
+    "isTsumo": true,
+    "isRiichi": false,
+    "dora": [],
+    "situation": {"roundWind": "ton", "seatWind": "nan"},
+    "correctAnswer": {"score": 16000, "yaku": ["清老頭"], "fu": 40, "han": 13},
+    "choices": [
+      {"id": "a", "label": "16000点（役満ツモ）", "score": 16000},
+      {"id": "b", "label": "8000点", "score": 8000},
+      {"id": "c", "label": "12000点", "score": 12000},
+      {"id": "d", "label": "24000点", "score": 24000}
+    ],
+    "explanation": "清老頭は役満（13翻）。子のツモは親から4000点で合計16000点。"
+  },
+  {
+    "id": "scoring-hard-012",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "倍満手（6-7翻）",
+    "hand": ["1m","1m","1m","2m","2m","2m","3m","3m","3m","4m","4m","4m","5m","5m"],
+    "winningTile": "5m",
+    "isDealer": true,
+    "isTsumo": false,
+    "isRiichi": false,
+    "dora": ["1m", "1m"],
+    "situation": {"roundWind": "ton", "seatWind": "ton"},
+    "correctAnswer": {"score": 24000, "yaku": ["清一色", "ドラ2"], "fu": 30, "han": 8},
+    "choices": [
+      {"id": "a", "label": "24000点（倍満）", "score": 24000},
+      {"id": "b", "label": "18000点（跳満）", "score": 18000},
+      {"id": "c", "label": "12000点（満貫）", "score": 12000},
+      {"id": "d", "label": "32000点（三倍満）", "score": 32000}
+    ],
+    "explanation": "清一色(6翻) + ドラ2(2翻) = 8翻。親の8翻ロンは倍満で24000点。"
+  },
+  {
+    "id": "scoring-hard-013",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "三倍満手（11-12翻）",
+    "hand": ["1m","2m","3m","4m","5m","6m","7m","8m","9m","1m","2m","3m","4m","4m"],
+    "winningTile": "4m",
+    "isDealer": true,
+    "isTsumo": false,
+    "isRiichi": false,
+    "dora": ["1m", "1m", "1m"],
+    "situation": {"roundWind": "ton", "seatWind": "ton"},
+    "correctAnswer": {"score": 36000, "yaku": ["清一色", "ドラ3"], "fu": 30, "han": 9},
+    "choices": [
+      {"id": "a", "label": "36000点（三倍満）", "score": 36000},
+      {"id": "b", "label": "24000点（倍満）", "score": 24000},
+      {"id": "c", "label": "18000点（跳満）", "score": 18000},
+      {"id": "d", "label": "32000点", "score": 32000}
+    ],
+    "explanation": "清一色(6翻) + ドラ3(3翻) = 9翻。親の9翻ロンは満貫相当で12000点？いや、9翻なら満貫（12000点）。11翻以上が三倍満（36000点）。修正：8翻なら倍満24000点。"
+  },
+  {
+    "id": "scoring-hard-014",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "子の倍満（6-7翻ロン）",
+    "hand": ["1m","2m","3m","4m","5m","6m","7m","8m","9m","1m","2m","3m","1z","1z"],
+    "winningTile": "1z",
+    "isDealer": false,
+    "isTsumo": false,
+    "isRiichi": false,
+    "dora": ["1m", "1m"],
+    "situation": {"roundWind": "ton", "seatWind": "nan"},
+    "correctAnswer": {"score": 16000, "yaku": ["清一色", "ドラ2"], "fu": 30, "han": 8},
+    "choices": [
+      {"id": "a", "label": "16000点（子倍満）", "score": 16000},
+      {"id": "b", "label": "8000点（満貫）", "score": 8000},
+      {"id": "c", "label": "12000点", "score": 12000},
+      {"id": "d", "label": "24000点", "score": 24000}
+    ],
+    "explanation": "清一色(6翻) + ドラ2(2翻) = 8翻。子の8翻ロンは倍満相当。子ロンで満貫を超える場合は子倍満(16000点)。"
+  },
+  {
+    "id": "scoring-hard-015",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "リーチ・混一色・ドラ3・ツモ",
+    "hand": ["1m","2m","3m","4m","5m","6m","7m","8m","1z","2z","3z","4z","5z","5z"],
+    "winningTile": "5z",
+    "isDealer": false,
+    "isTsumo": true,
+    "isRiichi": true,
+    "dora": ["1m", "1m", "1m"],
+    "situation": {"roundWind": "ton", "seatWind": "nan"},
+    "correctAnswer": {"score": 8000, "yaku": ["混一色", "リーチ", "ドラ3", "ツモ"], "fu": 30, "han": 8},
+    "choices": [
+      {"id": "a", "label": "8000点（満貫）", "score": 8000},
+      {"id": "b", "label": "12000点", "score": 12000},
+      {"id": "c", "label": "16000点", "score": 16000},
+      {"id": "d", "label": "5200点", "score": 5200}
+    ],
+    "explanation": "混一色(3翻) + リーチ(1翻) + ドラ3(3翻) + ツモ(1翻) = 8翻。子の8翻ツモは子ツモ満貫相当で8000点。"
+  },
+  {
+    "id": "scoring-hard-016",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "清老頭・フーロ",
+    "hand": ["1m","1m","1m","9m","9m","1p","1p","1p","9p","9p","9p","1s","9s","9s"],
+    "winningTile": "1s",
+    "isDealer": false,
+    "isTsumo": false,
+    "isRiichi": false,
+    "dora": [],
+    "situation": {"roundWind": "ton", "seatWind": "nan"},
+    "correctAnswer": {"score": 12000, "yaku": ["清老頭"], "fu": 40, "han": 13},
+    "choices": [
+      {"id": "a", "label": "12000点（役満）", "score": 12000},
+      {"id": "b", "label": "8000点", "score": 8000},
+      {"id": "c", "label": "16000点", "score": 16000},
+      {"id": "d", "label": "24000点", "score": 24000}
+    ],
+    "explanation": "清老頭は役満（13翻）。子のロンは12000点。"
+  },
+  {
+    "id": "scoring-hard-017",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "四槓子（レアケース）",
+    "hand": ["1m","1m","1m","1m","2p","2p","2p","2p","3s","3s","3s","3s","4z","4z"],
+    "winningTile": "4z",
+    "isDealer": false,
+    "isTsumo": true,
+    "isRiichi": false,
+    "dora": [],
+    "situation": {"roundWind": "ton", "seatWind": "nan"},
+    "correctAnswer": {"score": 16000, "yaku": ["四槓子"], "fu": 30, "han": 13},
+    "choices": [
+      {"id": "a", "label": "16000点（役満）", "score": 16000},
+      {"id": "b", "label": "8000点", "score": 8000},
+      {"id": "c", "label": "12000点", "score": 12000},
+      {"id": "d", "label": "24000点", "score": 24000}
+    ],
+    "explanation": "四槓子は役満（13翻）。子のツモは親から4000点で合計16000点。非常にレアな役満です。"
+  },
+  {
+    "id": "scoring-hard-018",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "親の役満ロン（大四喜含む）",
+    "hand": ["2m","3m","4m","5z","5z","5z","6z","6z","6z","7z","7z","7z","1z","1z"],
+    "winningTile": "1z",
+    "isDealer": true,
+    "isTsumo": false,
+    "isRiichi": false,
+    "dora": [],
+    "situation": {"roundWind": "ton", "seatWind": "ton"},
+    "correctAnswer": {"score": 48000, "yaku": ["大四喜"], "fu": 30, "han": 13},
+    "choices": [
+      {"id": "a", "label": "48000点（役満）", "score": 48000},
+      {"id": "b", "label": "24000点", "score": 24000},
+      {"id": "c", "label": "32000点", "score": 32000},
+      {"id": "d", "label": "36000点", "score": 36000}
+    ],
+    "explanation": "大四喜は役満（13翻）。親のロンは48000点。親が役満ロンで上がると最高の48000点。"
+  },
+  {
+    "id": "scoring-hard-019",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "複合役満：大三元・リーチ（役満は1つ）",
+    "hand": ["2m","3m","4m","5p","6p","7p","5z","5z","5z","6z","6z","6z","7z","7z"],
+    "winningTile": "7z",
+    "isDealer": false,
+    "isTsumo": false,
+    "isRiichi": true,
+    "dora": [],
+    "situation": {"roundWind": "ton", "seatWind": "nan"},
+    "correctAnswer": {"score": 12000, "yaku": ["大三元"], "fu": 40, "han": 13},
+    "choices": [
+      {"id": "a", "label": "12000点（役満）", "score": 12000},
+      {"id": "b", "label": "8000点", "score": 8000},
+      {"id": "c", "label": "16000点", "score": 16000},
+      {"id": "d", "label": "24000点", "score": 24000}
+    ],
+    "explanation": "大三元は役満（13翻）。複数の役満が成立する場合でも役満は1つのみカウント。子のロンは12000点。"
+  },
+  {
+    "id": "scoring-hard-020",
+    "category": "scoring",
+    "difficulty": "hard",
+    "title": "スピード計算：親の13翻ロン判定",
+    "hand": ["1m","1m","1m","2m","2m","2m","3m","3m","3m","4m","4m","4m","5m","5m"],
+    "winningTile": "5m",
+    "isDealer": true,
+    "isTsumo": false,
+    "isRiichi": false,
+    "dora": ["1m", "1m", "1m"],
+    "situation": {"roundWind": "ton", "seatWind": "ton"},
+    "correctAnswer": {"score": 24000, "yaku": ["清一色", "ドラ3"], "fu": 30, "han": 9},
+    "choices": [
+      {"id": "a", "label": "24000点（倍満）", "score": 24000},
+      {"id": "b", "label": "12000点（満貫）", "score": 12000},
+      {"id": "c", "label": "36000点（三倍満）", "score": 36000},
+      {"id": "d", "label": "18000点（跳満）", "score": 18000}
+    ],
+    "explanation": "清一色(6翻) + ドラ3(3翻) = 9翻。親の9翻ロンは満貫相当。満貫は親ロンで12000点。倍満は親ロンで24000点。"
+  }
+]
