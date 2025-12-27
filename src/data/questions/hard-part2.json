@@ -1,0 +1,152 @@
+[
+  {
+    "id": "q051",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌は？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "8m", "3p", "4p", "5p", "6s", "7s", "8s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "2mを切る"},
+      {"id": "b", "label": "8mを切る"},
+      {"id": "c", "label": "3pを切る"},
+      {"id": "d", "label": "6sを切る"}
+    ],
+    "explanation": "8mを切ると、1m・4m・7m・9mの4種類16枚が有効牌になります。2mを切ると3種類12枚、他の選択肢はさらに少なくなります。受け入れ枚数が最大になる8m切りが最善です。"
+  },
+  {
+    "id": "q052",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌は？",
+    "hand": ["1m", "1m", "2m", "3m", "4m", "5m", "6m", "2p", "3p", "4p", "5s", "6s", "7s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "1mを切る"},
+      {"id": "b", "label": "6mを切る"},
+      {"id": "c", "label": "2pを切る"},
+      {"id": "d", "label": "5sを切る"}
+    ],
+    "explanation": "1mを切ると、1m2m3m4m5m6mの形が良くなり、有効牌が増えます。1mの対子を残すより、順子候補として活用する方が効率的です。"
+  },
+  {
+    "id": "q053",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌は？",
+    "hand": ["3m", "4m", "5m", "6m", "7m", "8m", "9m", "2p", "3p", "4p", "5p", "6p", "7p"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "3mを切る"},
+      {"id": "b", "label": "6mを切る"},
+      {"id": "c", "label": "9mを切る"},
+      {"id": "d", "label": "2pを切る"}
+    ],
+    "explanation": "9mを切ると、3-8mと2-7pの両方で良い形になります。9mは孤立牌に近く、切ることで受け入れが広がります。"
+  },
+  {
+    "id": "q054",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌は？",
+    "hand": ["1m", "2m", "3m", "4m", "5m", "6m", "7m", "8m", "1p", "2p", "3p", "5s", "5s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "1mを切る"},
+      {"id": "b", "label": "8mを切る"},
+      {"id": "c", "label": "1pを切る"},
+      {"id": "d", "label": "5sを切る"}
+    ],
+    "explanation": "1mを切ると、2-8mの形が良くなり、より多くの有効牌を受け入れられます。端牌を切ることで中張牌の受け入れが広がります。"
+  },
+  {
+    "id": "q055",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌は？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "2p", "2p", "3p", "4p", "6s", "7s", "8s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "2mを切る"},
+      {"id": "b", "label": "7mを切る"},
+      {"id": "c", "label": "2pを切る"},
+      {"id": "d", "label": "6sを切る"}
+    ],
+    "explanation": "7mを切ると、2-6mと2-4p、6-8sの形が整い、有効牌が増えます。2pの対子も活かせる形です。"
+  },
+  {
+    "id": "q056",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌は？",
+    "hand": ["1m", "1m", "1m", "3m", "4m", "5m", "6m", "7m", "3p", "4p", "5p", "7s", "8s"],
+    "correctAnswer": "d",
+    "choices": [
+      {"id": "a", "label": "1mを切る"},
+      {"id": "b", "label": "3mを切る"},
+      {"id": "c", "label": "7mを切る"},
+      {"id": "d", "label": "7sを切る"}
+    ],
+    "explanation": "7sを切ると、6s・9sの受け入れでテンパイできます。1mの暗刻は確定なので、他の部分を整える方が効率的です。"
+  },
+  {
+    "id": "q057",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌は？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "8m", "9m", "1p", "1p", "2p", "3p", "4p"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "9mを切る"},
+      {"id": "b", "label": "2mを切る"},
+      {"id": "c", "label": "1pを切る"},
+      {"id": "d", "label": "4pを切る"}
+    ],
+    "explanation": "9mを切ると、2-8mの形が良くなり、1mや7mなどの有効牌が増えます。端牌を切ることで受け入れが広がります。"
+  },
+  {
+    "id": "q058",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌は？",
+    "hand": ["3m", "4m", "5m", "6m", "7m", "8m", "2p", "3p", "4p", "5p", "5s", "6s", "7s"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "3mを切る"},
+      {"id": "b", "label": "8mを切る"},
+      {"id": "c", "label": "5pを切る"},
+      {"id": "d", "label": "5sを切る"}
+    ],
+    "explanation": "5pを切ると、2p3p4pと5s6s7sの形が確定し、3-8mの形も良くなります。バランスの取れた打牌です。"
+  },
+  {
+    "id": "q059",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌は？",
+    "hand": ["1m", "2m", "3m", "4m", "5m", "6m", "7m", "8m", "9m", "2p", "2p", "3p", "4p"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "1mを切る"},
+      {"id": "b", "label": "9mを切る"},
+      {"id": "c", "label": "2pを切る"},
+      {"id": "d", "label": "4pを切る"}
+    ],
+    "explanation": "9mを切ると、1-8mの形で多くの有効牌を受け入れられます。9mは孤立しやすい牌なので、早めに切るのが効率的です。"
+  },
+  {
+    "id": "q060",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌は？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "1p", "2p", "3p", "4p", "5p", "6p", "7p"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "2mを切る"},
+      {"id": "b", "label": "7mを切る"},
+      {"id": "c", "label": "1pを切る"},
+      {"id": "d", "label": "7pを切る"}
+    ],
+    "explanation": "2mを切ると、3-7mの形が良くなり、1p-7pの形も活かせます。端牌を整理することで全体の効率が上がります。"
+  }
+]

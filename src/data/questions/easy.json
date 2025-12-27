@@ -1,0 +1,152 @@
+[
+  {
+    "id": "e001",
+    "category": "shanten",
+    "difficulty": "easy",
+    "title": "この手牌で何向聴ですか？",
+    "hand": ["1m", "2m", "3m", "4m", "5m", "6m", "7m", "8m", "9m", "1p", "1p", "1p", "2p"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "0向聴（テンパイ）"},
+      {"id": "b", "label": "1向聴"},
+      {"id": "c", "label": "2向聴"},
+      {"id": "d", "label": "3向聴"}
+    ],
+    "explanation": "123m・456m・789mの3面子と1p×3の刻子、2pの単騎待ちでテンパイです。3pの単騎待ちになります。"
+  },
+  {
+    "id": "e002",
+    "category": "shanten",
+    "difficulty": "easy",
+    "title": "この手牌で何向聴ですか？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "8m", "9m", "9m", "3p", "4p", "5p", "6p"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "0向聴（テンパイ）"},
+      {"id": "b", "label": "1向聴"},
+      {"id": "c", "label": "2向聴"},
+      {"id": "d", "label": "3向聴"}
+    ],
+    "explanation": "234m・567m・345pの3面子と99mの雀頭、8mまたは9mが来ればアガリです。7-8mの両面待ちです。"
+  },
+  {
+    "id": "e003",
+    "category": "shanten",
+    "difficulty": "easy",
+    "title": "この手牌で何向聴ですか？",
+    "hand": ["1m", "2m", "3m", "7m", "8m", "9m", "2p", "3p", "4p", "5s", "6s", "7s", "8s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "0向聴（テンパイ）"},
+      {"id": "b", "label": "1向聴"},
+      {"id": "c", "label": "2向聴"},
+      {"id": "d", "label": "3向聴"}
+    ],
+    "explanation": "123m・789m・234p・567sと4面子ありますが、雀頭がありません。どれか1つを雀頭候補にすると1向聴です。"
+  },
+  {
+    "id": "e004",
+    "category": "shanten",
+    "difficulty": "easy",
+    "title": "この手牌で何向聴ですか？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "6m", "6p", "7p", "8p", "3s", "4s", "5s", "9s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "0向聴（テンパイ）"},
+      {"id": "b", "label": "1向聴"},
+      {"id": "c", "label": "2向聴"},
+      {"id": "d", "label": "3向聴"}
+    ],
+    "explanation": "234m・66mの雀頭・678p・345sと3面子1雀頭で、あと1面子必要です。5-6mや9sのシャボが有効牌となる1向聴です。"
+  },
+  {
+    "id": "e005",
+    "category": "shanten",
+    "difficulty": "easy",
+    "title": "この手牌で何向聴ですか？",
+    "hand": ["1m", "1m", "2m", "3m", "4m", "5m", "6m", "7p", "8p", "9p", "5s", "6s", "7s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "0向聴（テンパイ）"},
+      {"id": "b", "label": "1向聴"},
+      {"id": "c", "label": "2向聴"},
+      {"id": "d", "label": "3向聴"}
+    ],
+    "explanation": "11mの雀頭・234m・789p・567sで3面子1雀頭、5-6mの両面待ちでテンパイです。"
+  },
+  {
+    "id": "e006",
+    "category": "shanten",
+    "difficulty": "easy",
+    "title": "この手牌で何向聴ですか？",
+    "hand": ["3m", "4m", "5m", "5m", "5m", "6p", "7p", "8p", "2s", "3s", "4s", "7s", "8s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "0向聴（テンパイ）"},
+      {"id": "b", "label": "1向聴"},
+      {"id": "c", "label": "2向聴"},
+      {"id": "d", "label": "3向聴"}
+    ],
+    "explanation": "345m・555m・678p・234sと4面子ありますが雀頭がないため1向聴です。6sや9sが来ると雀頭が作れます。"
+  },
+  {
+    "id": "e007",
+    "category": "shanten",
+    "difficulty": "easy",
+    "title": "この手牌で何向聴ですか？",
+    "hand": ["2m", "3m", "4m", "6m", "7m", "8m", "4p", "4p", "5p", "6p", "7p", "3s", "4s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "0向聴（テンパイ）"},
+      {"id": "b", "label": "1向聴"},
+      {"id": "c", "label": "2向聴"},
+      {"id": "d", "label": "3向聴"}
+    ],
+    "explanation": "234m・678m・44pの雀頭・567pで3面子1雀頭、2-5sの両面待ちでテンパイです。"
+  },
+  {
+    "id": "e008",
+    "category": "shanten",
+    "difficulty": "easy",
+    "title": "この手牌で何向聴ですか？",
+    "hand": ["1m", "2m", "3m", "4m", "5m", "6m", "3p", "4p", "6s", "7s", "8s", "9s", "9s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "0向聴（テンパイ）"},
+      {"id": "b", "label": "1向聴"},
+      {"id": "c", "label": "2向聴"},
+      {"id": "d", "label": "3向聴"}
+    ],
+    "explanation": "123m・456m・99sの雀頭・678sで3面子1雀頭ですが、3-4pが孤立しており、あと1面子必要な1向聴です。"
+  },
+  {
+    "id": "e009",
+    "category": "shanten",
+    "difficulty": "easy",
+    "title": "この手牌で何向聴ですか？",
+    "hand": ["7m", "8m", "9m", "3p", "4p", "5p", "6p", "7p", "8p", "1s", "2s", "3s", "5s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "0向聴（テンパイ）"},
+      {"id": "b", "label": "1向聴"},
+      {"id": "c", "label": "2向聴"},
+      {"id": "d", "label": "3向聴"}
+    ],
+    "explanation": "789m・345p・678p・123sで4面子ですが雀頭がなく、5sの単騎待ちでテンパイです。"
+  },
+  {
+    "id": "e010",
+    "category": "shanten",
+    "difficulty": "easy",
+    "title": "この手牌で何向聴ですか？",
+    "hand": ["2m", "2m", "3m", "4m", "5m", "6m", "7m", "5p", "6p", "7p", "8s", "8s", "8s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "0向聴（テンパイ）"},
+      {"id": "b", "label": "1向聴"},
+      {"id": "c", "label": "2向聴"},
+      {"id": "d", "label": "3向聴"}
+    ],
+    "explanation": "22mの雀頭・345m・567m・567p・888sで4面子1雀頭が完成しており、2mのシャボ待ちでテンパイです。"
+  }
+]

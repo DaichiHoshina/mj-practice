@@ -1,0 +1,152 @@
+[
+  {
+    "id": "h001",
+    "category": "discard",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌はどれですか？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "8m", "3p", "4p", "5p", "6s", "7s", "8s", "9s"],
+    "correctAnswer": "d",
+    "choices": [
+      {"id": "a", "label": "2mを切る"},
+      {"id": "b", "label": "8mを切る"},
+      {"id": "c", "label": "3pを切る"},
+      {"id": "d", "label": "9sを切る"}
+    ],
+    "explanation": "9sを切ることで、6-7-8sの良形搭子を残せます。2mや8mを切ると受け入れが狭くなります。"
+  },
+  {
+    "id": "h002",
+    "category": "discard",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌はどれですか？",
+    "hand": ["1m", "2m", "3m", "5m", "6m", "7m", "2p", "3p", "4p", "5p", "6p", "7s", "8s", "9s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "1mを切る"},
+      {"id": "b", "label": "5mを切る"},
+      {"id": "c", "label": "2pを切る"},
+      {"id": "d", "label": "9sを切る"}
+    ],
+    "explanation": "1mは孤立した辺張搭子のため、切って2-3mのリャンメンを活かすのが効率的です。"
+  },
+  {
+    "id": "h003",
+    "category": "discard",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌はどれですか？",
+    "hand": ["3m", "4m", "5m", "6m", "7m", "8m", "1p", "2p", "3p", "4s", "5s", "6s", "7s"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "3mを切る"},
+      {"id": "b", "label": "8mを切る"},
+      {"id": "c", "label": "7sを切る"},
+      {"id": "d", "label": "1pを切る"}
+    ],
+    "explanation": "7sを切ることで、4-5-6sの良形三連形を残せます。受け入れが広くなります。"
+  },
+  {
+    "id": "h004",
+    "category": "discard",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌はどれですか？",
+    "hand": ["2m", "2m", "3m", "4m", "5m", "6m", "7m", "1p", "2p", "3p", "6s", "7s", "8s", "9s"],
+    "correctAnswer": "d",
+    "choices": [
+      {"id": "a", "label": "2mを切る"},
+      {"id": "b", "label": "7mを切る"},
+      {"id": "c", "label": "1pを切る"},
+      {"id": "d", "label": "9sを切る"}
+    ],
+    "explanation": "9sは孤立した辺張のため切って、他の良形を活かします。2-2-3-4-5-6-7mの形は非常に強力です。"
+  },
+  {
+    "id": "h005",
+    "category": "discard",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌はどれですか？",
+    "hand": ["1m", "1m", "2m", "3m", "4m", "5m", "6m", "3p", "4p", "5p", "5s", "6s", "7s", "8s"],
+    "correctAnswer": "d",
+    "choices": [
+      {"id": "a", "label": "1mを切る"},
+      {"id": "b", "label": "6mを切る"},
+      {"id": "c", "label": "3pを切る"},
+      {"id": "d", "label": "8sを切る"}
+    ],
+    "explanation": "8sを切ることで、5-6-7sの三連形を残し、受け入れを広くします。1-1mの雀頭候補も残せます。"
+  },
+  {
+    "id": "h006",
+    "category": "discard",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌はどれですか？",
+    "hand": ["4m", "5m", "6m", "7m", "8m", "9m", "2p", "3p", "4p", "5p", "6p", "3s", "4s", "5s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "4mを切る"},
+      {"id": "b", "label": "9mを切る"},
+      {"id": "c", "label": "2pを切る"},
+      {"id": "d", "label": "6pを切る"}
+    ],
+    "explanation": "9mは辺張のため切って、4-5-6-7-8mの五連形を活かします。ピンズも良形です。"
+  },
+  {
+    "id": "h007",
+    "category": "discard",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌はどれですか？",
+    "hand": ["2m", "3m", "4m", "6m", "7m", "8m", "1p", "1p", "2p", "3p", "4p", "6s", "7s", "8s"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "2mを切る"},
+      {"id": "b", "label": "8mを切る"},
+      {"id": "c", "label": "1pを切る"},
+      {"id": "d", "label": "8sを切る"}
+    ],
+    "explanation": "1pのトイツを切って、2-3-4pのリャンメンを活かします。マンズとソーズも良形です。"
+  },
+  {
+    "id": "h008",
+    "category": "discard",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌はどれですか？",
+    "hand": ["3m", "4m", "5m", "5m", "6m", "7m", "2p", "3p", "4p", "5s", "6s", "7s", "8s", "9s"],
+    "correctAnswer": "d",
+    "choices": [
+      {"id": "a", "label": "3mを切る"},
+      {"id": "b", "label": "7mを切る"},
+      {"id": "c", "label": "2pを切る"},
+      {"id": "d", "label": "9sを切る"}
+    ],
+    "explanation": "9sを切ることで、5-6-7-8sの四連形を残せます。マンズとピンズも良形で受け入れが広いです。"
+  },
+  {
+    "id": "h009",
+    "category": "discard",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌はどれですか？",
+    "hand": ["1m", "2m", "3m", "4m", "5m", "6m", "3p", "4p", "5p", "6p", "7p", "5s", "6s", "7s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "1mを切る"},
+      {"id": "b", "label": "6mを切る"},
+      {"id": "c", "label": "3pを切る"},
+      {"id": "d", "label": "7pを切る"}
+    ],
+    "explanation": "1mを切って2-3-4-5-6mの五連形を活かします。ピンズとソーズも良形で受け入れが非常に広くなります。"
+  },
+  {
+    "id": "h010",
+    "category": "discard",
+    "difficulty": "hard",
+    "title": "この手牌で最も効率的な打牌はどれですか？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "8m", "9m", "1p", "2p", "3p", "5s", "6s", "7s"],
+    "correctAnswer": "d",
+    "choices": [
+      {"id": "a", "label": "2mを切る"},
+      {"id": "b", "label": "9mを切る"},
+      {"id": "c", "label": "1pを切る"},
+      {"id": "d", "label": "どれも同程度"}
+    ],
+    "explanation": "2mか9mを切るのが効率的ですが、受け入れ枚数を考えると2mを切る方が若干有利です。ただし大差はありません。"
+  }
+]

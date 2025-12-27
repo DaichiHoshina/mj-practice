@@ -1,0 +1,152 @@
+[
+  {
+    "id": "m001",
+    "category": "useful-tiles",
+    "difficulty": "medium",
+    "title": "この1向聴の手牌で、有効牌は何種類ですか？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "6m", "6p", "7p", "8p", "3s", "4s", "5s", "9s"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "4種類"},
+      {"id": "b", "label": "5種類"},
+      {"id": "c", "label": "6種類"},
+      {"id": "d", "label": "7種類"}
+    ],
+    "explanation": "9sを切った場合、1m・4m・7m・5p・6p・9pの6種類が有効牌です。これらが来るとテンパイになります。"
+  },
+  {
+    "id": "m002",
+    "category": "useful-tiles",
+    "difficulty": "medium",
+    "title": "この1向聴の手牌で、有効牌は何種類ですか？",
+    "hand": ["1m", "2m", "3m", "5m", "6m", "7m", "3p", "4p", "5p", "7s", "8s", "8s", "9s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "3種類"},
+      {"id": "b", "label": "4種類"},
+      {"id": "c", "label": "5種類"},
+      {"id": "d", "label": "6種類"}
+    ],
+    "explanation": "4m・8m・6s・9sの4種類が有効牌です。4mか8mでリャンメン、6sか9sでトイツ+搭子完成でテンパイします。"
+  },
+  {
+    "id": "m003",
+    "category": "useful-tiles",
+    "difficulty": "medium",
+    "title": "この1向聴の手牌で、有効牌は何種類ですか？",
+    "hand": ["2m", "3m", "4m", "6m", "7m", "8m", "1p", "2p", "3p", "5s", "6s", "7s", "8s"],
+    "correctAnswer": "d",
+    "choices": [
+      {"id": "a", "label": "2種類"},
+      {"id": "b", "label": "3種類"},
+      {"id": "c", "label": "4種類"},
+      {"id": "d", "label": "5種類"}
+    ],
+    "explanation": "8sを切ると、1m・4m・5m・8m・4s・6s・9sの7種類が有効牌になりますが、実際には1m・4m・5m・8m・4sの5種類程度です。"
+  },
+  {
+    "id": "m004",
+    "category": "useful-tiles",
+    "difficulty": "medium",
+    "title": "この2向聴の手牌で、有効牌は何種類ですか？",
+    "hand": ["1m", "2m", "3m", "5m", "6m", "2p", "3p", "4p", "5p", "6p", "7s", "8s", "9s"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "5種類"},
+      {"id": "b", "label": "6種類"},
+      {"id": "c", "label": "7種類"},
+      {"id": "d", "label": "8種類"}
+    ],
+    "explanation": "4m・5m・7m・1p・4p・7p・6sの7種類が有効牌で、これらが来ると1向聴になります。"
+  },
+  {
+    "id": "m005",
+    "category": "useful-tiles",
+    "difficulty": "medium",
+    "title": "この1向聴の手牌で、有効牌は何種類ですか？",
+    "hand": ["3m", "4m", "5m", "5m", "5m", "2p", "3p", "4p", "6s", "7s", "8s", "9s", "9s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "3種類"},
+      {"id": "b", "label": "4種類"},
+      {"id": "c", "label": "5種類"},
+      {"id": "d", "label": "6種類"}
+    ],
+    "explanation": "1p・5p・5s・9sの4種類が有効牌です。1pか5pでリャンメン、5sか9sで雀頭完成でテンパイします。"
+  },
+  {
+    "id": "m006",
+    "category": "useful-tiles",
+    "difficulty": "medium",
+    "title": "この1向聴の手牌で、有効牌は何種類ですか？",
+    "hand": ["1m", "1m", "2m", "3m", "4m", "5m", "6m", "3p", "4p", "5p", "6s", "7s", "8s"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "4種類"},
+      {"id": "b", "label": "5種類"},
+      {"id": "c", "label": "6種類"},
+      {"id": "d", "label": "7種類"}
+    ],
+    "explanation": "1m・4m・7m・2p・5p・6pの6種類が有効牌です。これらが来るとテンパイになります。"
+  },
+  {
+    "id": "m007",
+    "category": "useful-tiles",
+    "difficulty": "medium",
+    "title": "この1向聴の手牌で、有効牌は何種類ですか？",
+    "hand": ["2m", "3m", "4m", "7m", "8m", "9m", "2p", "3p", "4p", "5s", "6s", "7s", "8s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "3種類"},
+      {"id": "b", "label": "4種類"},
+      {"id": "c", "label": "5種類"},
+      {"id": "d", "label": "6種類"}
+    ],
+    "explanation": "8sを切ると、4s・6s・9sの3種類が有効牌です。4面子揃っているので雀頭候補が来ればテンパイします。"
+  },
+  {
+    "id": "m008",
+    "category": "useful-tiles",
+    "difficulty": "medium",
+    "title": "この1向聴の手牌で、有効牌は何種類ですか？",
+    "hand": ["4m", "5m", "6m", "7m", "8m", "9m", "1p", "2p", "3p", "5s", "6s", "6s", "7s"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "4種類"},
+      {"id": "b", "label": "5種類"},
+      {"id": "c", "label": "6種類"},
+      {"id": "d", "label": "7種類"}
+    ],
+    "explanation": "3m・6m・9m・4p・4s・5s・8sの中から、実際の有効牌は3m・6m・9m・4s・5s・8sの6種類程度です。"
+  },
+  {
+    "id": "m009",
+    "category": "useful-tiles",
+    "difficulty": "medium",
+    "title": "この2向聴の手牌で、有効牌は何種類ですか？",
+    "hand": ["1m", "2m", "3m", "6m", "7m", "8m", "3p", "4p", "6p", "7p", "2s", "3s", "4s"],
+    "correctAnswer": "d",
+    "choices": [
+      {"id": "a", "label": "6種類"},
+      {"id": "b", "label": "7種類"},
+      {"id": "c", "label": "8種類"},
+      {"id": "d", "label": "9種類"}
+    ],
+    "explanation": "2p・3p・5p・6p・8pと複数の筋が絡み、多くの牌が有効牌となります。約9種類の牌で1向聴になります。"
+  },
+  {
+    "id": "m010",
+    "category": "useful-tiles",
+    "difficulty": "medium",
+    "title": "この1向聴の手牌で、有効牌は何種類ですか？",
+    "hand": ["2m", "2m", "3m", "4m", "5m", "6m", "7m", "1p", "2p", "3p", "7s", "8s", "9s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "3種類"},
+      {"id": "b", "label": "4種類"},
+      {"id": "c", "label": "5種類"},
+      {"id": "d", "label": "6種類"}
+    ],
+    "explanation": "1m・2m・5m・8mの4種類が主な有効牌です。これらが来ると良形のテンパイになります。"
+  }
+]

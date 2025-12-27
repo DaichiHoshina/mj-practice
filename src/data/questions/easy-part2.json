@@ -1,0 +1,152 @@
+[
+  {
+    "id": "q031",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌の有効牌は何種類ですか？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "8m", "2p", "2p", "4s", "5s", "6s", "7s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "1種類（3枚）"},
+      {"id": "b", "label": "2種類（7枚）"},
+      {"id": "c", "label": "3種類（10枚）"},
+      {"id": "d", "label": "4種類（13枚）"}
+    ],
+    "explanation": "イーシャンテン状態です。1m・9mを引けばテンパイになります。1mは4枚、9mは3枚（1枚見えている可能性を考慮）残っているので、合計2種類7枚が有効牌です。"
+  },
+  {
+    "id": "q032",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌の有効牌は何種類ですか？",
+    "hand": ["3m", "4m", "5m", "6m", "7m", "1p", "2p", "3p", "5s", "5s", "6s", "7s", "8s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "2種類（8枚）"},
+      {"id": "b", "label": "3種類（12枚）"},
+      {"id": "c", "label": "4種類（16枚）"},
+      {"id": "d", "label": "5種類（20枚）"}
+    ],
+    "explanation": "イーシャンテン状態です。2mまたは8mを引けばテンパイします。両方とも4枚ずつ残っているので、2種類8枚が有効牌です。"
+  },
+  {
+    "id": "q033",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌の有効牌は何種類ですか？",
+    "hand": ["1m", "1m", "2m", "3m", "4m", "5m", "6m", "7p", "8p", "9p", "3s", "4s", "5s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "1種類（2枚）"},
+      {"id": "b", "label": "1種類（4枚）"},
+      {"id": "c", "label": "2種類（8枚）"},
+      {"id": "d", "label": "3種類（12枚）"}
+    ],
+    "explanation": "テンパイ状態です。6pが来ればアガリです。6pは4枚残っているので、1種類4枚が有効牌（待ち牌）です。"
+  },
+  {
+    "id": "q034",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌の有効牌は何種類ですか？",
+    "hand": ["2m", "3m", "4m", "5p", "6p", "7p", "8p", "2s", "3s", "4s", "5s", "6s", "7s"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "1種類（4枚）"},
+      {"id": "b", "label": "2種類（7枚）"},
+      {"id": "c", "label": "2種類（8枚）"},
+      {"id": "d", "label": "3種類（12枚）"}
+    ],
+    "explanation": "イーシャンテン状態です。1mまたは9pを引けばテンパイします。それぞれ4枚ずつ残っているので、2種類8枚が有効牌です。"
+  },
+  {
+    "id": "q035",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌の有効牌は何種類ですか？",
+    "hand": ["3m", "3m", "4m", "5m", "6m", "7m", "8m", "2p", "3p", "4p", "6s", "7s", "8s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "1種類（3枚）"},
+      {"id": "b", "label": "2種類（6枚）"},
+      {"id": "c", "label": "3種類（9枚）"},
+      {"id": "d", "label": "4種類（12枚）"}
+    ],
+    "explanation": "イーシャンテン状態です。2mまたは9mを引けばテンパイします。2mは4枚、9mは2枚（3m3枚あるため）残っているので、2種類6枚が有効牌です。"
+  },
+  {
+    "id": "q036",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌の有効牌は何種類ですか？",
+    "hand": ["1m", "2m", "3m", "4m", "5m", "6m", "7s", "7s", "8s", "9s", "2z", "2z", "2z"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "2種類（8枚）"},
+      {"id": "b", "label": "3種類（12枚）"},
+      {"id": "c", "label": "4種類（16枚）"},
+      {"id": "d", "label": "5種類（20枚）"}
+    ],
+    "explanation": "イーシャンテン状態です。0mはないので実質7mまで、または6s・9sを引けばテンパイします。実際には6sまたは9sで2種類8枚が有効牌です。"
+  },
+  {
+    "id": "q037",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌の有効牌は何種類ですか？",
+    "hand": ["4m", "5m", "6m", "7m", "8m", "9m", "1p", "1p", "2p", "3p", "5s", "6s", "7s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "1種類（4枚）"},
+      {"id": "b", "label": "2種類（6枚）"},
+      {"id": "c", "label": "3種類（9枚）"},
+      {"id": "d", "label": "4種類（12枚）"}
+    ],
+    "explanation": "イーシャンテン状態です。3mまたは4sを引けばテンパイします。3mは4枚、4sは2枚（5s6s7sで使用済みの可能性）残っているので、2種類6枚程度が有効牌です。"
+  },
+  {
+    "id": "q038",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌の有効牌は何種類ですか？",
+    "hand": ["2m", "2m", "3m", "4m", "1p", "2p", "3p", "4p", "5p", "6p", "7s", "8s", "9s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "1種類（3枚）"},
+      {"id": "b", "label": "2種類（6枚）"},
+      {"id": "c", "label": "3種類（9枚）"},
+      {"id": "d", "label": "4種類（12枚）"}
+    ],
+    "explanation": "イーシャンテン状態です。5mを引けばテンパイします（2m2m3m4m5mで一盃口形）。5mは1枚見えているため、残り3枚が有効牌です。"
+  },
+  {
+    "id": "q039",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌の有効牌は何種類ですか？",
+    "hand": ["3m", "4m", "5m", "6m", "7m", "8m", "3p", "4p", "5p", "1s", "1s", "1s", "9s"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "1種類（4枚）"},
+      {"id": "b", "label": "2種類（8枚）"},
+      {"id": "c", "label": "3種類（11枚）"},
+      {"id": "d", "label": "4種類（15枚）"}
+    ],
+    "explanation": "イーシャンテン状態です。7s・8s・9sのいずれかを引けばテンパイします。7sと8sは4枚ずつ、9sは3枚（1枚手牌にある）残っているので、3種類11枚が有効牌です。"
+  },
+  {
+    "id": "q040",
+    "category": "effective",
+    "difficulty": "easy",
+    "title": "この手牌の有効牌は何種類ですか？",
+    "hand": ["1m", "2m", "3m", "7m", "8m", "9m", "4p", "5p", "6p", "5s", "5s", "6s", "7s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "1種類（4枚）"},
+      {"id": "b", "label": "2種類（6枚）"},
+      {"id": "c", "label": "3種類（9枚）"},
+      {"id": "d", "label": "4種類（12枚）"}
+    ],
+    "explanation": "イーシャンテン状態です。4sまたは8sを引けばテンパイします。4sは4枚、8sは2枚（5s2枚あるため）残っているので、2種類6枚が有効牌です。"
+  }
+]

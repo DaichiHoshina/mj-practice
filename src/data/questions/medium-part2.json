@@ -1,0 +1,152 @@
+[
+  {
+    "id": "q041",
+    "category": "effective",
+    "difficulty": "medium",
+    "title": "この手牌の待ち形は何ですか？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "3p", "3p", "3p", "6s", "7s", "8s", "9s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "両面待ち"},
+      {"id": "b", "label": "カンチャン待ち"},
+      {"id": "c", "label": "シャボ待ち"},
+      {"id": "d", "label": "タンキ待ち"}
+    ],
+    "explanation": "テンパイ状態で、5sのカンチャン待ちです。6s7s8s9sの形は、5sが来れば5s6s7sと7s8s9sの2面子になります。"
+  },
+  {
+    "id": "q042",
+    "category": "effective",
+    "difficulty": "medium",
+    "title": "この手牌の待ち形は何ですか？",
+    "hand": ["1m", "1m", "2m", "3m", "4m", "5m", "6m", "7p", "8p", "9p", "5s", "5s", "5s"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "両面待ち"},
+      {"id": "b", "label": "ペンチャン待ち"},
+      {"id": "c", "label": "シャボ待ち"},
+      {"id": "d", "label": "タンキ待ち"}
+    ],
+    "explanation": "テンパイ状態で、1mと4mのシャボ待ちです。1m1m2m3m4m5m6mの形は、1mまたは4mが来ればアガリになります。"
+  },
+  {
+    "id": "q043",
+    "category": "effective",
+    "difficulty": "medium",
+    "title": "この手牌の待ち形は何ですか？",
+    "hand": ["3m", "4m", "5m", "6m", "7m", "8m", "2p", "3p", "4p", "5p", "6p", "7p", "8p"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "3面待ち（1p・4p・7p）"},
+      {"id": "b", "label": "両面待ち"},
+      {"id": "c", "label": "カンチャン待ち"},
+      {"id": "d", "label": "タンキ待ち"}
+    ],
+    "explanation": "テンパイ状態で、1p・4p・7pの3面待ちです。2p3p4p5p6p7p8pの形は、1p・4p・7pのいずれかでアガリになります。"
+  },
+  {
+    "id": "q044",
+    "category": "effective",
+    "difficulty": "medium",
+    "title": "この手牌の待ち形は何ですか？",
+    "hand": ["1m", "2m", "3m", "4m", "5m", "6m", "3p", "4p", "5p", "7s", "7s", "8s", "9s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "両面待ち"},
+      {"id": "b", "label": "シャボ待ち"},
+      {"id": "c", "label": "ペンチャン待ち"},
+      {"id": "d", "label": "タンキ待ち"}
+    ],
+    "explanation": "テンパイ状態で、7sと9sのシャボ待ちです。7s7s8s9sの形は、7sまたは9sが来ればアガリになります。"
+  },
+  {
+    "id": "q045",
+    "category": "effective",
+    "difficulty": "medium",
+    "title": "この手牌の待ち形は何ですか？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "1p", "2p", "3p", "4s", "4s", "5s", "6s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "シャボ待ち（4s・6s）"},
+      {"id": "b", "label": "両面待ち"},
+      {"id": "c", "label": "カンチャン待ち"},
+      {"id": "d", "label": "タンキ待ち"}
+    ],
+    "explanation": "テンパイ状態で、4sと6sのシャボ待ちです。4s4s5s6sの形は、4sまたは6sが来ればアガリになります。"
+  },
+  {
+    "id": "q046",
+    "category": "effective",
+    "difficulty": "medium",
+    "title": "この手牌の最も枚数の多い待ち形を選んでください",
+    "hand": ["1m", "1m", "2m", "3m", "5p", "6p", "7p", "8p", "9p", "3s", "4s", "5s", "6s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "両面待ち（4p・7p）で8枚"},
+      {"id": "b", "label": "ペンチャン待ち（1p）で4枚"},
+      {"id": "c", "label": "カンチャン待ち（5p）で4枚"},
+      {"id": "d", "label": "タンキ待ち（1m）で2枚"}
+    ],
+    "explanation": "イーシャンテン状態から1m・4mを切ると、5p6p7p8p9pで4p・7pの両面待ちテンパイになります。これが最も待ち枚数が多い形です。"
+  },
+  {
+    "id": "q047",
+    "category": "effective",
+    "difficulty": "medium",
+    "title": "この手牌の待ち形は何ですか？",
+    "hand": ["3m", "4m", "5m", "2p", "2p", "2p", "4p", "5p", "6p", "7s", "8s", "9s", "9s"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "両面待ち"},
+      {"id": "b", "label": "カンチャン待ち"},
+      {"id": "c", "label": "ペンチャン待ち"},
+      {"id": "d", "label": "シャボ待ち"}
+    ],
+    "explanation": "テンパイ状態で、6sのペンチャン待ちです。7s8s9s9sの形は、6sが来れば6s7s8sと9s9sになります。"
+  },
+  {
+    "id": "q048",
+    "category": "effective",
+    "difficulty": "medium",
+    "title": "この手牌の待ち形は何ですか？",
+    "hand": ["1m", "2m", "3m", "5m", "6m", "7m", "2p", "3p", "4p", "6s", "6s", "7s", "8s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "両面待ち（5s・8s）"},
+      {"id": "b", "label": "カンチャン待ち"},
+      {"id": "c", "label": "シャボ待ち"},
+      {"id": "d", "label": "ペンチャン待ち"}
+    ],
+    "explanation": "テンパイ状態で、5sと8sの両面待ちです。6s6s7s8sの形は、5sまたは8sが来ればアガリになります。"
+  },
+  {
+    "id": "q049",
+    "category": "effective",
+    "difficulty": "medium",
+    "title": "この手牌で最も効率が良い待ち形になる打牌は？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "3p", "4p", "5p", "6p", "7p", "5s", "5s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "5sを切って3p・6pの両面待ち"},
+      {"id": "b", "label": "2mを切ってカンチャン待ち"},
+      {"id": "c", "label": "7mを切ってペンチャン待ち"},
+      {"id": "d", "label": "5mを切ってシャボ待ち"}
+    ],
+    "explanation": "5sを切ると、3p4p5p6p7pで3p・6pの両面待ちテンパイになります。これが最も待ち枚数が多く効率的です。"
+  },
+  {
+    "id": "q050",
+    "category": "effective",
+    "difficulty": "medium",
+    "title": "この手牌の待ち形は何ですか？",
+    "hand": ["4m", "5m", "6m", "7m", "8m", "9m", "1p", "1p", "1p", "5s", "5s", "6s", "7s"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "両面待ち"},
+      {"id": "b", "label": "シャボ待ち（5s・7s）"},
+      {"id": "c", "label": "カンチャン待ち"},
+      {"id": "d", "label": "タンキ待ち"}
+    ],
+    "explanation": "テンパイ状態で、5sと7sのシャボ待ちです。5s5s6s7sの形は、5sまたは7sが来ればアガリになります。"
+  }
+]
