@@ -26,6 +26,12 @@ export async function loadMachiQuestions(
       questions = questions.filter((q) => q.difficulty === difficulty);
     }
 
+    // Fisher-Yatesシャッフル
+    for (let i = questions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [questions[i], questions[j]] = [questions[j], questions[i]];
+    }
+
     return questions;
   } catch (error) {
     console.error('Failed to load machi questions:', error);
