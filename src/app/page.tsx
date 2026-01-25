@@ -47,6 +47,15 @@ export default function Home() {
           </p>
           <div className={styles.cardBadge}>Phase 2</div>
         </Link>
+
+        <Link href="/quiz/machi" className={styles.card}>
+          <div className={styles.cardIcon}>🎴</div>
+          <h2 className={styles.cardTitle}>7枚待ちクイズ</h2>
+          <p className={styles.cardDescription}>
+            多面待ちの待ち牌を当てるクイズ。全19パターンで待ち認識力を養います。
+          </p>
+          <div className={styles.cardBadge}>New</div>
+        </Link>
       </div>
 
       <footer className={styles.footer}>

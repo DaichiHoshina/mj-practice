@@ -5,3 +5,4 @@ export { ScoreBoard } from './ScoreBoard';
 export { DifficultySelector } from './DifficultySelector';
 export { ScoringQuestionDisplay } from './ScoringQuestionDisplay';
 export { ScoringFeedback } from './ScoringFeedback';
+export { MachiQuizGame } from './MachiQuizGame';

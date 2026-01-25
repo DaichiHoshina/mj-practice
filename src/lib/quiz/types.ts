@@ -34,6 +34,18 @@ export interface Question {
 }
 
 /**
+ * 待ち当てクイズ問題（7枚待ちなど）
+ */
+export interface MachiQuestion {
+  readonly id: string;
+  readonly hand: readonly TileType[];
+  readonly correctAnswers: readonly TileType[];
+  readonly difficulty: QuizDifficulty;
+  readonly pattern: string;
+  readonly explanation: string;
+}
+
+/**
  * クイズセッション
  */
 export interface QuizSession {

@@ -5,7 +5,14 @@ export type {
   Question,
   QuizSession,
   QuizResult,
+  MachiQuestion,
 } from './types';
+
+export {
+  loadMachiQuestions,
+  getMachiCandidates,
+  checkMachiAnswer,
+} from './machiLoader';
 
 /**
  * クイズセッションを作成
