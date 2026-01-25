@@ -45,12 +45,14 @@
 
 .tiles {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.5rem;
   padding: 1rem;
   background-color: var(--color-bg);
   border-radius: 8px;
   border: 1px solid var(--color-border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Mobile Optimization */

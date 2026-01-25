@@ -3,6 +3,7 @@ export { QuestionDisplay } from './QuestionDisplay';
 export { ChoiceButton } from './ChoiceButton';
 export { ScoreBoard } from './ScoreBoard';
 export { DifficultySelector } from './DifficultySelector';
+export { PresetSelector } from './PresetSelector';
 export { ScoringQuestionDisplay } from './ScoringQuestionDisplay';
 export { ScoringFeedback } from './ScoringFeedback';
 export { MachiQuizGame } from './MachiQuizGame';

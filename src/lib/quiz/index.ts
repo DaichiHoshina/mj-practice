@@ -1,6 +1,7 @@
 export type {
   QuizCategory,
   QuizDifficulty,
+  QuizPreset,
   Choice,
   Question,
   QuizSession,

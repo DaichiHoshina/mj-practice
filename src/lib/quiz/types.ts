@@ -11,6 +11,19 @@ export type QuizCategory = 'shanten' | 'effective' | 'wait' | 'scoring';
 export type QuizDifficulty = 'easy' | 'medium' | 'hard';
 
 /**
+ * クイズプリセット設定
+ */
+export interface QuizPreset {
+  readonly id: string;
+  readonly label: string;
+  readonly difficulty: QuizDifficulty;
+  readonly questionCount: number;
+  readonly description: string;
+  readonly color: string;
+  readonly emoji: string;
+}
+
+/**
  * クイズの選択肢
  */
 export interface Choice {

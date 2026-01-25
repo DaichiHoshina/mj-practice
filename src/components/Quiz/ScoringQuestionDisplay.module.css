@@ -45,12 +45,14 @@
 
 .tiles {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.5rem;
   padding: 1rem;
   background-color: var(--color-card-bg);
   border-radius: 8px;
   border: none;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .normalTile {

@@ -1,23 +1,24 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeSanitize from 'rehype-sanitize';
 import {
   QuizSession,
-  QuizDifficulty,
   QuizCategory,
+  QuizPreset,
   createQuizSession,
   calculateQuizResult,
 } from '@/lib/quiz';
 import { loadQuestions, loadEfficiencyQuestions } from '@/lib/quiz/loader';
-import { DifficultySelector } from './DifficultySelector';
+import { DEFAULT_PRESET } from '@/lib/quiz/presets';
+import { PresetSelector } from './PresetSelector';
 import { QuestionDisplay } from './QuestionDisplay';
 import { ChoiceButton } from './ChoiceButton';
 import { ScoreBoard } from './ScoreBoard';
 import styles from './QuizGame.module.css';
 
-type GameState = 'selection' | 'playing' | 'feedback' | 'finished';
+type GameState = 'playing' | 'feedback' | 'finished' | 'settings';
 
 interface QuizGameProps {
   readonly category?: QuizCategory;
@@ -27,9 +28,29 @@ interface QuizGameProps {
  * クイズゲーム全体を管理するコンポーネント
  */
 export function QuizGame({ category = 'shanten' }: QuizGameProps) {
-  const [gameState, setGameState] = useState<GameState>('selection');
+  const [gameState, setGameState] = useState<GameState>('playing');
   const [session, setSession] = useState<QuizSession | null>(null);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+  const [currentPreset, setCurrentPreset] =
+    useState<QuizPreset>(DEFAULT_PRESET);
+
+  // 初回レンダリング時にデフォルト設定でセッション作成
+  useEffect(() => {
+    if (!session) {
+      const questions =
+        category === 'effective'
+          ? loadEfficiencyQuestions(
+              DEFAULT_PRESET.difficulty,
+              DEFAULT_PRESET.questionCount
+            )
+          : loadQuestions(
+              DEFAULT_PRESET.difficulty,
+              DEFAULT_PRESET.questionCount
+            );
+      const newSession = createQuizSession(questions);
+      setSession(newSession);
+    }
+  }, []);
 
   // 現在の問題を取得
   const currentQuestion = useMemo(() => {
@@ -39,15 +60,26 @@ export function QuizGame({ category = 'shanten' }: QuizGameProps) {
     return session.questions[session.currentIndex];
   }, [session]);
 
-  // 難易度選択ハンドラ
-  const handleDifficultySelect = (difficulty: QuizDifficulty) => {
+  // プリセット設定でクイズ開始
+  const startQuizWithPreset = (preset: QuizPreset) => {
     const questions =
       category === 'effective'
-        ? loadEfficiencyQuestions(difficulty, 10)
-        : loadQuestions(difficulty, 10);
+        ? loadEfficiencyQuestions(preset.difficulty, preset.questionCount)
+        : loadQuestions(preset.difficulty, preset.questionCount);
     const newSession = createQuizSession(questions);
     setSession(newSession);
+    setCurrentPreset(preset);
     setGameState('playing');
+  };
+
+  // 設定変更ハンドラ
+  const handleOpenSettings = () => {
+    setGameState('settings');
+  };
+
+  // プリセット選択ハンドラ
+  const handlePresetSelect = (preset: QuizPreset) => {
+    startQuizWithPreset(preset);
   };
 
   // 選択肢選択ハンドラ
@@ -84,11 +116,10 @@ export function QuizGame({ category = 'shanten' }: QuizGameProps) {
     }
   };
 
-  // リスタートハンドラ
+  // リスタートハンドラ（現在のプリセットで再開始）
   const handleRestart = () => {
-    setSession(null);
     setSelectedAnswer(null);
-    setGameState('selection');
+    startQuizWithPreset(currentPreset);
   };
 
   // 終了ハンドラ
@@ -102,9 +133,14 @@ export function QuizGame({ category = 'shanten' }: QuizGameProps) {
     return calculateQuizResult(session);
   }, [session, gameState]);
 
-  // 難易度選択画面
-  if (gameState === 'selection') {
-    return <DifficultySelector onSelect={handleDifficultySelect} />;
+  // 設定変更画面
+  if (gameState === 'settings') {
+    return (
+      <PresetSelector
+        onSelect={handlePresetSelect}
+        onClose={() => setGameState('playing')}
+      />
+    );
   }
 
   // 結果画面
@@ -133,6 +169,15 @@ export function QuizGame({ category = 'shanten' }: QuizGameProps) {
 
   return (
     <div className={styles.container}>
+      <div className={styles.header}>
+        <div className={styles.currentPreset}>
+          {currentPreset.emoji} {currentPreset.label}
+        </div>
+        <button className={styles.settingsButton} onClick={handleOpenSettings}>
+          ⚙️ 設定変更
+        </button>
+      </div>
+
       <QuestionDisplay
         question={currentQuestion}
         currentNumber={session.currentIndex + 1}
