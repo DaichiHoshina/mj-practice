@@ -5,6 +5,8 @@
 
 import { TileType } from '../tiles';
 import { YAKU_DEFINITIONS } from './constants';
+import { calculateFu } from './fuCalculator';
+import { calculateScore } from './scoreCalculator';
 import { YakuResult, WinContext } from './types';
 import {
   decomposeHand,
@@ -468,7 +470,8 @@ function detectShousangen(mentsu: readonly Mentsu[], jantou: TileType): boolean 
 function buildYakuResult(
   yakuIds: Set<string>,
   context: WinContext,
-  extraHan: number
+  extraHan: number,
+  decomposition: DecomposedHand | null
 ): YakuResult {
   const yakuList = YAKU_DEFINITIONS.filter((y) => yakuIds.has(y.id));
   let totalHan = 0;
@@ -489,6 +492,7 @@ function buildYakuResult(
     yakuList,
     totalHan: Math.min(totalHan, 13),
     isYakuman,
+    decomposition,
   };
 }
 
@@ -502,35 +506,34 @@ export function detectYaku(
   hand: readonly TileType[],
   context: WinContext
 ): YakuResult {
-  const yakuIds = new Set<string>();
-  let extraHan = 0;
-
   if (detectChiitoitsu(hand) && context.isMenzen) {
-    yakuIds.add('chiitoitsu');
-    return buildYakuResult(yakuIds, context, 0);
+    const yakuIds = new Set<string>(['chiitoitsu']);
+    return buildYakuResult(yakuIds, context, 0, null);
   }
 
   if (detectKokushimusou(hand) && context.isMenzen) {
-    yakuIds.add('kokushimusou');
-    const result = buildYakuResult(yakuIds, context, 0);
+    const yakuIds = new Set<string>(['kokushimusou']);
+    const result = buildYakuResult(yakuIds, context, 0, null);
     return { ...result, isYakuman: true, totalHan: 13 };
   }
 
   const decompositions = decomposeHand(hand);
+  const baseYakuIds = new Set<string>();
+  if (detectRiichi(context)) baseYakuIds.add('riichi');
+  if (detectTanyao(hand)) baseYakuIds.add('tanyao');
+  if (detectHonitsu(hand)) baseYakuIds.add('honitsu');
+  if (detectChinitsu(hand)) baseYakuIds.add('chinitsu');
+
   if (decompositions.length === 0) {
-    if (detectRiichi(context)) yakuIds.add('riichi');
-    if (detectTanyao(hand)) yakuIds.add('tanyao');
-    if (detectHonitsu(hand)) yakuIds.add('honitsu');
-    if (detectChinitsu(hand)) yakuIds.add('chinitsu');
-    return buildYakuResult(yakuIds, context, 0);
+    return buildYakuResult(baseYakuIds, context, 0, null);
   }
 
-  if (detectRiichi(context)) yakuIds.add('riichi');
-  if (detectTanyao(hand)) yakuIds.add('tanyao');
-  if (detectHonitsu(hand)) yakuIds.add('honitsu');
-  if (detectChinitsu(hand)) yakuIds.add('chinitsu');
-
+  let bestResult: YakuResult | null = null;
+  let bestFu = -1;
+  let bestScore = -1;
   for (const decomposition of decompositions) {
+    const yakuIds = new Set(baseYakuIds);
+    let extraHan = 0;
     const { mentsu, jantou } = decomposition;
 
     if (detectPinfu(decomposition, hand, context)) yakuIds.add('pinfu');
@@ -551,8 +554,31 @@ export function detectYaku(
 
     const yakuhai = detectYakuhai(decomposition, context);
     yakuhai.ids.forEach((id) => yakuIds.add(id));
-    extraHan = Math.max(extraHan, yakuhai.bonusHan);
+    extraHan = yakuhai.bonusHan;
+
+    const result = buildYakuResult(yakuIds, context, extraHan, decomposition);
+    const fuBreakdown = calculateFu(hand, result, context);
+    const score = calculateScore(
+      fuBreakdown.total,
+      result.totalHan,
+      context.isDealer,
+      context.isTsumo
+    ).score;
+
+    if (
+      !bestResult ||
+      result.totalHan > bestResult.totalHan ||
+      (result.totalHan === bestResult.totalHan &&
+        (fuBreakdown.total > bestFu ||
+          (fuBreakdown.total === bestFu && score > bestScore)))
+    ) {
+      bestResult = result;
+      bestFu = fuBreakdown.total;
+      bestScore = score;
+    }
   }
 
-  return buildYakuResult(yakuIds, context, extraHan);
+  return (
+    bestResult ?? buildYakuResult(baseYakuIds, context, 0, null)
+  );
 }

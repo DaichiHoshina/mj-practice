@@ -1,4 +1,5 @@
 import { ScoringQuizGame } from '@/components/Quiz/ScoringQuizGame';
+import { BackButton } from '@/components/common/BackButton';
 import styles from './page.module.css';
 
 /**
@@ -8,6 +9,7 @@ export default function ScoringQuizPage() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
+        <BackButton href="/" label="クイズ選択に戻る" />
         <h1 className={styles.title}>麻雀点数計算クイズ</h1>
         <p className={styles.description}>
           和了手牌から適切な点数を計算するクイズです。

@@ -31,10 +31,10 @@
 
 .hand {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   margin: 20px 0;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .pattern {

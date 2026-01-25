@@ -199,6 +199,15 @@ export function calculateFu(
     };
   }
 
+  if (yakuResult.decomposition) {
+    return calculateFuForDecomposition(
+      hand,
+      yakuResult.decomposition,
+      yakuResult,
+      context
+    );
+  }
+
   const decompositions = decomposeHand(hand);
   if (decompositions.length === 0) {
     return {

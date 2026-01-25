@@ -31,6 +31,7 @@ describe('calculateFu', () => {
     ],
     totalHan: 1,
     isYakuman: false,
+    decomposition: null,
   });
 
   it('七対子は25符固定', () => {
@@ -63,6 +64,7 @@ describe('calculateFu', () => {
       ],
       totalHan: 2,
       isYakuman: false,
+      decomposition: null,
     };
 
     const result = calculateFu(hand, yakuResult, createWinContext());
@@ -100,6 +102,7 @@ describe('calculateFu', () => {
       ],
       totalHan: 1,
       isYakuman: false,
+      decomposition: null,
     };
 
     const result = calculateFu(
@@ -269,6 +272,7 @@ describe('calculateFu', () => {
       ],
       totalHan: 1,
       isYakuman: false,
+      decomposition: null,
     };
 
     const result = calculateFu(
@@ -368,6 +372,7 @@ describe('calculateFu', () => {
       ],
       totalHan: 1,
       isYakuman: false,
+      decomposition: null,
     };
 
     const result = calculateFu(

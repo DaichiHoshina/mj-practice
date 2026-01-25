@@ -1,4 +1,5 @@
 import { TileType } from '../tiles';
+import type { DecomposedHand } from './handDecomposer';
 
 /** 役の定義 */
 export interface Yaku {
@@ -14,6 +15,7 @@ export interface YakuResult {
   readonly yakuList: readonly Yaku[];
   readonly totalHan: number;
   readonly isYakuman: boolean;
+  readonly decomposition: DecomposedHand | null;
 }
 
 /** 符の内訳 */

@@ -9,6 +9,8 @@ import hardPart2Questions from '@/data/questions/hard-part2.json';
 import scoringEasyQuestions from '@/data/questions/scoring-easy.json';
 import scoringSampleQuestions from '@/data/questions/scoring-sample.json';
 import efficiencyEasyQuestions from '@/data/questions/efficiency-easy.json';
+import efficiencyMediumQuestions from '@/data/questions/efficiency-medium.json';
+import efficiencyHardQuestions from '@/data/questions/efficiency-hard.json';
 
 /**
  * すべての問題をマージ
@@ -125,6 +127,8 @@ export function loadMixedScoringQuestions(
  */
 const allEfficiencyQuestions: Question[] = [
   ...efficiencyEasyQuestions,
+  ...efficiencyMediumQuestions,
+  ...efficiencyHardQuestions,
 ] as Question[];
 
 /**

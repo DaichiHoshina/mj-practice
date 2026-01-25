@@ -16,16 +16,19 @@
 .tile.small {
   width: 32px;
   height: 44px;
+  flex: 0 0 auto;
 }
 
 .tile.medium {
   width: 48px;
   height: 66px;
+  flex: 0 0 auto;
 }
 
 .tile.large {
   width: 64px;
   height: 88px;
+  flex: 0 0 auto;
 }
 
 /* 画像スタイル */
@@ -87,21 +90,93 @@
   outline: 2px solid var(--color-text-muted);
 }
 
-/* Mobile Optimization */
+/* レスポンシブ対応 - コンテナ幅に応じて自動調整 */
 @media (max-width: 768px) {
-  /* タップ領域を維持しつつ、サイズを微調整 */
   .tile.small {
+    width: 38px;
+    height: 52px;
+    flex: 0 1 auto;
+  }
+
+  .tile.medium {
+    width: 42px;
+    height: 58px;
+    flex: 0 1 auto;
+  }
+
+  .tile.large {
+    width: 56px;
+    height: 78px;
+    flex: 0 1 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .tile.small {
+    width: 26px;
+    height: 36px;
+  }
+
+  .tile.medium {
     width: 30px;
     height: 42px;
   }
 
+  .tile.large {
+    width: 46px;
+    height: 64px;
+  }
+}
+
+@media (max-width: 400px) {
+  .tile.small {
+    width: 22px;
+    height: 30px;
+  }
+
   .tile.medium {
-    width: 44px;
-    height: 62px;
+    width: 26px;
+    height: 36px;
   }
 
   .tile.large {
-    width: 60px;
-    height: 84px;
+    width: 40px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 360px) {
+  /* 14枚完全対応 - スクロールなし */
+  .tile.small {
+    width: 19px;
+    height: 26px;
+  }
+
+  .tile.medium {
+    width: 23px;
+    height: 32px;
+  }
+
+  .tile.large {
+    width: 36px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 340px) {
+  /* 14枚完全対応 - 最小デバイス */
+  .tile.small {
+    width: 18px;
+    height: 25px;
+  }
+
+  .tile.medium {
+    width: 21px;
+    height: 29px;
+  }
+
+  .tile.large {
+    width: 34px;
+    height: 47px;
   }
 }

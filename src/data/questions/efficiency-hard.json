@@ -1,0 +1,227 @@
+[
+  {
+    "id": "eff-h001",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "8m", "3p", "4p", "5p", "6p", "5s", "6s"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "2mを切る", "tile": "2m"},
+      {"id": "b", "label": "8mを切る", "tile": "8m"},
+      {"id": "c", "label": "3pを切る", "tile": "3p"},
+      {"id": "d", "label": "6pを切る", "tile": "6p"}
+    ],
+    "explanation": "345m・567mの良形を活かします。2mは辺張受けのみで、8mも辺張ですが、234pと考えると2mの方が受け入れが狭いため2mを切ります。"
+  },
+  {
+    "id": "eff-h002",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["1m", "2m", "3m", "4m", "5m", "6m", "7m", "8m", "4p", "5p", "6p", "7p", "8p"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "1mを切る", "tile": "1m"},
+      {"id": "b", "label": "8mを切る", "tile": "8m"},
+      {"id": "c", "label": "4pを切る", "tile": "4p"},
+      {"id": "d", "label": "8pを切る", "tile": "8p"}
+    ],
+    "explanation": "234m・345m・567mと形が豊富。456p・567p・678pも良形で、1mと8mを比較すると、1mの方が辺張受けのみで受け入れが狭いです。"
+  },
+  {
+    "id": "eff-h003",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["3m", "4m", "5m", "6m", "7m", "8m", "2p", "3p", "4p", "5p", "6p", "7p", "8p"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "3mを切る", "tile": "3m"},
+      {"id": "b", "label": "8mを切る", "tile": "8m"},
+      {"id": "c", "label": "2pを切る", "tile": "2p"},
+      {"id": "d", "label": "8pを切る", "tile": "8p"}
+    ],
+    "explanation": "345m・456m・678mの形が良好。234p・345p・456p・567p・678pと形が豊富ですが、2pは辺張受けで、8pも辺張ですが、2pの方がやや弱いです。"
+  },
+  {
+    "id": "eff-h004",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["1m", "2m", "3m", "4m", "5m", "6m", "7m", "3p", "4p", "5p", "6p", "7p", "8p"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "1mを切る", "tile": "1m"},
+      {"id": "b", "label": "7mを切る", "tile": "7m"},
+      {"id": "c", "label": "3pを切る", "tile": "3p"},
+      {"id": "d", "label": "8pを切る", "tile": "8p"}
+    ],
+    "explanation": "123m・234m・345mの形で1mは辺張受けのみ。345p・456p・567p・678pと形が豊富なため、1mを切って受け入れを広げます。"
+  },
+  {
+    "id": "eff-h005",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "8m", "9m", "3p", "4p", "5p", "6p", "7p"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "2mを切る", "tile": "2m"},
+      {"id": "b", "label": "9mを切る", "tile": "9m"},
+      {"id": "c", "label": "3pを切る", "tile": "3p"},
+      {"id": "d", "label": "7pを切る", "tile": "7p"}
+    ],
+    "explanation": "234m・345m・567mの形が良好。345p・456p・567pも良形。2mと9mを比較すると、9mの方が辺張受けのみで弱いです。"
+  },
+  {
+    "id": "eff-h006",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["1m", "1m", "2m", "3m", "4m", "5m", "6m", "7m", "3p", "4p", "5p", "6p", "7p"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "1mを切る", "tile": "1m"},
+      {"id": "b", "label": "7mを切る", "tile": "7m"},
+      {"id": "c", "label": "3pを切る", "tile": "3p"},
+      {"id": "d", "label": "7pを切る", "tile": "7p"}
+    ],
+    "explanation": "11m雀頭確定。234m・345mの形が良く、7mは辺張受けのみ。345p・456p・567pの形が豊富なため7mを切ります。"
+  },
+  {
+    "id": "eff-h007",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "8m", "2p", "3p", "4p", "5p", "6p", "7p"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "2mを切る", "tile": "2m"},
+      {"id": "b", "label": "8mを切る", "tile": "8m"},
+      {"id": "c", "label": "2pを切る", "tile": "2p"},
+      {"id": "d", "label": "7pを切る", "tile": "7p"}
+    ],
+    "explanation": "345m・567mの形が良好。234p・345p・456p・567pと形が豊富。2mと8mを比較すると、両方辺張ですが、pの形の方が強いため2mを切ります。"
+  },
+  {
+    "id": "eff-h008",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["3m", "4m", "5m", "6m", "7m", "8m", "9m", "2p", "3p", "4p", "5p", "6p", "7p"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "3mを切る", "tile": "3m"},
+      {"id": "b", "label": "9mを切る", "tile": "9m"},
+      {"id": "c", "label": "2pを切る", "tile": "2p"},
+      {"id": "d", "label": "7pを切る", "tile": "7p"}
+    ],
+    "explanation": "345m・456m・678mの形が良好。234p・345p・456p・567pと形が豊富ですが、2pは辺張受けで、雀頭候補もないため切ります。"
+  },
+  {
+    "id": "eff-h009",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["1m", "2m", "3m", "4m", "5m", "6m", "2p", "3p", "4p", "5p", "6p", "7p", "8p"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "1mを切る", "tile": "1m"},
+      {"id": "b", "label": "6mを切る", "tile": "6m"},
+      {"id": "c", "label": "2pを切る", "tile": "2p"},
+      {"id": "d", "label": "8pを切る", "tile": "8p"}
+    ],
+    "explanation": "123m・234m・345mの形で、1mは辺張受けのみ。234p・345p・456p・567p・678pと形が非常に豊富なため1mを切ります。"
+  },
+  {
+    "id": "eff-h010",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["2m", "2m", "3m", "4m", "5m", "6m", "7m", "3p", "4p", "5p", "6p", "7p", "8p"],
+    "correctAnswer": "d",
+    "choices": [
+      {"id": "a", "label": "2mを切る", "tile": "2m"},
+      {"id": "b", "label": "7mを切る", "tile": "7m"},
+      {"id": "c", "label": "3pを切る", "tile": "3p"},
+      {"id": "d", "label": "8pを切る", "tile": "8p"}
+    ],
+    "explanation": "22m雀頭確定。234m・345mの形が良好。345p・456p・567pの形で、8pは辺張受けのみで余剰となるため切ります。"
+  },
+  {
+    "id": "eff-h011",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["1m", "2m", "3m", "4m", "5m", "6m", "7m", "8m", "2p", "3p", "4p", "5p", "6p"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "1mを切る", "tile": "1m"},
+      {"id": "b", "label": "8mを切る", "tile": "8m"},
+      {"id": "c", "label": "2pを切る", "tile": "2p"},
+      {"id": "d", "label": "6pを切る", "tile": "6p"}
+    ],
+    "explanation": "123m・234m・345m・567mと形が豊富。234p・345p・456pも良形。1mと8mを比較すると、1mの方が辺張受けのみで弱いです。"
+  },
+  {
+    "id": "eff-h012",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["3m", "4m", "5m", "6m", "7m", "8m", "1p", "2p", "3p", "4p", "5p", "6p", "7p"],
+    "correctAnswer": "c",
+    "choices": [
+      {"id": "a", "label": "3mを切る", "tile": "3m"},
+      {"id": "b", "label": "8mを切る", "tile": "8m"},
+      {"id": "c", "label": "1pを切る", "tile": "1p"},
+      {"id": "d", "label": "7pを切る", "tile": "7p"}
+    ],
+    "explanation": "345m・456m・678mの形が良好。123p・234p・345p・456p・567pと形が非常に豊富ですが、1pは辺張受けのみで最も弱いです。"
+  },
+  {
+    "id": "eff-h013",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "8m", "9m", "2p", "3p", "4p", "5p", "6p"],
+    "correctAnswer": "b",
+    "choices": [
+      {"id": "a", "label": "2mを切る", "tile": "2m"},
+      {"id": "b", "label": "9mを切る", "tile": "9m"},
+      {"id": "c", "label": "2pを切る", "tile": "2p"},
+      {"id": "d", "label": "6pを切る", "tile": "6p"}
+    ],
+    "explanation": "234m・345m・567mの形が良好。234p・345p・456pも良形。2mと9mを比較すると、9mの方が辺張受けのみで孤立しています。"
+  },
+  {
+    "id": "eff-h014",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["1m", "2m", "3m", "4m", "5m", "6m", "7m", "2p", "3p", "4p", "5p", "6p", "7p"],
+    "correctAnswer": "a",
+    "choices": [
+      {"id": "a", "label": "1mを切る", "tile": "1m"},
+      {"id": "b", "label": "7mを切る", "tile": "7m"},
+      {"id": "c", "label": "2pを切る", "tile": "2p"},
+      {"id": "d", "label": "7pを切る", "tile": "7p"}
+    ],
+    "explanation": "123m・234m・345mの形で、1mは辺張受けのみ。234p・345p・456p・567pと形が豊富。7mと1mを比較すると、1mの方が受け入れが狭いです。"
+  },
+  {
+    "id": "eff-h015",
+    "category": "effective",
+    "difficulty": "hard",
+    "title": "この手牌で、どの牌を切りますか？",
+    "hand": ["2m", "3m", "4m", "5m", "6m", "7m", "8m", "1p", "2p", "3p", "4p", "5p", "6p"],
+    "correctAnswer": "d",
+    "choices": [
+      {"id": "a", "label": "2mを切る", "tile": "2m"},
+      {"id": "b", "label": "8mを切る", "tile": "8m"},
+      {"id": "c", "label": "1pを切る", "tile": "1p"},
+      {"id": "d", "label": "6pを切る", "tile": "6p"}
+    ],
+    "explanation": "234m・345m・567mの形が良好。123p・234p・345pの形を活かし、6pは余剰となります。1pは辺張ですが、123pの形で残す価値があります。"
+  }
+]
