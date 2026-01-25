@@ -1,8 +1,8 @@
 .container {
   padding: 1.5rem;
-  background-color: #ffffff;
+  background-color: var(--color-card-bg);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-border);
 }
 
 .header {
@@ -11,25 +11,25 @@
   align-items: center;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #e0e0e0;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .progress {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #1976d2;
+  color: var(--color-accent);
 }
 
 .difficulty {
   font-size: 0.875rem;
-  color: #757575;
+  color: var(--color-text-secondary);
 }
 
 .title {
   margin: 1rem 0;
   font-size: 1.25rem;
   font-weight: 600;
-  color: #212121;
+  color: var(--color-text-primary);
 }
 
 .handContainer {
@@ -40,7 +40,7 @@
   margin-bottom: 0.75rem;
   font-size: 0.875rem;
   font-weight: 600;
-  color: #424242;
+  color: var(--color-text-primary);
 }
 
 .tiles {
@@ -48,6 +48,7 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   padding: 1rem;
-  background-color: #f5f5f5;
+  background-color: var(--color-bg);
   border-radius: 8px;
+  border: 1px solid var(--color-border);
 }

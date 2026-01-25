@@ -8,14 +8,14 @@
 .title {
   margin-bottom: 1rem;
   font-size: 2rem;
-  font-weight: 700;
-  color: #212121;
+  font-weight: 600;
+  color: var(--color-text-primary);
 }
 
 .subtitle {
   margin-bottom: 2rem;
-  font-size: 1rem;
-  color: #757575;
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
 }
 
 .options {
@@ -28,29 +28,36 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background-color: #ffffff;
-  border: 3px solid;
+  background-color: var(--color-card-bg);
+  border: 2px solid var(--color-accent);
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-base);
 }
 
 .option:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  background-color: var(--color-accent);
+}
+
+.option:hover .optionHeader {
+  color: var(--color-bg);
+}
+
+.option:hover .description {
+  color: var(--color-bg);
 }
 
 .option:focus-visible {
-  outline: 2px solid #1976d2;
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
 .optionHeader {
   padding: 1.5rem;
   font-size: 1.5rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-weight: 600;
+  color: var(--color-accent);
+  transition: color var(--transition-base);
 }
 
 .optionBody {
@@ -61,6 +68,7 @@
 .description {
   margin: 0;
   font-size: 0.875rem;
-  color: #424242;
+  color: var(--color-text-primary);
   line-height: 1.5;
+  transition: color var(--transition-base);
 }

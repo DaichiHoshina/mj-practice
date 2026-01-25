@@ -1,32 +1,28 @@
 .container {
   min-height: 100vh;
   padding: 24px;
-  background: linear-gradient(to bottom, #f9fafb, #f3f4f6);
+  background: var(--color-bg);
 }
 
 .header {
   text-align: center;
   margin-bottom: 32px;
   padding: 24px;
-  background: white;
+  background: var(--color-card-bg);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-border);
 }
 
 .title {
   font-size: 32px;
-  font-weight: bold;
-  color: #1f2937;
+  font-weight: 600;
+  color: var(--color-text-primary);
   margin: 0 0 12px 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .description {
-  font-size: 16px;
-  color: #6b7280;
+  font-size: 15px;
+  color: var(--color-text-secondary);
   margin: 0;
   line-height: 1.6;
 }

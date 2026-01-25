@@ -1,8 +1,8 @@
 .container {
-  background: white;
+  background: var(--color-card-bg);
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-border);
   margin-bottom: 24px;
 }
 
@@ -12,39 +12,42 @@
   justify-content: space-between;
   margin-bottom: 24px;
   padding-bottom: 16px;
-  border-bottom: 2px solid #e5e7eb;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .title {
   font-size: 20px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--color-text-primary);
   margin: 0;
 }
 
 .shantenValue {
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 600;
   padding: 12px 24px;
   border-radius: 8px;
   text-align: center;
   min-width: 150px;
+  border: 2px solid var(--color-accent);
 }
 
 .shanten {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: var(--color-card-bg);
+  color: var(--color-accent);
 }
 
 .ready {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  color: white;
+  background: var(--color-card-bg);
+  color: var(--color-error);
+  border-color: var(--color-error);
   animation: pulse 2s ease-in-out infinite;
 }
 
 .complete {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  color: white;
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border-color: var(--color-success);
   animation: celebration 0.6s ease-in-out;
 }
 
@@ -78,7 +81,7 @@
 .sectionTitle {
   font-size: 16px;
   font-weight: 600;
-  color: #374151;
+  color: var(--color-text-primary);
   margin: 0 0 16px 0;
 }
 
@@ -98,8 +101,8 @@
 .remaining {
   font-size: 14px;
   font-weight: 600;
-  color: #6b7280;
-  background: #f3f4f6;
+  color: var(--color-text-secondary);
+  background: var(--color-border);
   padding: 4px 12px;
   border-radius: 12px;
 }
@@ -107,10 +110,11 @@
 .noEffective {
   text-align: center;
   padding: 32px;
-  color: #9ca3af;
+  color: var(--color-text-muted);
   font-size: 14px;
-  background: #f9fafb;
+  background: var(--color-bg);
   border-radius: 8px;
+  border: 1px solid var(--color-border);
 }
 
 .completeMessage {
@@ -118,9 +122,10 @@
   padding: 24px;
   font-size: 16px;
   font-weight: 600;
-  color: #059669;
-  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: var(--color-success);
+  background: var(--color-success-bg);
   border-radius: 8px;
+  border: 1px solid var(--color-success);
   margin-top: 16px;
 }
 

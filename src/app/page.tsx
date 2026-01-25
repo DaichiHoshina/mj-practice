@@ -13,7 +13,13 @@ export default function Home() {
 
       <div className={styles.features}>
         <Link href="/efficiency" className={styles.card}>
-          <div className={styles.cardIcon}>📊</div>
+          <div className={styles.cardIcon}>
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="13" width="4" height="8" />
+              <rect x="10" y="8" width="4" height="13" />
+              <rect x="17" y="3" width="4" height="18" />
+            </svg>
+          </div>
           <h2 className={styles.cardTitle}>牌効率計算</h2>
           <p className={styles.cardDescription}>
             手牌から向聴数と有効牌を自動計算。牌効率の基礎を学べます。
@@ -22,7 +28,13 @@ export default function Home() {
         </Link>
 
         <Link href="/quiz" className={styles.card}>
-          <div className={styles.cardIcon}>🎯</div>
+          <div className={styles.cardIcon}>
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" />
+              <circle cx="12" cy="12" r="5" />
+              <circle cx="12" cy="12" r="1" />
+            </svg>
+          </div>
           <h2 className={styles.cardTitle}>向聴数クイズ</h2>
           <p className={styles.cardDescription}>
             手牌を見て何向聴かを当てるクイズ。向聴数の感覚を鍛えます。
@@ -31,7 +43,18 @@ export default function Home() {
         </Link>
 
         <Link href="/quiz/efficiency" className={styles.card}>
-          <div className={styles.cardIcon}>🎲</div>
+          <div className={styles.cardIcon}>
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="8" height="8" rx="1" />
+              <rect x="13" y="3" width="8" height="8" rx="1" />
+              <rect x="3" y="13" width="8" height="8" rx="1" />
+              <rect x="13" y="13" width="8" height="8" rx="1" />
+              <circle cx="7" cy="7" r="1" fill="currentColor" />
+              <circle cx="17" cy="7" r="1" fill="currentColor" />
+              <circle cx="7" cy="17" r="1" fill="currentColor" />
+              <circle cx="17" cy="17" r="1" fill="currentColor" />
+            </svg>
+          </div>
           <h2 className={styles.cardTitle}>牌効率クイズ</h2>
           <p className={styles.cardDescription}>
             どの牌を切るべきかを選ぶクイズ。最適な打牌を学びます。
@@ -40,7 +63,12 @@ export default function Home() {
         </Link>
 
         <Link href="/quiz/scoring" className={styles.card}>
-          <div className={styles.cardIcon}>💰</div>
+          <div className={styles.cardIcon}>
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 6v12M9 9h3a2 2 0 0 1 0 4h-3M9 15h3a2 2 0 0 0 0-4h-3" />
+            </svg>
+          </div>
           <h2 className={styles.cardTitle}>点数計算クイズ</h2>
           <p className={styles.cardDescription}>
             和了手牌から点数を計算。役の認識と点数計算をマスター。
@@ -49,7 +77,17 @@ export default function Home() {
         </Link>
 
         <Link href="/quiz/machi" className={styles.card}>
-          <div className={styles.cardIcon}>🎴</div>
+          <div className={styles.cardIcon}>
+            <svg viewBox="0 0 24 24">
+              <rect x="4" y="4" width="7" height="10" rx="1" />
+              <rect x="13" y="4" width="7" height="10" rx="1" />
+              <line x1="6" y1="7" x2="9" y2="7" />
+              <line x1="6" y1="9" x2="9" y2="9" />
+              <line x1="15" y1="7" x2="18" y2="7" />
+              <line x1="15" y1="9" x2="18" y2="9" />
+              <path d="M4 16h16v4H4z" />
+            </svg>
+          </div>
           <h2 className={styles.cardTitle}>7枚待ちクイズ</h2>
           <p className={styles.cardDescription}>
             多面待ちの待ち牌を当てるクイズ。全19パターンで待ち認識力を養います。

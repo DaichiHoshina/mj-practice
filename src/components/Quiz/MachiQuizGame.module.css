@@ -6,29 +6,27 @@
 
 .header {
   text-align: center;
-  margin-bottom: 30px;
-}
-
-.header h2 {
-  margin: 0 0 10px 0;
-  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .progress {
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 14px;
+  font-weight: 600;
 }
 
 .questionArea {
-  background: #f5f5f5;
+  background: var(--color-card-bg);
   padding: 20px;
   border-radius: 8px;
+  border: 1px solid var(--color-border);
   margin-bottom: 30px;
 }
 
 .questionArea h3 {
   margin: 0 0 15px 0;
   font-size: 18px;
+  color: var(--color-text-primary);
 }
 
 .hand {
@@ -39,7 +37,7 @@
 
 .pattern {
   text-align: center;
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 14px;
   margin-top: 10px;
 }
@@ -66,17 +64,18 @@
 .tileButton {
   padding: 15px 8px;
   font-size: 16px;
-  font-weight: bold;
-  border: 2px solid #ccc;
+  font-weight: 600;
+  border: 1px solid var(--color-border);
   border-radius: 4px;
-  background: white;
+  background: var(--color-card-bg);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all var(--transition-base);
 }
 
 .tileButton:hover:not(:disabled) {
-  background: #f0f0f0;
-  border-color: #999;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
 }
 
 .tileButton:disabled {
@@ -84,78 +83,96 @@
 }
 
 .tileButton.selected {
-  background: #4a90e2;
-  color: white;
-  border-color: #4a90e2;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
 }
 
 .tileButton.correct {
-  background: #5cb85c;
-  color: white;
-  border-color: #5cb85c;
+  background: var(--color-success);
+  color: var(--color-bg);
+  border-color: var(--color-success);
 }
 
 .tileButton.correctNotSelected {
-  background: #e8f5e9;
-  color: #2e7d32;
-  border: 2px solid #5cb85c;
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border: 2px solid var(--color-success);
   border-style: dashed;
 }
 
 .tileButton.wrong {
-  background: #d9534f;
-  color: white;
-  border-color: #d9534f;
+  background: var(--color-error);
+  color: var(--color-bg);
+  border-color: var(--color-error);
 }
 
 .submitButton,
-.nextButton,
-.restartButton {
+.nextButton {
   display: block;
   width: 100%;
   max-width: 300px;
   margin: 20px auto;
   padding: 15px;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 0.9375rem;
+  font-weight: 600;
   border: none;
   border-radius: 8px;
-  background: #4a90e2;
-  color: white;
+  background: var(--color-accent);
+  color: var(--color-bg);
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background var(--transition-base);
 }
 
 .submitButton:hover:not(:disabled),
-.nextButton:hover,
-.restartButton:hover {
-  background: #357abd;
+.nextButton:hover {
+  background: var(--color-accent-hover);
 }
 
 .submitButton:disabled {
-  background: #ccc;
+  background: var(--color-border);
   cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.restartButton {
+  display: block;
+  max-width: 300px;
+  padding: 15px 30px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  cursor: pointer;
+  transition: background var(--transition-base);
+}
+
+.restartButton:hover {
+  background: var(--color-accent-hover);
 }
 
 .feedback {
-  background: #f5f5f5;
+  background: var(--color-card-bg);
   padding: 20px;
   border-radius: 8px;
+  border: 1px solid var(--color-border);
   margin-top: 20px;
 }
 
 .feedback .correct {
-  color: #5cb85c;
+  color: var(--color-success);
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
   margin: 0 0 15px 0;
 }
 
 .feedback .incorrect {
-  color: #d9534f;
+  color: var(--color-error);
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
   margin: 0 0 15px 0;
 }
@@ -163,14 +180,15 @@
 .correctAnswer {
   margin: 20px 0;
   padding: 15px;
-  background: white;
+  background: var(--color-bg);
   border-radius: 4px;
-  border: 2px solid #5cb85c;
+  border: 2px solid var(--color-success);
 }
 
 .correctAnswer p {
   margin: 0 0 10px 0;
-  font-weight: bold;
+  font-weight: 600;
+  color: var(--color-text-primary);
 }
 
 .correctTiles {
@@ -183,19 +201,21 @@
 .correctTile {
   display: inline-block;
   padding: 8px 12px;
-  background: #5cb85c;
-  color: white;
+  background: var(--color-success);
+  color: var(--color-bg);
   border-radius: 4px;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 16px;
 }
 
 .explanation {
   margin: 15px 0;
   padding: 15px;
-  background: white;
+  background: var(--color-bg);
   border-radius: 4px;
+  border: 1px solid var(--color-border);
   line-height: 1.6;
+  color: var(--color-text-secondary);
 }
 
 .result {
@@ -206,19 +226,46 @@
 .result h2 {
   margin: 0 0 30px 0;
   font-size: 28px;
+  color: var(--color-text-primary);
 }
 
 .score {
   font-size: 36px;
-  font-weight: bold;
-  color: #4a90e2;
+  font-weight: 600;
+  color: var(--color-accent);
   margin: 20px 0;
 }
 
 .accuracy {
   font-size: 20px;
-  color: #666;
+  color: var(--color-text-secondary);
   margin: 10px 0 30px 0;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.menuButton {
+  display: block;
+  max-width: 300px;
+  padding: 15px 30px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border: 1px solid var(--color-accent);
+  border-radius: 8px;
+  background: var(--color-bg);
+  color: var(--color-accent);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.menuButton:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
 }
 
 .loading,
@@ -229,5 +276,5 @@
 }
 
 .error {
-  color: #d9534f;
+  color: var(--color-error);
 }

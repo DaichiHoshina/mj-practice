@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { MachiQuestion } from '@/lib/quiz/types';
 import { TileType } from '@/lib/tiles';
 import {
@@ -18,6 +19,7 @@ interface MachiQuizGameProps {
 type GameState = 'playing' | 'answered' | 'finished';
 
 export function MachiQuizGame({ difficulty }: MachiQuizGameProps) {
+  const router = useRouter();
   const [questions, setQuestions] = useState<MachiQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedTiles, setSelectedTiles] = useState<TileType[]>([]);
@@ -125,9 +127,17 @@ export function MachiQuizGame({ difficulty }: MachiQuizGameProps) {
           {correctCount} / {questions.length} 問正解
         </p>
         <p className={styles.accuracy}>正解率: {accuracy.toFixed(1)}%</p>
-        <button onClick={handleRestart} className={styles.restartButton}>
-          もう一度挑戦
-        </button>
+        <div className={styles.actions}>
+          <button onClick={handleRestart} className={styles.restartButton}>
+            もう一度挑戦
+          </button>
+          <button
+            onClick={() => router.push('/')}
+            className={styles.menuButton}
+          >
+            メニューに戻る
+          </button>
+        </div>
       </div>
     );
   }
@@ -135,7 +145,6 @@ export function MachiQuizGame({ difficulty }: MachiQuizGameProps) {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h2>7枚待ちクイズ</h2>
         <p className={styles.progress}>
           問題 {currentIndex + 1} / {questions.length}
         </p>
@@ -195,41 +204,46 @@ export function MachiQuizGame({ difficulty }: MachiQuizGameProps) {
         </button>
       )}
 
-      {gameState === 'answered' && (() => {
-        const isCorrect = checkMachiAnswer(
-          selectedTiles,
-          currentQuestion.correctAnswers
-        );
-        return (
-          <div className={styles.feedback}>
-            <p className={isCorrect ? styles.correct : styles.incorrect}>
-              {isCorrect ? '✓ 正解！' : '✗ 不正解'}
-            </p>
-            <div
-              className={styles.correctAnswer}
-              role="status"
-              aria-live="polite"
-            >
-            <p>正解の待ち牌:</p>
-            <div className={styles.correctTiles}>
-              {uniqueCorrectAnswers.map((tile, index) => (
-                <span
-                  key={index}
-                  className={styles.correctTile}
-                  aria-label={`正解 ${tile}`}
-                >
-                  {tile}
-                </span>
-              ))}
+      {gameState === 'answered' &&
+        (() => {
+          const isCorrect = checkMachiAnswer(
+            selectedTiles,
+            currentQuestion.correctAnswers
+          );
+          return (
+            <div className={styles.feedback}>
+              <p className={isCorrect ? styles.correct : styles.incorrect}>
+                {isCorrect ? '✓ 正解！' : '✗ 不正解'}
+              </p>
+              <div
+                className={styles.correctAnswer}
+                role="status"
+                aria-live="polite"
+              >
+                <p>正解の待ち牌:</p>
+                <div className={styles.correctTiles}>
+                  {uniqueCorrectAnswers.map((tile, index) => (
+                    <span
+                      key={index}
+                      className={styles.correctTile}
+                      aria-label={`正解 ${tile}`}
+                    >
+                      {tile}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <p className={styles.explanation}>
+                {currentQuestion.explanation}
+              </p>
+              <button onClick={handleNext} className={styles.nextButton}>
+                {currentIndex + 1 < questions.length
+                  ? '次の問題へ'
+                  : '結果を見る'}
+              </button>
             </div>
-          </div>
-          <p className={styles.explanation}>{currentQuestion.explanation}</p>
-          <button onClick={handleNext} className={styles.nextButton}>
-            {currentIndex + 1 < questions.length ? '次の問題へ' : '結果を見る'}
-          </button>
-        </div>
-        );
-      })()}
+          );
+        })()}
     </div>
   );
 }

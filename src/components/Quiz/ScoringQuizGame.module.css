@@ -10,11 +10,11 @@
 
 .error {
   padding: 2rem;
-  background: #fff3cd;
-  border: 1px solid #ffc107;
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error);
   border-radius: 8px;
   text-align: center;
-  color: #856404;
+  color: var(--color-error);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -22,17 +22,17 @@
 
 .error button {
   padding: 0.75rem 1.5rem;
-  background: #ffc107;
+  background: var(--color-error);
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-weight: 600;
-  color: #000;
-  transition: background-color 0.2s;
+  color: var(--color-bg);
+  transition: background-color var(--transition-base);
 }
 
 .error button:hover {
-  background: #e0a800;
+  background: var(--color-accent-hover);
 }
 
 /* 選択肢ボタン群 */
@@ -51,17 +51,17 @@
   justify-content: center;
   gap: 0.5rem;
   padding: 1.5rem;
-  background: #f8f9fa;
-  border: 2px solid #dee2e6;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   cursor: pointer;
-  font-size: 0.95rem;
-  transition: all 0.2s;
+  font-size: 0.9375rem;
+  transition: all var(--transition-base);
 }
 
 .choiceButton:hover:not(:disabled) {
-  border-color: #007bff;
-  background: #e7f3ff;
+  border-color: var(--color-accent);
+  transform: translateX(4px);
 }
 
 .choiceButton:disabled {
@@ -69,48 +69,48 @@
 }
 
 .choiceButton.selected {
-  border-color: #007bff;
-  background: #e7f3ff;
+  border-color: var(--color-accent);
+  background: var(--color-card-bg);
 }
 
 .choiceButton.correct {
-  border-color: #28a745;
-  background: #d4edda;
+  border-color: var(--color-success);
+  background: var(--color-success-bg);
 }
 
 .choiceButton.incorrect {
-  border-color: #dc3545;
-  background: #f8d7da;
+  border-color: var(--color-error);
+  background: var(--color-error-bg);
 }
 
 /* スコア表示 */
 .score {
   font-size: 1.5rem;
-  font-weight: 700;
-  color: #007bff;
+  font-weight: 600;
+  color: var(--color-accent);
 }
 
 .choiceButton.correct .score {
-  color: #28a745;
+  color: var(--color-success);
 }
 
 .choiceButton.incorrect .score {
-  color: #dc3545;
+  color: var(--color-error);
 }
 
 /* ラベル表示 */
 .label {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--color-text-secondary);
   text-align: center;
 }
 
 .choiceButton.correct .label {
-  color: #155724;
+  color: var(--color-success);
 }
 
 .choiceButton.incorrect .label {
-  color: #721c24;
+  color: var(--color-error);
 }
 
 /* フィードバック */
@@ -119,32 +119,32 @@
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;
-  background: #f8f9fa;
+  background: var(--color-card-bg);
   border-radius: 8px;
-  border-left: 4px solid #007bff;
+  border: 1px solid var(--color-border);
 }
 
 /* 次へボタン */
 .nextButton {
   padding: 0.75rem 2rem;
-  background: #007bff;
-  color: white;
+  background: var(--color-accent);
+  color: var(--color-bg);
   border: none;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color var(--transition-base);
   align-self: center;
   min-width: 200px;
 }
 
 .nextButton:hover {
-  background: #0056b3;
+  background: var(--color-accent-hover);
 }
 
 .nextButton:active {
-  background: #003d82;
+  background: var(--color-accent-hover);
 }
 
 /* レスポンシブ対応 */

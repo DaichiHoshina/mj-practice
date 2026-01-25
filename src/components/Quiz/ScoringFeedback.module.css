@@ -1,8 +1,8 @@
 .container {
-  background: white;
+  background: var(--color-card-bg);
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-border);
   margin-top: 24px;
 }
 
@@ -14,40 +14,41 @@
 }
 
 .correct {
-  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
-  border-left: 4px solid #059669;
+  background: var(--color-success-bg);
+  border: 1px solid var(--color-success);
 }
 
 .incorrect {
-  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-  border-left: 4px solid #dc2626;
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error);
 }
 
 .resultTitle {
   margin: 0 0 8px 0;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .correct .resultTitle {
-  color: #059669;
+  color: var(--color-success);
 }
 
 .incorrect .resultTitle {
-  color: #dc2626;
+  color: var(--color-error);
 }
 
 .selectedAnswer {
   margin: 0;
   font-size: 14px;
-  color: #374151;
+  color: var(--color-text-secondary);
 }
 
 /* 正解セクション */
 .correctAnswer {
   padding: 16px;
-  background-color: #fafafa;
+  background-color: var(--color-bg);
   border-radius: 8px;
+  border: 1px solid var(--color-border);
   margin-bottom: 24px;
 }
 
@@ -55,8 +56,8 @@
   margin: 0 0 12px 0;
   font-size: 16px;
   font-weight: 600;
-  color: #1f2937;
-  border-bottom: 2px solid #e5e7eb;
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
   padding-bottom: 8px;
 }
 
@@ -76,25 +77,26 @@
 .scoreLabel {
   font-size: 14px;
   font-weight: 600;
-  color: #6b7280;
+  color: var(--color-text-secondary);
 }
 
 .scoreValue {
   font-size: 24px;
-  font-weight: 700;
-  color: #1976d2;
+  font-weight: 600;
+  color: var(--color-accent);
 }
 
 .hanFuDisplay {
   padding: 8px 16px;
-  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  background: var(--color-card-bg);
   border-radius: 8px;
+  border: 1px solid var(--color-accent);
 }
 
 .hanFu {
   font-size: 16px;
   font-weight: 600;
-  color: #1565c0;
+  color: var(--color-accent);
 }
 
 /* 役一覧セクション */
@@ -113,27 +115,27 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px;
-  background-color: #f9fafb;
+  background-color: var(--color-card-bg);
   border-radius: 6px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--color-border);
 }
 
 .yakuName {
   font-size: 14px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--color-text-primary);
 }
 
 .yakuHan {
   font-size: 14px;
   font-weight: 600;
-  color: #1976d2;
+  color: var(--color-accent);
 }
 
 .emptyMessage {
   text-align: center;
   padding: 16px;
-  color: #9ca3af;
+  color: var(--color-text-muted);
   font-size: 14px;
 }
 
@@ -153,8 +155,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
-  background-color: #f9fafb;
+  background-color: var(--color-card-bg);
   border-radius: 6px;
+  border: 1px solid var(--color-border);
 }
 
 .fuTotal {
@@ -162,27 +165,28 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px;
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  background: var(--color-card-bg);
   border-radius: 6px;
-  font-weight: 700;
+  font-weight: 600;
   margin-top: 8px;
+  border: 2px solid var(--color-accent);
 }
 
 .fuLabel {
   font-size: 14px;
   font-weight: 600;
-  color: #6b7280;
+  color: var(--color-text-secondary);
 }
 
 .fuValue {
   font-size: 14px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--color-text-primary);
 }
 
 .fuTotal .fuValue {
   font-size: 16px;
-  color: #92400e;
+  color: var(--color-accent);
 }
 
 /* 計算式セクション */
@@ -192,16 +196,16 @@
 
 .calculation {
   padding: 16px;
-  background-color: #f0f9ff;
+  background-color: var(--color-card-bg);
   border-radius: 8px;
-  border: 1px solid #bae6fd;
+  border: 1px solid var(--color-border);
 }
 
 .formula {
   margin: 8px 0;
   font-size: 14px;
   font-family: 'Courier New', monospace;
-  color: #0c4a6e;
+  color: var(--color-text-primary);
   line-height: 1.6;
 }
 
@@ -212,10 +216,11 @@
 
 .explanation {
   padding: 16px;
-  background-color: #fafafa;
+  background-color: var(--color-bg);
   border-radius: 8px;
+  border: 1px solid var(--color-border);
   line-height: 1.8;
-  color: #374151;
+  color: var(--color-text-secondary);
 }
 
 .explanation h1,
@@ -223,7 +228,7 @@
 .explanation h3 {
   margin-top: 16px;
   margin-bottom: 8px;
-  color: #1f2937;
+  color: var(--color-text-primary);
 }
 
 .explanation h1 {
@@ -254,16 +259,17 @@
 
 .explanation code {
   padding: 2px 6px;
-  background-color: #e5e7eb;
+  background-color: var(--color-border);
   border-radius: 4px;
   font-family: 'Courier New', monospace;
   font-size: 0.9em;
+  color: var(--color-text-primary);
 }
 
 .explanation pre {
   padding: 12px;
-  background-color: #1f2937;
-  color: #f9fafb;
+  background-color: var(--color-accent);
+  color: var(--color-bg);
   border-radius: 6px;
   overflow-x: auto;
 }
