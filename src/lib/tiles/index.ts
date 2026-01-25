@@ -117,9 +117,15 @@ export const TILE_TO_FILENAME: Record<TileType, string> = {
  * @param tile 牌タイプ
  * @returns SVGファイルのパス (例: /tiles/Man1.svg)
  */
+/**
+ * 牌タイプからSVGファイルのパスを取得
+ * @param tile 牌タイプ
+ * @returns SVGファイルのパス (例: /tiles/Man1.svg)
+ */
 export function getTilePath(tile: TileType): string {
   const filename = TILE_TO_FILENAME[tile];
-  return `/tiles/${filename}`;
+  const basePath = process.env.NODE_ENV === 'production' ? '/mj-practice' : '';
+  return `${basePath}/tiles/${filename}`;
 }
 
 /**
