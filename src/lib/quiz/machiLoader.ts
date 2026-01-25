@@ -2,13 +2,21 @@ import { MachiQuestion, QuizDifficulty } from './types';
 import { TileType } from '../tiles';
 
 /**
+ * basePathを考慮したパスを取得
+ */
+function getBasePath(): string {
+  return process.env.NODE_ENV === 'production' ? '/mj-practice' : '';
+}
+
+/**
  * 7枚待ちクイズデータをロード
  */
 export async function loadMachiQuestions(
   difficulty?: QuizDifficulty
 ): Promise<MachiQuestion[]> {
   try {
-    const response = await fetch('/data/questions/machi-7.json');
+    const basePath = getBasePath();
+    const response = await fetch(`${basePath}/data/questions/machi-7.json`);
     if (!response.ok) {
       throw new Error(`Failed to load questions: ${response.status}`);
     }
@@ -44,7 +52,7 @@ export async function loadMachiQuestions(
  */
 export function getMachiCandidates(): TileType[] {
   const candidates: TileType[] = [];
-  
+
   // 型ガード関数
   function isManzuTile(value: string): value is TileType {
     return /^[1-9]m$/.test(value);
@@ -56,7 +64,7 @@ export function getMachiCandidates(): TileType[] {
       candidates.push(tile);
     }
   }
-  
+
   return candidates;
 }
 
@@ -79,4 +87,3 @@ export function checkMachiAnswer(
   // 選択した牌が全て正解に含まれていればOK（部分一致を許可）
   return Array.from(selectedSet).every((tile) => correctSet.has(tile));
 }
-
