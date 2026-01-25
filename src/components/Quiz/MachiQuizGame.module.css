@@ -55,10 +55,28 @@
 
 .candidates {
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   max-width: 600px;
   margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+  .candidates {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 640px) {
+  .candidates {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .candidates {
+    grid-template-columns: repeat(9, 1fr);
+  }
 }
 
 .tileButton {

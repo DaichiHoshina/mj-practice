@@ -41,6 +41,17 @@
   border: 1px dashed var(--color-border);
 }
 
+/* ヒントメッセージ */
+.hint {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg);
+  border-radius: 0.375rem;
+  border-left: 3px solid var(--color-accent);
+}
+
 /* 牌リスト */
 .tileList {
   display: flex;

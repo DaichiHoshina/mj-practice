@@ -27,6 +27,51 @@
   line-height: 1.6;
 }
 
+.instructions {
+  max-width: 1200px;
+  margin: 0 auto 32px auto;
+  padding: 20px 24px;
+  background: var(--color-card-bg);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+.instructionsTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 12px 0;
+}
+
+.instructionsList {
+  margin: 0;
+  padding-left: 24px;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.instructionsList li {
+  margin: 8px 0;
+}
+
+.resetButton {
+  margin-top: 16px;
+  padding: 10px 20px;
+  border: 1px solid var(--color-accent);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.resetButton:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
 .content {
   max-width: 1200px;
   margin: 0 auto;

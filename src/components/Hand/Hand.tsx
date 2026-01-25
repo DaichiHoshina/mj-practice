@@ -48,16 +48,21 @@ export function Hand({ hand, onRemove }: HandProps) {
           牌を選択して手牌に追加してください
         </div>
       ) : (
-        <div className={styles.tileList}>
-          {sortedHand.map((tile, index) => (
-            <Tile
-              key={`${tile}-${index}`}
-              tile={tile}
-              onClick={onRemove ? () => handleTileClick(tile) : undefined}
-              size="medium"
-            />
-          ))}
-        </div>
+        <>
+          {onRemove && (
+            <div className={styles.hint}>クリックで削除できます</div>
+          )}
+          <div className={styles.tileList}>
+            {sortedHand.map((tile, index) => (
+              <Tile
+                key={`${tile}-${index}`}
+                tile={tile}
+                onClick={onRemove ? () => handleTileClick(tile) : undefined}
+                size="medium"
+              />
+            ))}
+          </div>
+        </>
       )}
     </div>
   );

@@ -151,6 +151,11 @@ export function QuizGame({ category = 'shanten' }: QuizGameProps) {
                 ? isCorrect
                 : undefined
             }
+            isCorrectAnswer={
+              gameState === 'feedback' &&
+              !isCorrect &&
+              choice.id === currentQuestion.correctAnswer
+            }
             disabled={gameState === 'feedback'}
           />
         ))}

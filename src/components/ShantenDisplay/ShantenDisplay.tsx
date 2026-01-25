@@ -11,6 +11,8 @@ export interface ShantenDisplayProps {
   result: ShantenResult;
   /** 有効牌一覧 */
   effectiveTiles: readonly EffectiveTile[];
+  /** 手牌枚数 */
+  handSize: number;
 }
 
 /**
@@ -19,6 +21,7 @@ export interface ShantenDisplayProps {
 export function ShantenDisplay({
   result,
   effectiveTiles,
+  handSize,
 }: ShantenDisplayProps) {
   // 向聴数の表示テキスト
   const getShantenText = (): string => {
@@ -69,9 +72,11 @@ export function ShantenDisplay({
         </div>
       )}
 
-      {effectiveTiles.length === 0 && !result.isComplete && (
+      {effectiveTiles.length === 0 && !result.isComplete && handSize > 0 && (
         <div className={styles.noEffective}>
-          有効牌がありません（手牌を確認してください）
+          {handSize < 13
+            ? `手牌が13枚になると有効牌が計算されます（現在${handSize}枚）`
+            : '有効牌がありません（手牌を確認してください）'}
         </div>
       )}
 

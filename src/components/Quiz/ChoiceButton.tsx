@@ -12,6 +12,8 @@ export interface ChoiceButtonProps {
   selected: boolean;
   /** 正解かどうか */
   isCorrect?: boolean;
+  /** この選択肢が正解かどうか（不正解時に正解を表示） */
+  isCorrectAnswer?: boolean;
   /** 無効状態 */
   disabled: boolean;
 }
@@ -24,6 +26,7 @@ export function ChoiceButton({
   onClick,
   selected,
   isCorrect,
+  isCorrectAnswer = false,
   disabled,
 }: ChoiceButtonProps) {
   const handleClick = () => {
@@ -39,9 +42,12 @@ export function ChoiceButton({
       classes.push(isCorrect ? styles.correct : styles.incorrect);
     } else if (selected) {
       classes.push(styles.selected);
+    } else if (isCorrectAnswer && disabled) {
+      // 不正解時に正解の選択肢を表示
+      classes.push(styles.correctAnswer);
     }
 
-    if (disabled && !selected) {
+    if (disabled && !selected && !isCorrectAnswer) {
       classes.push(styles.disabled);
     }
 

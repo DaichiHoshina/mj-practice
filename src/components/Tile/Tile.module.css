@@ -41,8 +41,8 @@
 }
 
 .tile.clickable:hover {
-  border-width: 2px;
   border-color: var(--color-accent-hover);
+  box-shadow: 0 0 0 1px var(--color-accent-hover);
 }
 
 .tile.clickable:active {
@@ -52,11 +52,13 @@
 /* 選択状態 */
 .tile.selected {
   background-color: var(--color-card-bg);
-  border: 2px solid var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent);
 }
 
 .tile.selected:hover {
   border-color: var(--color-accent-hover);
+  box-shadow: 0 0 0 1px var(--color-accent-hover);
 }
 
 /* 無効状態 */
