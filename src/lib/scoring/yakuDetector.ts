@@ -502,83 +502,141 @@ function buildYakuResult(
  * @param context 和了コンテキスト
  * @returns 役判定結果
  */
+/**
+ * 2つの役判定結果を比較し、新しい結果の方が良いか判定
+ */
+function isBetterResult(
+  newResult: YakuResult,
+  newFu: number,
+  newScore: number,
+  bestResult: YakuResult | null,
+  bestFu: number,
+  bestScore: number
+): boolean {
+  if (!bestResult) return true;
+  if (newResult.totalHan > bestResult.totalHan) return true;
+  if (newResult.totalHan === bestResult.totalHan) {
+    if (newFu > bestFu) return true;
+    if (newFu === bestFu && newScore > bestScore) return true;
+  }
+  return false;
+}
+
+/**
+ * 1つのdecompositionに対して役を評価
+ */
+function evaluateDecomposition(
+  decomposition: DecomposedHand,
+  baseYakuIds: Set<string>,
+  hand: readonly TileType[],
+  context: WinContext
+): { result: YakuResult; fu: number; score: number } {
+  const yakuIds = new Set(baseYakuIds);
+  let extraHan = 0;
+  const { mentsu, jantou } = decomposition;
+
+  // 各種役判定
+  if (detectPinfu(decomposition, hand, context)) yakuIds.add('pinfu');
+  if (context.isMenzen && detectIipeikou(mentsu)) yakuIds.add('iipeikou');
+  if (detectIkkitsuukan(mentsu)) yakuIds.add('ikkitsuukan');
+  if (detectSanshokuDoujun(mentsu)) yakuIds.add('sanshoku_doujun');
+  if (detectSanshokuDoukou(mentsu)) yakuIds.add('sanshoku_doukou');
+  if (detectToitoi(mentsu)) yakuIds.add('toitoi');
+  if (detectSanankou(mentsu, context)) yakuIds.add('sanankou');
+  if (detectChanta(mentsu, jantou)) yakuIds.add('chanta');
+  if (detectJunchan(mentsu, jantou)) yakuIds.add('junchan');
+  if (detectSuuankou(mentsu, decomposition, hand, context))
+    yakuIds.add('suuankou');
+  if (detectDaisangen(mentsu)) yakuIds.add('daisangen');
+  if (detectSankantsu(mentsu)) yakuIds.add('sankantsu');
+  if (detectHonroutou(mentsu, jantou)) yakuIds.add('honroutou');
+  if (detectShousangen(mentsu, jantou)) yakuIds.add('shousangen');
+
+  const yakuhai = detectYakuhai(decomposition, context);
+  yakuhai.ids.forEach((id) => yakuIds.add(id));
+  extraHan = yakuhai.bonusHan;
+
+  const result = buildYakuResult(yakuIds, context, extraHan, decomposition);
+  const fuBreakdown = calculateFu(hand, result, context);
+  const score = calculateScore(
+    fuBreakdown.total,
+    result.totalHan,
+    context.isDealer,
+    context.isTsumo
+  ).score;
+
+  return { result, fu: fuBreakdown.total, score };
+}
+
+/**
+ * 複数のdecompositionから最適なものを選択
+ */
+function selectBestDecomposition(
+  decompositions: readonly DecomposedHand[],
+  baseYakuIds: Set<string>,
+  hand: readonly TileType[],
+  context: WinContext
+): YakuResult {
+  let bestResult: YakuResult | null = null;
+  let bestFu = -1;
+  let bestScore = -1;
+
+  for (const decomposition of decompositions) {
+    const { result, fu, score } = evaluateDecomposition(
+      decomposition,
+      baseYakuIds,
+      hand,
+      context
+    );
+
+    if (isBetterResult(result, fu, score, bestResult, bestFu, bestScore)) {
+      bestResult = result;
+      bestFu = fu;
+      bestScore = score;
+    }
+  }
+
+  return bestResult ?? buildYakuResult(baseYakuIds, context, 0, null);
+}
+
+/**
+ * 手牌から役を検出する
+ * @param hand 手牌（13or14枚）
+ * @param context 和了コンテキスト
+ * @returns 役判定結果
+ */
 export function detectYaku(
   hand: readonly TileType[],
   context: WinContext
 ): YakuResult {
+  // 七対子
   if (detectChiitoitsu(hand) && context.isMenzen) {
     const yakuIds = new Set<string>(['chiitoitsu']);
     return buildYakuResult(yakuIds, context, 0, null);
   }
 
+  // 国士無双
   if (detectKokushimusou(hand) && context.isMenzen) {
     const yakuIds = new Set<string>(['kokushimusou']);
     const result = buildYakuResult(yakuIds, context, 0, null);
     return { ...result, isYakuman: true, totalHan: 13 };
   }
 
-  const decompositions = decomposeHand(hand);
+  // 基本役（面子構成に依存しない役）
   const baseYakuIds = new Set<string>();
   if (detectRiichi(context)) baseYakuIds.add('riichi');
   if (detectTanyao(hand)) baseYakuIds.add('tanyao');
   if (detectHonitsu(hand)) baseYakuIds.add('honitsu');
   if (detectChinitsu(hand)) baseYakuIds.add('chinitsu');
 
+  // 面子分解
+  const decompositions = decomposeHand(hand);
   if (decompositions.length === 0) {
     return buildYakuResult(baseYakuIds, context, 0, null);
   }
 
-  let bestResult: YakuResult | null = null;
-  let bestFu = -1;
-  let bestScore = -1;
-  for (const decomposition of decompositions) {
-    const yakuIds = new Set(baseYakuIds);
-    let extraHan = 0;
-    const { mentsu, jantou } = decomposition;
-
-    if (detectPinfu(decomposition, hand, context)) yakuIds.add('pinfu');
-    if (context.isMenzen && detectIipeikou(mentsu)) yakuIds.add('iipeikou');
-    if (detectIkkitsuukan(mentsu)) yakuIds.add('ikkitsuukan');
-    if (detectSanshokuDoujun(mentsu)) yakuIds.add('sanshoku_doujun');
-    if (detectSanshokuDoukou(mentsu)) yakuIds.add('sanshoku_doukou');
-    if (detectToitoi(mentsu)) yakuIds.add('toitoi');
-    if (detectSanankou(mentsu, context)) yakuIds.add('sanankou');
-    if (detectChanta(mentsu, jantou)) yakuIds.add('chanta');
-    if (detectJunchan(mentsu, jantou)) yakuIds.add('junchan');
-    if (detectSuuankou(mentsu, decomposition, hand, context))
-      yakuIds.add('suuankou');
-    if (detectDaisangen(mentsu)) yakuIds.add('daisangen');
-    if (detectSankantsu(mentsu)) yakuIds.add('sankantsu');
-    if (detectHonroutou(mentsu, jantou)) yakuIds.add('honroutou');
-    if (detectShousangen(mentsu, jantou)) yakuIds.add('shousangen');
-
-    const yakuhai = detectYakuhai(decomposition, context);
-    yakuhai.ids.forEach((id) => yakuIds.add(id));
-    extraHan = yakuhai.bonusHan;
-
-    const result = buildYakuResult(yakuIds, context, extraHan, decomposition);
-    const fuBreakdown = calculateFu(hand, result, context);
-    const score = calculateScore(
-      fuBreakdown.total,
-      result.totalHan,
-      context.isDealer,
-      context.isTsumo
-    ).score;
-
-    if (
-      !bestResult ||
-      result.totalHan > bestResult.totalHan ||
-      (result.totalHan === bestResult.totalHan &&
-        (fuBreakdown.total > bestFu ||
-          (fuBreakdown.total === bestFu && score > bestScore)))
-    ) {
-      bestResult = result;
-      bestFu = fuBreakdown.total;
-      bestScore = score;
-    }
-  }
-
-  return (
-    bestResult ?? buildYakuResult(baseYakuIds, context, 0, null)
-  );
+  // 最適なdecompositionを選択
+  return selectBestDecomposition(decompositions, baseYakuIds, hand, context);
 }
+
+

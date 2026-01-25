@@ -14,8 +14,9 @@
 
 /* サイズバリエーション */
 .tile.small {
-  width: 32px;
-  height: 44px;
+  /* WCAG推奨: タッチターゲット44x44px以上 */
+  width: 40px;
+  height: 55px;
   flex: 0 0 auto;
 }
 

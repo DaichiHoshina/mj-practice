@@ -1,4 +1,21 @@
 import { Question, QuizDifficulty } from './types';
+
+/**
+ * 問題が見つからない場合のカスタムエラー
+ */
+export class QuestionNotFoundError extends Error {
+  constructor(
+    public readonly difficulty: QuizDifficulty,
+    public readonly category: 'machi' | 'scoring' | 'efficiency',
+    public readonly availableCount: number
+  ) {
+    super(
+      `No ${category} questions found for difficulty: ${difficulty} (available: ${availableCount})`
+    );
+    this.name = 'QuestionNotFoundError';
+    Object.setPrototypeOf(this, QuestionNotFoundError.prototype);
+  }
+}
 import { ScoringQuestion } from '@/lib/scoring/types';
 import easyQuestions from '@/data/questions/easy.json';
 import easyPart2Questions from '@/data/questions/easy-part2.json';
@@ -51,7 +68,7 @@ export function loadQuestions(
   );
 
   if (filteredQuestions.length === 0) {
-    throw new Error(`No questions found for difficulty: ${difficulty}`);
+    throw new QuestionNotFoundError(difficulty, 'machi', allQuestions.length);
   }
 
   const shuffled = shuffleArray(filteredQuestions);
@@ -103,7 +120,11 @@ export function loadScoringQuestions(
   );
 
   if (filteredQuestions.length === 0) {
-    throw new Error(`No scoring questions found for difficulty: ${difficulty}`);
+    throw new QuestionNotFoundError(
+      difficulty,
+      'scoring',
+      allScoringQuestions.length
+    );
   }
 
   const shuffled = shuffleArray(filteredQuestions);
@@ -146,8 +167,10 @@ export function loadEfficiencyQuestions(
   );
 
   if (filteredQuestions.length === 0) {
-    throw new Error(
-      `No efficiency questions found for difficulty: ${difficulty}`
+    throw new QuestionNotFoundError(
+      difficulty,
+      'efficiency',
+      allEfficiencyQuestions.length
     );
   }
 

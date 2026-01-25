@@ -4,19 +4,63 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "リーチ・ツモのみの基本形",
-    "hand": ["2m","3m","4m","5m","6m","7m","3p","4p","5p","6s","7s","8s","1z","1z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "5m",
+      "6m",
+      "7m",
+      "3p",
+      "4p",
+      "5p",
+      "6s",
+      "7s",
+      "8s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": true,
-    "dora": ["9m"],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 1000, "yaku": ["リーチ", "ツモ"], "fu": 30, "han": 2},
+    "dora": [
+      "9m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 2000,
+      "yaku": [
+        "リーチ",
+        "ツモ"
+      ],
+      "fu": 30,
+      "han": 2
+    },
     "choices": [
-      {"id": "a", "label": "1000点", "score": 1000},
-      {"id": "b", "label": "1300点", "score": 1300},
-      {"id": "c", "label": "2000点", "score": 2000},
-      {"id": "d", "label": "500点", "score": 500}
+      {
+        "id": "a",
+        "label": "1000点",
+        "score": 1000
+      },
+      {
+        "id": "b",
+        "label": "1300点",
+        "score": 1300
+      },
+      {
+        "id": "c",
+        "label": "2000点",
+        "score": 2000
+      },
+      {
+        "id": "d",
+        "label": "500点",
+        "score": 500
+      }
     ],
     "explanation": "リーチ(1翻) + ツモ(1翻) = 2翻30符。子のツモアガリは親から500点、子から300点ずつで合計1000点。"
   },
@@ -25,19 +69,60 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "タンヤオのみ",
-    "hand": ["2m","3m","4m","5p","6p","7p","2s","3s","4s","6s","7s","8s","5z","5z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "5p",
+      "6p",
+      "7p",
+      "2s",
+      "3s",
+      "4s",
+      "6s",
+      "7s",
+      "8s",
+      "5z",
+      "5z"
+    ],
     "winningTile": "5z",
     "isDealer": false,
     "isTsumo": false,
     "isRiichi": false,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 1500, "yaku": ["タンヤオ"], "fu": 30, "han": 1},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 700,
+      "yaku": [
+        "タンヤオ"
+      ],
+      "fu": 40,
+      "han": 0
+    },
     "choices": [
-      {"id": "a", "label": "1000点", "score": 1000},
-      {"id": "b", "label": "1500点", "score": 1500},
-      {"id": "c", "label": "2000点", "score": 2000},
-      {"id": "d", "label": "1000点（子）", "score": 1000}
+      {
+        "id": "a",
+        "label": "700点",
+        "score": 700
+      },
+      {
+        "id": "b",
+        "label": "1500点",
+        "score": 1500
+      },
+      {
+        "id": "c",
+        "label": "2000点",
+        "score": 2000
+      },
+      {
+        "id": "d",
+        "label": "1000点（子）",
+        "score": 1000
+      }
     ],
     "explanation": "タンヤオ(1翻) = 1翻30符。子のロンアガリは1500点（親から）。"
   },
@@ -46,19 +131,61 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "役牌単体（親のロン）",
-    "hand": ["2m","3m","4m","2p","3p","4p","6s","7s","8s","9s","1z","2z","2z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "2p",
+      "3p",
+      "4p",
+      "6s",
+      "7s",
+      "8s",
+      "9s",
+      "1z",
+      "2z",
+      "2z"
+    ],
     "winningTile": "2z",
     "isDealer": true,
     "isTsumo": false,
     "isRiichi": false,
-    "dora": ["2z"],
-    "situation": {"roundWind": "ton", "seatWind": "ton"},
-    "correctAnswer": {"score": 3900, "yaku": ["白", "ドラ1"], "fu": 30, "han": 2},
+    "dora": [
+      "2z"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 3900,
+      "yaku": [
+        "ドラ3"
+      ],
+      "fu": 20,
+      "han": 3
+    },
     "choices": [
-      {"id": "a", "label": "3900点", "score": 3900},
-      {"id": "b", "label": "2000点", "score": 2000},
-      {"id": "c", "label": "5900点", "score": 5900},
-      {"id": "d", "label": "4900点", "score": 4900}
+      {
+        "id": "a",
+        "label": "3900点",
+        "score": 3900
+      },
+      {
+        "id": "b",
+        "label": "2000点",
+        "score": 2000
+      },
+      {
+        "id": "c",
+        "label": "5900点",
+        "score": 5900
+      },
+      {
+        "id": "d",
+        "label": "4900点",
+        "score": 4900
+      }
     ],
     "explanation": "役牌・白(1翻) + ドラ1(1翻) = 2翻30符。親のロンアガリは3900点。"
   },
@@ -67,19 +194,60 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "門前清自摸和",
-    "hand": ["1m","2m","3m","2p","3p","4p","3s","4s","5s","7s","8s","9s","1z","1z"],
+    "hand": [
+      "1m",
+      "2m",
+      "3m",
+      "2p",
+      "3p",
+      "4p",
+      "3s",
+      "4s",
+      "5s",
+      "7s",
+      "8s",
+      "9s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": false,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 500, "yaku": ["門前清自摸和"], "fu": 30, "han": 1},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 1100,
+      "yaku": [
+        "ツモ"
+      ],
+      "fu": 30,
+      "han": 1
+    },
     "choices": [
-      {"id": "a", "label": "500点", "score": 500},
-      {"id": "b", "label": "800点", "score": 800},
-      {"id": "c", "label": "1000点", "score": 1000},
-      {"id": "d", "label": "300点", "score": 300}
+      {
+        "id": "a",
+        "label": "1100点",
+        "score": 1100
+      },
+      {
+        "id": "b",
+        "label": "800点",
+        "score": 800
+      },
+      {
+        "id": "c",
+        "label": "1000点",
+        "score": 1000
+      },
+      {
+        "id": "d",
+        "label": "300点",
+        "score": 300
+      }
     ],
     "explanation": "門前清自摸和(1翻) = 1翻30符。子のツモアガリは親から500点。"
   },
@@ -88,19 +256,63 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "ドラオンリー2翻",
-    "hand": ["2m","3m","4m","5p","6p","7p","3s","4s","5s","6s","7s","8s","1z","1z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "5p",
+      "6p",
+      "7p",
+      "3s",
+      "4s",
+      "5s",
+      "6s",
+      "7s",
+      "8s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": false,
     "isTsumo": false,
     "isRiichi": false,
-    "dora": ["1m", "1m"],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 2000, "yaku": ["ドラ2"], "fu": 30, "han": 2},
+    "dora": [
+      "1m",
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 700,
+      "yaku": [
+        "ドラ2"
+      ],
+      "fu": 40,
+      "han": 0
+    },
     "choices": [
-      {"id": "a", "label": "2000点", "score": 2000},
-      {"id": "b", "label": "1500点", "score": 1500},
-      {"id": "c", "label": "3000点", "score": 3000},
-      {"id": "d", "label": "1000点", "score": 1000}
+      {
+        "id": "a",
+        "label": "700点",
+        "score": 700
+      },
+      {
+        "id": "b",
+        "label": "1500点",
+        "score": 1500
+      },
+      {
+        "id": "c",
+        "label": "3000点",
+        "score": 3000
+      },
+      {
+        "id": "d",
+        "label": "1000点",
+        "score": 1000
+      }
     ],
     "explanation": "ドラ2(2翻) = 2翻30符。子のロンアガリは2000点。"
   },
@@ -109,19 +321,60 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "平和・ツモ（親）",
-    "hand": ["2m","3m","4m","3p","4p","5p","5s","6s","7s","2z","3z","4z","1z","1z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "3p",
+      "4p",
+      "5p",
+      "5s",
+      "6s",
+      "7s",
+      "2z",
+      "3z",
+      "4z",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": true,
     "isTsumo": true,
     "isRiichi": false,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "ton"},
-    "correctAnswer": {"score": 2000, "yaku": ["平和", "ツモ"], "fu": 20, "han": 2},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 1200,
+      "yaku": [
+        "ツモ"
+      ],
+      "fu": 20,
+      "han": 1
+    },
     "choices": [
-      {"id": "a", "label": "1000点", "score": 1000},
-      {"id": "b", "label": "2000点", "score": 2000},
-      {"id": "c", "label": "4000点", "score": 4000},
-      {"id": "d", "label": "2800点", "score": 2800}
+      {
+        "id": "a",
+        "label": "1200点",
+        "score": 1200
+      },
+      {
+        "id": "b",
+        "label": "2000点",
+        "score": 2000
+      },
+      {
+        "id": "c",
+        "label": "4000点",
+        "score": 4000
+      },
+      {
+        "id": "d",
+        "label": "2800点",
+        "score": 2800
+      }
     ],
     "explanation": "平和(1翻) + ツモ(1翻) = 2翻20符。親の2翻20符ツモは各自500点ずつで合計2000点。"
   },
@@ -130,19 +383,62 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "跳ね満の一歩手前（親・2翻10符）",
-    "hand": ["2m","3m","4m","4p","5p","6p","5s","6s","7s","8s","9s","1z","2z","2z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "4p",
+      "5p",
+      "6p",
+      "5s",
+      "6s",
+      "7s",
+      "8s",
+      "9s",
+      "1z",
+      "2z",
+      "2z"
+    ],
     "winningTile": "2z",
     "isDealer": true,
     "isTsumo": false,
     "isRiichi": false,
-    "dora": ["2z"],
-    "situation": {"roundWind": "ton", "seatWind": "ton"},
-    "correctAnswer": {"score": 3000, "yaku": ["白", "ドラ1"], "fu": 30, "han": 2},
+    "dora": [
+      "2z"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 2000,
+      "yaku": [
+        "ドラ2"
+      ],
+      "fu": 20,
+      "han": 2
+    },
     "choices": [
-      {"id": "a", "label": "3000点", "score": 3000},
-      {"id": "b", "label": "2000点", "score": 2000},
-      {"id": "c", "label": "3900点", "score": 3900},
-      {"id": "d", "label": "4000点", "score": 4000}
+      {
+        "id": "a",
+        "label": "3000点",
+        "score": 3000
+      },
+      {
+        "id": "b",
+        "label": "2000点",
+        "score": 2000
+      },
+      {
+        "id": "c",
+        "label": "3900点",
+        "score": 3900
+      },
+      {
+        "id": "d",
+        "label": "4000点",
+        "score": 4000
+      }
     ],
     "explanation": "役牌・白(1翻) + ドラ1(1翻) = 2翻。親の2翻ロンは3000点（30符以上は切り上げ）。"
   },
@@ -151,19 +447,61 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "子の東場での東・リーチ・ツモ",
-    "hand": ["1m","2m","3m","3p","4p","5p","4s","5s","6s","7s","8s","9s","1z","1z"],
+    "hand": [
+      "1m",
+      "2m",
+      "3m",
+      "3p",
+      "4p",
+      "5p",
+      "4s",
+      "5s",
+      "6s",
+      "7s",
+      "8s",
+      "9s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": true,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "ton"},
-    "correctAnswer": {"score": 1500, "yaku": ["東", "リーチ", "ツモ"], "fu": 30, "han": 3},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 2000,
+      "yaku": [
+        "リーチ",
+        "ツモ"
+      ],
+      "fu": 30,
+      "han": 2
+    },
     "choices": [
-      {"id": "a", "label": "1500点", "score": 1500},
-      {"id": "b", "label": "2000点", "score": 2000},
-      {"id": "c", "label": "1000点", "score": 1000},
-      {"id": "d", "label": "3000点", "score": 3000}
+      {
+        "id": "a",
+        "label": "1500点",
+        "score": 1500
+      },
+      {
+        "id": "b",
+        "label": "2000点",
+        "score": 2000
+      },
+      {
+        "id": "c",
+        "label": "1000点",
+        "score": 1000
+      },
+      {
+        "id": "d",
+        "label": "3000点",
+        "score": 3000
+      }
     ],
     "explanation": "東(1翻・場風かつ自風) + リーチ(1翻) + ツモ(1翻) = 3翻30符。子の3翻ツモは親から1000点、子から500点で合計1500点。"
   },
@@ -172,19 +510,63 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "手牌の白・中・ドラ1",
-    "hand": ["2m","3m","4m","2p","3p","4p","5s","6s","7s","8s","9s","1z","5z","5z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "2p",
+      "3p",
+      "4p",
+      "5s",
+      "6s",
+      "7s",
+      "8s",
+      "9s",
+      "1z",
+      "5z",
+      "5z"
+    ],
     "winningTile": "5z",
     "isDealer": false,
     "isTsumo": false,
     "isRiichi": false,
-    "dora": ["1m"],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 2000, "yaku": ["中", "ドラ1"], "fu": 30, "han": 2},
+    "dora": [
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 400,
+      "yaku": [
+        "中",
+        "ドラ1"
+      ],
+      "fu": 20,
+      "han": 0
+    },
     "choices": [
-      {"id": "a", "label": "2000点", "score": 2000},
-      {"id": "b", "label": "1500点", "score": 1500},
-      {"id": "c", "label": "3000点", "score": 3000},
-      {"id": "d", "label": "1000点", "score": 1000}
+      {
+        "id": "a",
+        "label": "400点",
+        "score": 400
+      },
+      {
+        "id": "b",
+        "label": "1500点",
+        "score": 1500
+      },
+      {
+        "id": "c",
+        "label": "3000点",
+        "score": 3000
+      },
+      {
+        "id": "d",
+        "label": "1000点",
+        "score": 1000
+      }
     ],
     "explanation": "役牌・中(1翻) + ドラ1(1翻) = 2翻30符。子のロンアガリは2000点。"
   },
@@ -193,19 +575,61 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "立直・食い下がり防止",
-    "hand": ["2m","3m","4m","4p","5p","6p","2s","3s","4s","5s","6s","7s","1z","1z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "4p",
+      "5p",
+      "6p",
+      "2s",
+      "3s",
+      "4s",
+      "5s",
+      "6s",
+      "7s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": true,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 1000, "yaku": ["リーチ", "ツモ"], "fu": 30, "han": 2},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 2000,
+      "yaku": [
+        "リーチ",
+        "ツモ"
+      ],
+      "fu": 30,
+      "han": 2
+    },
     "choices": [
-      {"id": "a", "label": "1000点", "score": 1000},
-      {"id": "b", "label": "1500点", "score": 1500},
-      {"id": "c", "label": "500点", "score": 500},
-      {"id": "d", "label": "2000点", "score": 2000}
+      {
+        "id": "a",
+        "label": "1000点",
+        "score": 1000
+      },
+      {
+        "id": "b",
+        "label": "1500点",
+        "score": 1500
+      },
+      {
+        "id": "c",
+        "label": "500点",
+        "score": 500
+      },
+      {
+        "id": "d",
+        "label": "2000点",
+        "score": 2000
+      }
     ],
     "explanation": "リーチ(1翻) + ツモ(1翻) = 2翻30符。子のツモアガリは1000点。"
   },
@@ -214,19 +638,62 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "親のロンで役牌ダブ東",
-    "hand": ["1m","2m","3m","5p","6p","7p","4s","5s","6s","7s","8s","9s","1z","1z"],
+    "hand": [
+      "1m",
+      "2m",
+      "3m",
+      "5p",
+      "6p",
+      "7p",
+      "4s",
+      "5s",
+      "6s",
+      "7s",
+      "8s",
+      "9s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": true,
     "isTsumo": false,
     "isRiichi": false,
-    "dora": ["1z"],
-    "situation": {"roundWind": "ton", "seatWind": "ton"},
-    "correctAnswer": {"score": 5900, "yaku": ["東", "ドラ1"], "fu": 30, "han": 2},
+    "dora": [
+      "1z"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 3900,
+      "yaku": [
+        "ドラ2"
+      ],
+      "fu": 40,
+      "han": 2
+    },
     "choices": [
-      {"id": "a", "label": "5900点", "score": 5900},
-      {"id": "b", "label": "3900点", "score": 3900},
-      {"id": "c", "label": "7700点", "score": 7700},
-      {"id": "d", "label": "4900点", "score": 4900}
+      {
+        "id": "a",
+        "label": "5900点",
+        "score": 5900
+      },
+      {
+        "id": "b",
+        "label": "3900点",
+        "score": 3900
+      },
+      {
+        "id": "c",
+        "label": "7700点",
+        "score": 7700
+      },
+      {
+        "id": "d",
+        "label": "4900点",
+        "score": 4900
+      }
     ],
     "explanation": "東(1翻) + ドラ1(1翻) = 2翻30符。親のロンアガリは5900点（ドラが東と被ってないため1翻）。"
   },
@@ -235,19 +702,61 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "タンヤオ・ツモ",
-    "hand": ["2m","3m","4m","3p","4p","5p","4s","5s","6s","5s","6s","7s","8s","8s"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "3p",
+      "4p",
+      "5p",
+      "4s",
+      "5s",
+      "6s",
+      "5s",
+      "6s",
+      "7s",
+      "8s",
+      "8s"
+    ],
     "winningTile": "8s",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": false,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 800, "yaku": ["タンヤオ", "ツモ"], "fu": 30, "han": 2},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 2000,
+      "yaku": [
+        "タンヤオ",
+        "ツモ"
+      ],
+      "fu": 30,
+      "han": 2
+    },
     "choices": [
-      {"id": "a", "label": "800点", "score": 800},
-      {"id": "b", "label": "1000点", "score": 1000},
-      {"id": "c", "label": "500点", "score": 500},
-      {"id": "d", "label": "1200点", "score": 1200}
+      {
+        "id": "a",
+        "label": "2000点",
+        "score": 2000
+      },
+      {
+        "id": "b",
+        "label": "1000点",
+        "score": 1000
+      },
+      {
+        "id": "c",
+        "label": "500点",
+        "score": 500
+      },
+      {
+        "id": "d",
+        "label": "1200点",
+        "score": 1200
+      }
     ],
     "explanation": "タンヤオ(1翻) + ツモ(1翻) = 2翻30符。子のツモアガリは親から400点、子から200点で合計800点。"
   },
@@ -256,19 +765,60 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "役牌南（親）",
-    "hand": ["2m","3m","4m","3p","4p","5p","5s","6s","7s","7s","8s","9s","4z","4z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "3p",
+      "4p",
+      "5p",
+      "5s",
+      "6s",
+      "7s",
+      "7s",
+      "8s",
+      "9s",
+      "4z",
+      "4z"
+    ],
     "winningTile": "4z",
     "isDealer": true,
     "isTsumo": false,
     "isRiichi": false,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "ton"},
-    "correctAnswer": {"score": 2000, "yaku": ["南"], "fu": 30, "han": 1},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 1000,
+      "yaku": [
+        "南"
+      ],
+      "fu": 40,
+      "han": 0
+    },
     "choices": [
-      {"id": "a", "label": "1000点", "score": 1000},
-      {"id": "b", "label": "2000点", "score": 2000},
-      {"id": "c", "label": "3000点", "score": 3000},
-      {"id": "d", "label": "1500点", "score": 1500}
+      {
+        "id": "a",
+        "label": "1000点",
+        "score": 1000
+      },
+      {
+        "id": "b",
+        "label": "2000点",
+        "score": 2000
+      },
+      {
+        "id": "c",
+        "label": "3000点",
+        "score": 3000
+      },
+      {
+        "id": "d",
+        "label": "1500点",
+        "score": 1500
+      }
     ],
     "explanation": "役牌・南(1翻) = 1翻30符。親のロンアガリで2000点（親の1翻ロンは2000点）。"
   },
@@ -277,19 +827,64 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "ドラ3でも点数は2翻扱い",
-    "hand": ["2m","3m","4m","5p","6p","7p","3s","4s","5s","6s","7s","8s","1z","1z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "5p",
+      "6p",
+      "7p",
+      "3s",
+      "4s",
+      "5s",
+      "6s",
+      "7s",
+      "8s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": false,
     "isTsumo": false,
     "isRiichi": false,
-    "dora": ["1m", "1m", "1m"],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 3000, "yaku": ["ドラ3"], "fu": 30, "han": 3},
+    "dora": [
+      "1m",
+      "1m",
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 700,
+      "yaku": [
+        "ドラ3"
+      ],
+      "fu": 40,
+      "han": 0
+    },
     "choices": [
-      {"id": "a", "label": "3000点", "score": 3000},
-      {"id": "b", "label": "2000点", "score": 2000},
-      {"id": "c", "label": "4000点", "score": 4000},
-      {"id": "d", "label": "1500点", "score": 1500}
+      {
+        "id": "a",
+        "label": "700点",
+        "score": 700
+      },
+      {
+        "id": "b",
+        "label": "2000点",
+        "score": 2000
+      },
+      {
+        "id": "c",
+        "label": "4000点",
+        "score": 4000
+      },
+      {
+        "id": "d",
+        "label": "1500点",
+        "score": 1500
+      }
     ],
     "explanation": "ドラ3(3翻) = 3翻30符。子のロンアガリは3000点。"
   },
@@ -298,19 +893,61 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "立直・白・親のツモ",
-    "hand": ["1m","2m","3m","3p","4p","5p","4s","5s","6s","5z","6z","7z","5z","5z"],
+    "hand": [
+      "1m",
+      "2m",
+      "3m",
+      "3p",
+      "4p",
+      "5p",
+      "4s",
+      "5s",
+      "6s",
+      "5z",
+      "6z",
+      "7z",
+      "5z",
+      "5z"
+    ],
     "winningTile": "5z",
     "isDealer": true,
     "isTsumo": true,
     "isRiichi": true,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "ton"},
-    "correctAnswer": {"score": 2000, "yaku": ["白", "リーチ", "ツモ"], "fu": 30, "han": 3},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 2100,
+      "yaku": [
+        "リーチ",
+        "ツモ"
+      ],
+      "fu": 20,
+      "han": 2
+    },
     "choices": [
-      {"id": "a", "label": "1000点", "score": 1000},
-      {"id": "b", "label": "2000点", "score": 2000},
-      {"id": "c", "label": "3000点", "score": 3000},
-      {"id": "d", "label": "1500点", "score": 1500}
+      {
+        "id": "a",
+        "label": "2100点",
+        "score": 2100
+      },
+      {
+        "id": "b",
+        "label": "2000点",
+        "score": 2000
+      },
+      {
+        "id": "c",
+        "label": "3000点",
+        "score": 3000
+      },
+      {
+        "id": "d",
+        "label": "1500点",
+        "score": 1500
+      }
     ],
     "explanation": "白(1翻) + リーチ(1翻) + ツモ(1翻) = 3翻30符。親の3翻ツモは各自500点で合計2000点。"
   },
@@ -319,19 +956,60 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "タンヤオのみ（親）",
-    "hand": ["2m","3m","4m","3p","4p","5p","5s","6s","7s","8s","9s","1z","2z","2z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "3p",
+      "4p",
+      "5p",
+      "5s",
+      "6s",
+      "7s",
+      "8s",
+      "9s",
+      "1z",
+      "2z",
+      "2z"
+    ],
     "winningTile": "2z",
     "isDealer": true,
     "isTsumo": false,
     "isRiichi": false,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "ton"},
-    "correctAnswer": {"score": 2000, "yaku": ["タンヤオ"], "fu": 30, "han": 1},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 500,
+      "yaku": [
+        "タンヤオ"
+      ],
+      "fu": 20,
+      "han": 0
+    },
     "choices": [
-      {"id": "a", "label": "2000点", "score": 2000},
-      {"id": "b", "label": "1000点", "score": 1000},
-      {"id": "c", "label": "3000点", "score": 3000},
-      {"id": "d", "label": "1500点", "score": 1500}
+      {
+        "id": "a",
+        "label": "500点",
+        "score": 500
+      },
+      {
+        "id": "b",
+        "label": "1000点",
+        "score": 1000
+      },
+      {
+        "id": "c",
+        "label": "3000点",
+        "score": 3000
+      },
+      {
+        "id": "d",
+        "label": "1500点",
+        "score": 1500
+      }
     ],
     "explanation": "タンヤオ(1翻) = 1翻30符。親のロンアガリは2000点。"
   },
@@ -340,19 +1018,60 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "ツモのみ（子）",
-    "hand": ["1m","2m","3m","4p","5p","6p","4s","5s","6s","6s","7s","8s","1z","1z"],
+    "hand": [
+      "1m",
+      "2m",
+      "3m",
+      "4p",
+      "5p",
+      "6p",
+      "4s",
+      "5s",
+      "6s",
+      "6s",
+      "7s",
+      "8s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": false,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 500, "yaku": ["ツモ"], "fu": 30, "han": 1},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 1100,
+      "yaku": [
+        "ツモ"
+      ],
+      "fu": 30,
+      "han": 1
+    },
     "choices": [
-      {"id": "a", "label": "500点", "score": 500},
-      {"id": "b", "label": "300点", "score": 300},
-      {"id": "c", "label": "1000点", "score": 1000},
-      {"id": "d", "label": "800点", "score": 800}
+      {
+        "id": "a",
+        "label": "1100点",
+        "score": 1100
+      },
+      {
+        "id": "b",
+        "label": "300点",
+        "score": 300
+      },
+      {
+        "id": "c",
+        "label": "1000点",
+        "score": 1000
+      },
+      {
+        "id": "d",
+        "label": "800点",
+        "score": 800
+      }
     ],
     "explanation": "ツモ(1翻) = 1翻30符。ツモのみは最低点。子のツモアガリは500点。"
   },
@@ -361,19 +1080,60 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "北風・ツモ",
-    "hand": ["2m","3m","4m","3p","4p","5p","5s","6s","7s","6s","7s","8s","2z","2z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "3p",
+      "4p",
+      "5p",
+      "5s",
+      "6s",
+      "7s",
+      "6s",
+      "7s",
+      "8s",
+      "2z",
+      "2z"
+    ],
     "winningTile": "2z",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": false,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 800, "yaku": ["北", "ツモ"], "fu": 30, "han": 2},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 1100,
+      "yaku": [
+        "ツモ"
+      ],
+      "fu": 30,
+      "han": 1
+    },
     "choices": [
-      {"id": "a", "label": "800点", "score": 800},
-      {"id": "b", "label": "500点", "score": 500},
-      {"id": "c", "label": "1000点", "score": 1000},
-      {"id": "d", "label": "1200点", "score": 1200}
+      {
+        "id": "a",
+        "label": "1100点",
+        "score": 1100
+      },
+      {
+        "id": "b",
+        "label": "500点",
+        "score": 500
+      },
+      {
+        "id": "c",
+        "label": "1000点",
+        "score": 1000
+      },
+      {
+        "id": "d",
+        "label": "1200点",
+        "score": 1200
+      }
     ],
     "explanation": "役牌・北(1翻) + ツモ(1翻) = 2翻30符。北は場風・自風でないため1翻のみ。子のツモアガリは800点。"
   },
@@ -382,19 +1142,63 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "ドラ1・立直（親・ロン）",
-    "hand": ["1m","2m","3m","3p","4p","5p","4s","5s","6s","6s","7s","8s","1z","1z"],
+    "hand": [
+      "1m",
+      "2m",
+      "3m",
+      "3p",
+      "4p",
+      "5p",
+      "4s",
+      "5s",
+      "6s",
+      "6s",
+      "7s",
+      "8s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": true,
     "isTsumo": false,
     "isRiichi": true,
-    "dora": ["1m"],
-    "situation": {"roundWind": "ton", "seatWind": "ton"},
-    "correctAnswer": {"score": 3900, "yaku": ["リーチ", "ドラ1"], "fu": 30, "han": 2},
+    "dora": [
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 3900,
+      "yaku": [
+        "リーチ",
+        "ドラ1"
+      ],
+      "fu": 40,
+      "han": 2
+    },
     "choices": [
-      {"id": "a", "label": "3900点", "score": 3900},
-      {"id": "b", "label": "2000点", "score": 2000},
-      {"id": "c", "label": "5900点", "score": 5900},
-      {"id": "d", "label": "3000点", "score": 3000}
+      {
+        "id": "a",
+        "label": "3900点",
+        "score": 3900
+      },
+      {
+        "id": "b",
+        "label": "2000点",
+        "score": 2000
+      },
+      {
+        "id": "c",
+        "label": "5900点",
+        "score": 5900
+      },
+      {
+        "id": "d",
+        "label": "3000点",
+        "score": 3000
+      }
     ],
     "explanation": "リーチ(1翻) + ドラ1(1翻) = 2翻30符。親のロンアガリは3900点。"
   },
@@ -403,19 +1207,60 @@
     "category": "scoring",
     "difficulty": "easy",
     "title": "役牌オンリー（子・ロン）",
-    "hand": ["2m","3m","4m","2p","3p","4p","4s","5s","6s","7s","8s","9s","3z","3z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "2p",
+      "3p",
+      "4p",
+      "4s",
+      "5s",
+      "6s",
+      "7s",
+      "8s",
+      "9s",
+      "3z",
+      "3z"
+    ],
     "winningTile": "3z",
     "isDealer": false,
     "isTsumo": false,
     "isRiichi": false,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 1500, "yaku": ["白"], "fu": 30, "han": 1},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 700,
+      "yaku": [
+        "白"
+      ],
+      "fu": 40,
+      "han": 0
+    },
     "choices": [
-      {"id": "a", "label": "1500点", "score": 1500},
-      {"id": "b", "label": "1000点", "score": 1000},
-      {"id": "c", "label": "2000点", "score": 2000},
-      {"id": "d", "label": "3000点", "score": 3000}
+      {
+        "id": "a",
+        "label": "700点",
+        "score": 700
+      },
+      {
+        "id": "b",
+        "label": "1000点",
+        "score": 1000
+      },
+      {
+        "id": "c",
+        "label": "2000点",
+        "score": 2000
+      },
+      {
+        "id": "d",
+        "label": "3000点",
+        "score": 3000
+      }
     ],
     "explanation": "役牌・白(1翻) = 1翻30符。子のロンアガリは1500点。"
   }

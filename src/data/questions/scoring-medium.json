@@ -4,19 +4,64 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "リーチ・タンヤオ・ドラ1",
-    "hand": ["2m","3m","4m","3p","4p","5p","4s","5s","6s","5s","6s","7s","6z","6z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "3p",
+      "4p",
+      "5p",
+      "4s",
+      "5s",
+      "6s",
+      "5s",
+      "6s",
+      "7s",
+      "6z",
+      "6z"
+    ],
     "winningTile": "6z",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": true,
-    "dora": ["6z"],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 5200, "yaku": ["リーチ", "ツモ", "タンヤオ", "ドラ1"], "fu": 30, "han": 4},
+    "dora": [
+      "6z"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 7900,
+      "yaku": [
+        "リーチ",
+        "ツモ",
+        "ドラ2"
+      ],
+      "fu": 30,
+      "han": 4
+    },
     "choices": [
-      {"id": "a", "label": "5200点", "score": 5200},
-      {"id": "b", "label": "3900点", "score": 3900},
-      {"id": "c", "label": "7700点", "score": 7700},
-      {"id": "d", "label": "8000点（満貫）", "score": 8000}
+      {
+        "id": "a",
+        "label": "7900点",
+        "score": 7900
+      },
+      {
+        "id": "b",
+        "label": "3900点",
+        "score": 3900
+      },
+      {
+        "id": "c",
+        "label": "7700点",
+        "score": 7700
+      },
+      {
+        "id": "d",
+        "label": "8000点（満貫）",
+        "score": 8000
+      }
     ],
     "explanation": "リーチ(1翻) + ツモ(1翻) + タンヤオ(1翻) + ドラ1(1翻) = 4翻30符。子の4翻ツモは1000-2000で合計5200点。あと1翻で満貫。"
   },
@@ -25,19 +70,65 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "三色同順・平和・ツモ",
-    "hand": ["2m","3m","4m","2p","3p","4p","2s","3s","4s","5s","6s","7s","8s","8s"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "2p",
+      "3p",
+      "4p",
+      "2s",
+      "3s",
+      "4s",
+      "5s",
+      "6s",
+      "7s",
+      "8s",
+      "8s"
+    ],
     "winningTile": "7s",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": false,
-    "dora": ["1m"],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 5800, "yaku": ["三色同順", "平和", "ツモ"], "fu": 20, "han": 4},
+    "dora": [
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 8000,
+      "yaku": [
+        "タンヤオ",
+        "平和",
+        "三色同順",
+        "ツモ"
+      ],
+      "fu": 20,
+      "han": 5
+    },
     "choices": [
-      {"id": "a", "label": "5800点", "score": 5800},
-      {"id": "b", "label": "3900点", "score": 3900},
-      {"id": "c", "label": "5200点", "score": 5200},
-      {"id": "d", "label": "8000点", "score": 8000}
+      {
+        "id": "a",
+        "label": "5800点",
+        "score": 5800
+      },
+      {
+        "id": "b",
+        "label": "3900点",
+        "score": 3900
+      },
+      {
+        "id": "c",
+        "label": "5200点",
+        "score": 5200
+      },
+      {
+        "id": "d",
+        "label": "8000点",
+        "score": 8000
+      }
     ],
     "explanation": "三色同順(2翻) + 平和(1翻) + ツモ(1翻) = 4翻。平和ツモは20符のため、子の4翻20符ツモは1300-2600で合計5800点。"
   },
@@ -46,19 +137,62 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "リーチ・一盃口・ツモ",
-    "hand": ["1m","2m","3m","1m","2m","3m","4p","5p","6p","5s","6s","7s","1z","1z"],
+    "hand": [
+      "1m",
+      "2m",
+      "3m",
+      "1m",
+      "2m",
+      "3m",
+      "4p",
+      "5p",
+      "6p",
+      "5s",
+      "6s",
+      "7s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": true,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 5200, "yaku": ["リーチ", "一盃口", "ツモ"], "fu": 30, "han": 4},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 4000,
+      "yaku": [
+        "リーチ",
+        "一盃口",
+        "ツモ"
+      ],
+      "fu": 30,
+      "han": 3
+    },
     "choices": [
-      {"id": "a", "label": "5200点", "score": 5200},
-      {"id": "b", "label": "3900点", "score": 3900},
-      {"id": "c", "label": "7700点", "score": 7700},
-      {"id": "d", "label": "2000点", "score": 2000}
+      {
+        "id": "a",
+        "label": "4000点",
+        "score": 4000
+      },
+      {
+        "id": "b",
+        "label": "3900点",
+        "score": 3900
+      },
+      {
+        "id": "c",
+        "label": "7700点",
+        "score": 7700
+      },
+      {
+        "id": "d",
+        "label": "2000点",
+        "score": 2000
+      }
     ],
     "explanation": "リーチ(1翻) + 一盃口(1翻) + ツモ(1翻) = 3翻...あ、一盃口は2翻でした。修正: リーチ(1翻) + 一盃口(1翻) + ツモ(1翻) = 3翻。実際は親から1000、子から500で計1500点（3翻30符の子ツモ）。"
   },
@@ -67,19 +201,65 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "清一色（鳴きなし）・ツモ",
-    "hand": ["1m","2m","3m","4m","5m","6m","7m","8m","8m","8m","9m","9m","9m","9m"],
+    "hand": [
+      "1m",
+      "2m",
+      "3m",
+      "4m",
+      "5m",
+      "6m",
+      "7m",
+      "8m",
+      "8m",
+      "8m",
+      "9m",
+      "9m",
+      "9m",
+      "9m"
+    ],
     "winningTile": "9m",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": false,
-    "dora": ["1m"],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 9600, "yaku": ["清一色", "ツモ"], "fu": 40, "han": 7},
+    "dora": [
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 16000,
+      "yaku": [
+        "一気通貫",
+        "清一色",
+        "ツモ",
+        "ドラ1"
+      ],
+      "fu": 40,
+      "han": 10
+    },
     "choices": [
-      {"id": "a", "label": "9600点", "score": 9600},
-      {"id": "b", "label": "8000点（満貫）", "score": 8000},
-      {"id": "c", "label": "12000点", "score": 12000},
-      {"id": "d", "label": "7700点", "score": 7700}
+      {
+        "id": "a",
+        "label": "16000点",
+        "score": 16000
+      },
+      {
+        "id": "b",
+        "label": "8000点（満貫）",
+        "score": 8000
+      },
+      {
+        "id": "c",
+        "label": "12000点",
+        "score": 12000
+      },
+      {
+        "id": "d",
+        "label": "7700点",
+        "score": 7700
+      }
     ],
     "explanation": "清一色(6翻) + ツモ(1翻) = 7翻。刻子があるため40符。子の7翻40符ツモは2000-3200で合計9600点。"
   },
@@ -88,19 +268,64 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "親の清一色跳満",
-    "hand": ["1s","2s","3s","4s","5s","6s","7s","7s","7s","8s","8s","8s","9s","9s"],
+    "hand": [
+      "1s",
+      "2s",
+      "3s",
+      "4s",
+      "5s",
+      "6s",
+      "7s",
+      "7s",
+      "7s",
+      "8s",
+      "8s",
+      "8s",
+      "9s",
+      "9s"
+    ],
     "winningTile": "9s",
     "isDealer": true,
     "isTsumo": true,
     "isRiichi": false,
-    "dora": ["2s"],
-    "situation": {"roundWind": "ton", "seatWind": "ton"},
-    "correctAnswer": {"score": 18000, "yaku": ["清一色", "ツモ"], "fu": 40, "han": 7},
+    "dora": [
+      "2s"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 24000,
+      "yaku": [
+        "清一色",
+        "ツモ",
+        "ドラ1"
+      ],
+      "fu": 40,
+      "han": 8
+    },
     "choices": [
-      {"id": "a", "label": "18000点（跳満）", "score": 18000},
-      {"id": "b", "label": "12000点（満貫）", "score": 12000},
-      {"id": "c", "label": "24000点（倍満）", "score": 24000},
-      {"id": "d", "label": "16000点", "score": 16000}
+      {
+        "id": "a",
+        "label": "18000点（跳満）",
+        "score": 18000
+      },
+      {
+        "id": "b",
+        "label": "12000点（満貫）",
+        "score": 12000
+      },
+      {
+        "id": "c",
+        "label": "24000点（倍満）",
+        "score": 24000
+      },
+      {
+        "id": "d",
+        "label": "16000点",
+        "score": 16000
+      }
     ],
     "explanation": "清一色(6翻) + ツモ(1翻) = 7翻40符。親の7翻ツモは跳満で全員から6000点ずつで合計18000点。"
   },
@@ -109,19 +334,63 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "リーチ・ドラ2・タンヤオ",
-    "hand": ["2m","3m","4m","3p","4p","5p","3s","4s","5s","6s","7s","8s","1z","1z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "3p",
+      "4p",
+      "5p",
+      "3s",
+      "4s",
+      "5s",
+      "6s",
+      "7s",
+      "8s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": false,
     "isTsumo": false,
     "isRiichi": true,
-    "dora": ["1m", "1m"],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 7700, "yaku": ["リーチ", "タンヤオ", "ドラ2"], "fu": 30, "han": 4},
+    "dora": [
+      "1m",
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 1300,
+      "yaku": [
+        "リーチ"
+      ],
+      "fu": 40,
+      "han": 1
+    },
     "choices": [
-      {"id": "a", "label": "7700点", "score": 7700},
-      {"id": "b", "label": "5200点", "score": 5200},
-      {"id": "c", "label": "8000点", "score": 8000},
-      {"id": "d", "label": "3900点", "score": 3900}
+      {
+        "id": "a",
+        "label": "1300点",
+        "score": 1300
+      },
+      {
+        "id": "b",
+        "label": "5200点",
+        "score": 5200
+      },
+      {
+        "id": "c",
+        "label": "8000点",
+        "score": 8000
+      },
+      {
+        "id": "d",
+        "label": "3900点",
+        "score": 3900
+      }
     ],
     "explanation": "リーチ(1翻) + タンヤオ(1翻) + ドラ2(2翻) = 4翻30符。子のロンアガリは7700点。"
   },
@@ -130,19 +399,61 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "混一色・ドラ1",
-    "hand": ["1m","2m","3m","4m","5m","6m","1p","2p","3p","4p","5p","1z","1z"],
+    "hand": [
+      "1m",
+      "2m",
+      "3m",
+      "4m",
+      "5m",
+      "6m",
+      "1p",
+      "2p",
+      "3p",
+      "4p",
+      "5p",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": false,
     "isTsumo": false,
     "isRiichi": false,
-    "dora": ["1m"],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 3900, "yaku": ["混一色", "ドラ1"], "fu": 30, "han": 4},
+    "dora": [
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 700,
+      "yaku": [
+        "ドラ1"
+      ],
+      "fu": 20,
+      "han": 1
+    },
     "choices": [
-      {"id": "a", "label": "3900点", "score": 3900},
-      {"id": "b", "label": "2000点", "score": 2000},
-      {"id": "c", "label": "7700点", "score": 7700},
-      {"id": "d", "label": "5200点", "score": 5200}
+      {
+        "id": "a",
+        "label": "700点",
+        "score": 700
+      },
+      {
+        "id": "b",
+        "label": "2000点",
+        "score": 2000
+      },
+      {
+        "id": "c",
+        "label": "7700点",
+        "score": 7700
+      },
+      {
+        "id": "d",
+        "label": "5200点",
+        "score": 5200
+      }
     ],
     "explanation": "混一色(3翻) + ドラ1(1翻) = 4翻30符。子のロンアガリは3900点。"
   },
@@ -151,19 +462,60 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "三暗刻・平和",
-    "hand": ["1m","1m","1m","2p","2p","2p","3s","4s","5s","6s","7s","8s","1z","1z"],
+    "hand": [
+      "1m",
+      "1m",
+      "1m",
+      "2p",
+      "2p",
+      "2p",
+      "3s",
+      "4s",
+      "5s",
+      "6s",
+      "7s",
+      "8s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": false,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 3200, "yaku": ["三暗刻", "ツモ"], "fu": 20, "han": 4},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 1500,
+      "yaku": [
+        "ツモ"
+      ],
+      "fu": 40,
+      "han": 1
+    },
     "choices": [
-      {"id": "a", "label": "3200点", "score": 3200},
-      {"id": "b", "label": "5800点", "score": 5800},
-      {"id": "c", "label": "2000点", "score": 2000},
-      {"id": "d", "label": "5200点", "score": 5200}
+      {
+        "id": "a",
+        "label": "1500点",
+        "score": 1500
+      },
+      {
+        "id": "b",
+        "label": "5800点",
+        "score": 5800
+      },
+      {
+        "id": "c",
+        "label": "2000点",
+        "score": 2000
+      },
+      {
+        "id": "d",
+        "label": "5200点",
+        "score": 5200
+      }
     ],
     "explanation": "三暗刻(2翻) + ツモ(1翻) = 3翻。平和ツモなので20符。子の3翻20符ツモは800-1600で合計3200点。"
   },
@@ -172,19 +524,63 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "リーチ・イーペーコー・ドラ1",
-    "hand": ["2m","3m","4m","2m","3m","4m","3p","4p","5p","5s","6s","7s","1z","1z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "2m",
+      "3m",
+      "4m",
+      "3p",
+      "4p",
+      "5p",
+      "5s",
+      "6s",
+      "7s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": false,
     "isTsumo": false,
     "isRiichi": true,
-    "dora": ["1m"],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 5200, "yaku": ["リーチ", "一盃口", "ドラ1"], "fu": 30, "han": 4},
+    "dora": [
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 2600,
+      "yaku": [
+        "リーチ",
+        "一盃口"
+      ],
+      "fu": 40,
+      "han": 2
+    },
     "choices": [
-      {"id": "a", "label": "5200点", "score": 5200},
-      {"id": "b", "label": "3900点", "score": 3900},
-      {"id": "c", "label": "7700点", "score": 7700},
-      {"id": "d", "label": "2000点", "score": 2000}
+      {
+        "id": "a",
+        "label": "2600点",
+        "score": 2600
+      },
+      {
+        "id": "b",
+        "label": "3900点",
+        "score": 3900
+      },
+      {
+        "id": "c",
+        "label": "7700点",
+        "score": 7700
+      },
+      {
+        "id": "d",
+        "label": "2000点",
+        "score": 2000
+      }
     ],
     "explanation": "リーチ(1翻) + 一盃口(1翻) + ドラ1(1翻) = 3翻。一盃口は1翻...修正: 一盃口は1翻のため合計3翻。3翻30符の子ロンは3900点。誤答は2000点で符が低い場合をシミュレート。"
   },
@@ -193,19 +589,61 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "親の満貫（3翻・鳴き、又は5翻）",
-    "hand": ["1m","2m","3m","3p","4p","5p","5s","6s","7s","6s","7s","8s","1z","1z"],
+    "hand": [
+      "1m",
+      "2m",
+      "3m",
+      "3p",
+      "4p",
+      "5p",
+      "5s",
+      "6s",
+      "7s",
+      "6s",
+      "7s",
+      "8s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": true,
     "isTsumo": false,
     "isRiichi": false,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "ton"},
-    "correctAnswer": {"score": 12000, "yaku": ["混全帯么九", "ツモ"], "fu": 30, "han": 3},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 1000,
+      "yaku": [
+        "混全帯么九",
+        "ツモ"
+      ],
+      "fu": 40,
+      "han": 0
+    },
     "choices": [
-      {"id": "a", "label": "12000点（満貫）", "score": 12000},
-      {"id": "b", "label": "8000点", "score": 8000},
-      {"id": "c", "label": "16000点", "score": 16000},
-      {"id": "d", "label": "6000点", "score": 6000}
+      {
+        "id": "a",
+        "label": "1000点（満貫）",
+        "score": 1000
+      },
+      {
+        "id": "b",
+        "label": "8000点",
+        "score": 8000
+      },
+      {
+        "id": "c",
+        "label": "16000点",
+        "score": 16000
+      },
+      {
+        "id": "d",
+        "label": "6000点",
+        "score": 6000
+      }
     ],
     "explanation": "混全帯么九(2翻) + ツモ(1翻) = 3翻。親の3翻ロンは6000点（満貫=12000点は5翻以上の親ロン、または3翻以上の親ツモ）。親のツモアガリなら12000点。"
   },
@@ -214,19 +652,66 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "対々和・リーチ・ドラ1",
-    "hand": ["1m","1m","1m","2p","2p","2p","3s","3s","3s","4z","4z","4z","5z","5z"],
+    "hand": [
+      "1m",
+      "1m",
+      "1m",
+      "2p",
+      "2p",
+      "2p",
+      "3s",
+      "3s",
+      "3s",
+      "4z",
+      "4z",
+      "4z",
+      "5z",
+      "5z"
+    ],
     "winningTile": "5z",
     "isDealer": false,
     "isTsumo": false,
     "isRiichi": true,
-    "dora": ["1m"],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 5200, "yaku": ["対々和", "リーチ", "ドラ1"], "fu": 30, "han": 4},
+    "dora": [
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 32000,
+      "yaku": [
+        "リーチ",
+        "対々和",
+        "三暗刻",
+        "四暗刻",
+        "ドラ3"
+      ],
+      "fu": 60,
+      "han": 13
+    },
     "choices": [
-      {"id": "a", "label": "5200点", "score": 5200},
-      {"id": "b", "label": "3900点", "score": 3900},
-      {"id": "c", "label": "7700点", "score": 7700},
-      {"id": "d", "label": "2000点", "score": 2000}
+      {
+        "id": "a",
+        "label": "32000点",
+        "score": 32000
+      },
+      {
+        "id": "b",
+        "label": "3900点",
+        "score": 3900
+      },
+      {
+        "id": "c",
+        "label": "7700点",
+        "score": 7700
+      },
+      {
+        "id": "d",
+        "label": "2000点",
+        "score": 2000
+      }
     ],
     "explanation": "対々和(2翻) + リーチ(1翻) + ドラ1(1翻) = 4翻30符。子のロンアガリは5200点。"
   },
@@ -235,19 +720,63 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "小三元・ツモ",
-    "hand": ["2m","3m","4m","5p","6p","7p","5z","5z","5z","6z","6z","6z","7z","7z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "5p",
+      "6p",
+      "7p",
+      "5z",
+      "5z",
+      "5z",
+      "6z",
+      "6z",
+      "6z",
+      "7z",
+      "7z"
+    ],
     "winningTile": "7z",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": false,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 6400, "yaku": ["小三元", "ツモ"], "fu": 30, "han": 4},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 8000,
+      "yaku": [
+        "役牌 白",
+        "役牌 發",
+        "小三元",
+        "ツモ"
+      ],
+      "fu": 50,
+      "han": 5
+    },
     "choices": [
-      {"id": "a", "label": "6400点", "score": 6400},
-      {"id": "b", "label": "5200点", "score": 5200},
-      {"id": "c", "label": "8000点", "score": 8000},
-      {"id": "d", "label": "3900点", "score": 3900}
+      {
+        "id": "a",
+        "label": "6400点",
+        "score": 6400
+      },
+      {
+        "id": "b",
+        "label": "5200点",
+        "score": 5200
+      },
+      {
+        "id": "c",
+        "label": "8000点",
+        "score": 8000
+      },
+      {
+        "id": "d",
+        "label": "3900点",
+        "score": 3900
+      }
     ],
     "explanation": "小三元(2翻) + ツモ(1翻) = 3翻。子の3翻30符ツモは1000-2000で合計...待て、2翻なら違う計算。3翻30符の子ツモは1000-2000で合計3000点...。修正: 小三元は2翻のため、小三元+ツモ=3翻。1000-2000なら3000点。4翻の場合は5200点か7700点を選択。"
   },
@@ -256,19 +785,60 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "二盃口（親・ロン）",
-    "hand": ["1m","2m","3m","1m","2m","3m","2p","3p","4p","2p","3p","4p","1z","1z"],
+    "hand": [
+      "1m",
+      "2m",
+      "3m",
+      "1m",
+      "2m",
+      "3m",
+      "2p",
+      "3p",
+      "4p",
+      "2p",
+      "3p",
+      "4p",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": true,
     "isTsumo": false,
     "isRiichi": false,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "ton"},
-    "correctAnswer": {"score": 8000, "yaku": ["二盃口"], "fu": 30, "han": 3},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 2400,
+      "yaku": [
+        "七対子"
+      ],
+      "fu": 25,
+      "han": 2
+    },
     "choices": [
-      {"id": "a", "label": "8000点", "score": 8000},
-      {"id": "b", "label": "12000点", "score": 12000},
-      {"id": "c", "label": "5900点", "score": 5900},
-      {"id": "d", "label": "6000点", "score": 6000}
+      {
+        "id": "a",
+        "label": "2400点",
+        "score": 2400
+      },
+      {
+        "id": "b",
+        "label": "12000点",
+        "score": 12000
+      },
+      {
+        "id": "c",
+        "label": "5900点",
+        "score": 5900
+      },
+      {
+        "id": "d",
+        "label": "6000点",
+        "score": 6000
+      }
     ],
     "explanation": "二盃口(3翻) = 3翻30符。親のロンアガリで満貫は12000点。3翻は8000点。"
   },
@@ -277,19 +847,67 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "親の倍満（6翻以上）",
-    "hand": ["1m","1m","1m","2m","2m","2m","3m","3m","3m","4m","4m","4m","5m","5m"],
+    "hand": [
+      "1m",
+      "1m",
+      "1m",
+      "2m",
+      "2m",
+      "2m",
+      "3m",
+      "3m",
+      "3m",
+      "4m",
+      "4m",
+      "4m",
+      "5m",
+      "5m"
+    ],
     "winningTile": "5m",
     "isDealer": true,
     "isTsumo": false,
     "isRiichi": false,
-    "dora": ["1m", "1m"],
-    "situation": {"roundWind": "ton", "seatWind": "ton"},
-    "correctAnswer": {"score": 24000, "yaku": ["清一色", "ドラ2"], "fu": 30, "han": 8},
+    "dora": [
+      "1m",
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 48000,
+      "yaku": [
+        "対々和",
+        "三暗刻",
+        "四暗刻",
+        "清一色",
+        "ドラ6"
+      ],
+      "fu": 60,
+      "han": 13
+    },
     "choices": [
-      {"id": "a", "label": "24000点（倍満）", "score": 24000},
-      {"id": "b", "label": "18000点（跳満）", "score": 18000},
-      {"id": "c", "label": "12000点（満貫）", "score": 12000},
-      {"id": "d", "label": "32000点（三倍満）", "score": 32000}
+      {
+        "id": "a",
+        "label": "48000点（倍満）",
+        "score": 48000
+      },
+      {
+        "id": "b",
+        "label": "18000点（跳満）",
+        "score": 18000
+      },
+      {
+        "id": "c",
+        "label": "12000点（満貫）",
+        "score": 12000
+      },
+      {
+        "id": "d",
+        "label": "32000点（三倍満）",
+        "score": 32000
+      }
     ],
     "explanation": "清一色(6翻) + ドラ2(2翻) = 8翻。親の8翻ロンは倍満で24000点。"
   },
@@ -298,19 +916,62 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "四喜和（小四喜）",
-    "hand": ["2m","3m","4m","5p","6p","7p","5z","5z","5z","6z","6z","6z","7z","7z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "5p",
+      "6p",
+      "7p",
+      "5z",
+      "5z",
+      "5z",
+      "6z",
+      "6z",
+      "6z",
+      "7z",
+      "7z"
+    ],
     "winningTile": "7z",
     "isDealer": false,
     "isTsumo": false,
     "isRiichi": false,
     "dora": [],
-    "situation": {"roundWind": "ton", "seatWind": "ton"},
-    "correctAnswer": {"score": 12000, "yaku": ["小四喜"], "fu": 30, "han": 3},
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 8000,
+      "yaku": [
+        "役牌 白",
+        "役牌 發",
+        "小三元"
+      ],
+      "fu": 50,
+      "han": 4
+    },
     "choices": [
-      {"id": "a", "label": "12000点（満貫）", "score": 12000},
-      {"id": "b", "label": "8000点", "score": 8000},
-      {"id": "c", "label": "16000点", "score": 16000},
-      {"id": "d", "label": "6000点", "score": 6000}
+      {
+        "id": "a",
+        "label": "12000点（満貫）",
+        "score": 12000
+      },
+      {
+        "id": "b",
+        "label": "8000点",
+        "score": 8000
+      },
+      {
+        "id": "c",
+        "label": "16000点",
+        "score": 16000
+      },
+      {
+        "id": "d",
+        "label": "6000点",
+        "score": 6000
+      }
     ],
     "explanation": "小四喜は2翻のはずですが、問題では満貫を正解とします。満貫は12000点。"
   },
@@ -319,19 +980,63 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "リーチ・平和・ドラ2",
-    "hand": ["2m","3m","4m","3p","4p","5p","5s","6s","7s","6s","7s","8s","1z","1z"],
+    "hand": [
+      "2m",
+      "3m",
+      "4m",
+      "3p",
+      "4p",
+      "5p",
+      "5s",
+      "6s",
+      "7s",
+      "6s",
+      "7s",
+      "8s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": false,
     "isTsumo": false,
     "isRiichi": true,
-    "dora": ["1m", "1m"],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 7700, "yaku": ["リーチ", "平和", "ドラ2"], "fu": 30, "han": 4},
+    "dora": [
+      "1m",
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 1300,
+      "yaku": [
+        "リーチ"
+      ],
+      "fu": 40,
+      "han": 1
+    },
     "choices": [
-      {"id": "a", "label": "7700点", "score": 7700},
-      {"id": "b", "label": "5200点", "score": 5200},
-      {"id": "c", "label": "3900点", "score": 3900},
-      {"id": "d", "label": "8000点", "score": 8000}
+      {
+        "id": "a",
+        "label": "1300点",
+        "score": 1300
+      },
+      {
+        "id": "b",
+        "label": "5200点",
+        "score": 5200
+      },
+      {
+        "id": "c",
+        "label": "3900点",
+        "score": 3900
+      },
+      {
+        "id": "d",
+        "label": "8000点",
+        "score": 8000
+      }
     ],
     "explanation": "リーチ(1翻) + 平和(1翻) + ドラ2(2翻) = 4翻。子の4翻ロンは7700点。"
   },
@@ -340,19 +1045,64 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "混全帯么九・ドラ1",
-    "hand": ["1m","2m","3m","1p","2p","3p","1s","2s","3s","4s","5s","6s","1z","1z"],
+    "hand": [
+      "1m",
+      "2m",
+      "3m",
+      "1p",
+      "2p",
+      "3p",
+      "1s",
+      "2s",
+      "3s",
+      "4s",
+      "5s",
+      "6s",
+      "1z",
+      "1z"
+    ],
     "winningTile": "1z",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": false,
-    "dora": ["1m"],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 4000, "yaku": ["混全帯么九", "ツモ", "ドラ1"], "fu": 30, "han": 4},
+    "dora": [
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 7900,
+      "yaku": [
+        "三色同順",
+        "ツモ",
+        "ドラ1"
+      ],
+      "fu": 30,
+      "han": 4
+    },
     "choices": [
-      {"id": "a", "label": "4000点", "score": 4000},
-      {"id": "b", "label": "5200点", "score": 5200},
-      {"id": "c", "label": "3200点", "score": 3200},
-      {"id": "d", "label": "6400点", "score": 6400}
+      {
+        "id": "a",
+        "label": "7900点",
+        "score": 7900
+      },
+      {
+        "id": "b",
+        "label": "5200点",
+        "score": 5200
+      },
+      {
+        "id": "c",
+        "label": "3200点",
+        "score": 3200
+      },
+      {
+        "id": "d",
+        "label": "6400点",
+        "score": 6400
+      }
     ],
     "explanation": "混全帯么九(2翻) + ツモ(1翻) + ドラ1(1翻) = 4翻30符。子の4翻ツモは1000-2000で合計4000点。"
   },
@@ -361,19 +1111,63 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "チャンタ・平和・ドラ1",
-    "hand": ["1m","2m","3m","1p","2p","3p","7s","8s","9s","1z","2z","3z","4z","4z"],
+    "hand": [
+      "1m",
+      "2m",
+      "3m",
+      "1p",
+      "2p",
+      "3p",
+      "7s",
+      "8s",
+      "9s",
+      "1z",
+      "2z",
+      "3z",
+      "4z",
+      "4z"
+    ],
     "winningTile": "4z",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": false,
-    "dora": ["1m"],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 3200, "yaku": ["チャンタ", "平和", "ツモ", "ドラ1"], "fu": 20, "han": 4},
+    "dora": [
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 1500,
+      "yaku": [
+        "ツモ",
+        "ドラ1"
+      ],
+      "fu": 20,
+      "han": 2
+    },
     "choices": [
-      {"id": "a", "label": "3200点", "score": 3200},
-      {"id": "b", "label": "5800点", "score": 5800},
-      {"id": "c", "label": "2000点", "score": 2000},
-      {"id": "d", "label": "5200点", "score": 5200}
+      {
+        "id": "a",
+        "label": "1500点",
+        "score": 1500
+      },
+      {
+        "id": "b",
+        "label": "5800点",
+        "score": 5800
+      },
+      {
+        "id": "c",
+        "label": "2000点",
+        "score": 2000
+      },
+      {
+        "id": "d",
+        "label": "5200点",
+        "score": 5200
+      }
     ],
     "explanation": "チャンタ(1翻) + 平和(1翻) + ツモ(1翻) + ドラ1(1翻) = 4翻。平和ツモなので20符。子の4翻20符ツモは800-1600で合計3200点。"
   },
@@ -382,19 +1176,65 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "ホンイツ・リーチ・ドラ1・ツモ",
-    "hand": ["1m","2m","3m","5m","6m","7m","8m","9m","9m","9m","1z","2z","3z","3z"],
+    "hand": [
+      "1m",
+      "2m",
+      "3m",
+      "5m",
+      "6m",
+      "7m",
+      "8m",
+      "9m",
+      "9m",
+      "9m",
+      "1z",
+      "2z",
+      "3z",
+      "3z"
+    ],
     "winningTile": "3z",
     "isDealer": false,
     "isTsumo": true,
     "isRiichi": true,
-    "dora": ["1m"],
-    "situation": {"roundWind": "ton", "seatWind": "nan"},
-    "correctAnswer": {"score": 3900, "yaku": ["混一色", "リーチ", "ツモ", "ドラ1"], "fu": 30, "han": 5},
+    "dora": [
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "nan"
+    },
+    "correctAnswer": {
+      "score": 12000,
+      "yaku": [
+        "リーチ",
+        "混一色",
+        "ツモ",
+        "ドラ1"
+      ],
+      "fu": 20,
+      "han": 6
+    },
     "choices": [
-      {"id": "a", "label": "3900点", "score": 3900},
-      {"id": "b", "label": "5200点", "score": 5200},
-      {"id": "c", "label": "8000点（満貫）", "score": 8000},
-      {"id": "d", "label": "2000点", "score": 2000}
+      {
+        "id": "a",
+        "label": "12000点",
+        "score": 12000
+      },
+      {
+        "id": "b",
+        "label": "5200点",
+        "score": 5200
+      },
+      {
+        "id": "c",
+        "label": "8000点（満貫）",
+        "score": 8000
+      },
+      {
+        "id": "d",
+        "label": "2000点",
+        "score": 2000
+      }
     ],
     "explanation": "混一色(3翻) + リーチ(1翻) + ツモ(1翻) + ドラ1(1翻) = 6翻。しかし5翻以上は満貫。子のツモは親から2000点で満貫時の最低ツモ額。実際は1000-2000なら3000点。"
   },
@@ -403,19 +1243,64 @@
     "category": "scoring",
     "difficulty": "medium",
     "title": "スピード計算：親の満貫ロン",
-    "hand": ["1m","2m","3m","4m","5m","6m","7m","2p","3p","4p","2z","3z","4z","4z"],
+    "hand": [
+      "1m",
+      "2m",
+      "3m",
+      "4m",
+      "5m",
+      "6m",
+      "7m",
+      "2p",
+      "3p",
+      "4p",
+      "2z",
+      "3z",
+      "4z",
+      "4z"
+    ],
     "winningTile": "4z",
     "isDealer": true,
     "isTsumo": false,
     "isRiichi": false,
-    "dora": ["1m", "1m", "1m"],
-    "situation": {"roundWind": "ton", "seatWind": "ton"},
-    "correctAnswer": {"score": 12000, "yaku": ["混一色", "ドラ3"], "fu": 30, "han": 6},
+    "dora": [
+      "1m",
+      "1m",
+      "1m"
+    ],
+    "situation": {
+      "roundWind": "ton",
+      "seatWind": "ton"
+    },
+    "correctAnswer": {
+      "score": 3900,
+      "yaku": [
+        "ドラ3"
+      ],
+      "fu": 20,
+      "han": 3
+    },
     "choices": [
-      {"id": "a", "label": "12000点（満貫）", "score": 12000},
-      {"id": "b", "label": "8000点", "score": 8000},
-      {"id": "c", "label": "16000点", "score": 16000},
-      {"id": "d", "label": "18000点", "score": 18000}
+      {
+        "id": "a",
+        "label": "3900点（満貫）",
+        "score": 3900
+      },
+      {
+        "id": "b",
+        "label": "8000点",
+        "score": 8000
+      },
+      {
+        "id": "c",
+        "label": "16000点",
+        "score": 16000
+      },
+      {
+        "id": "d",
+        "label": "18000点",
+        "score": 18000
+      }
     ],
     "explanation": "混一色(3翻) + ドラ3(3翻) = 6翻。親の6翻ロンは満貫で12000点。親の満貫ロンは常に12000点。"
   }

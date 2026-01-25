@@ -114,6 +114,26 @@
   color: var(--color-bg);
 }
 
+/* アクセシビリティ: アニメーション無効化対応 */
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+
+  .button:hover:not(:disabled) {
+    transform: none;
+  }
+
+  .choiceId {
+    transition: none;
+  }
+
+  .correct,
+  .incorrect {
+    animation: none;
+  }
+}
+
 /* Mobile Optimization */
 @media (max-width: 768px) {
   .button {
