@@ -3,168 +3,82 @@
  * 手牌から役を判定し、翻数を計算
  */
 
-import {
-  TileType,
-  NUMBER_TILES as _NUMBER_TILES,
-  HONOR_TILES as _HONOR_TILES,
-} from '../tiles';
+import { TileType } from '../tiles';
 import { YAKU_DEFINITIONS } from './constants';
-import { type Yaku as _Yaku, YakuResult, WinContext } from './types';
+import { YakuResult, WinContext } from './types';
+import {
+  decomposeHand,
+  getTileNumber,
+  getTileSuit,
+  getWaitTypes,
+  normalizeTile,
+  type DecomposedHand,
+  type Mentsu,
+} from './handDecomposer';
 
-/** メンツの型 */
-type Mentsu = {
-  readonly type: 'shuntsu' | 'koutsu' | 'kantsu';
-  readonly tiles: readonly TileType[];
-};
-
-/** 牌の正規化（赤ドラを通常牌に） */
-function normalizeTile(tile: TileType): TileType {
-  if (tile === TileType.MAN5_DORA) return TileType.MAN5;
-  if (tile === TileType.PIN5_DORA) return TileType.PIN5;
-  if (tile === TileType.SOU5_DORA) return TileType.SOU5;
-  return tile;
+function isTerminalOrHonor(tile: TileType): boolean {
+  const num = getTileNumber(tile);
+  return num === 1 || num === 9 || getTileSuit(tile) === 'honor';
 }
 
-/** 牌の種類を取得（m/p/s/honor） */
-function getTileSuit(tile: TileType): 'man' | 'pin' | 'sou' | 'honor' {
-  const str = tile as string;
-  if (str.endsWith('m') || str === '0m') return 'man';
-  if (str.endsWith('p') || str === '0p') return 'pin';
-  if (str.endsWith('s') || str === '0s') return 'sou';
-  return 'honor';
-}
-
-/** 牌の数値を取得 */
-function getTileNumber(tile: TileType): number | null {
-  const str = tile as string;
-  if (str.endsWith('m') || str.endsWith('p') || str.endsWith('s')) {
-    const num = str.slice(0, -1);
-    return num === '0' ? 5 : parseInt(num, 10);
-  }
-  return null;
-}
-
-/** 手牌をメンツに分割 */
-function splitMentsu(
-  hand: readonly TileType[],
-  _winningTile: TileType
-): Mentsu[] | null {
-  const normalized = hand.map(normalizeTile);
-  const tiles = [...normalized];
-
-  // 雀頭を探す
-  let jantouIdx = -1;
-  for (let i = 0; i < tiles.length - 1; i++) {
-    if (tiles[i] === tiles[i + 1]) {
-      jantouIdx = i;
-      break;
-    }
-  }
-
-  if (jantouIdx === -1) return null;
-
-  // 雀頭を削除
-  const remaining = [
-    ...tiles.slice(0, jantouIdx),
-    ...tiles.slice(jantouIdx + 2),
-  ];
-
-  // メンツに分割（貪欲法）
-  const mentsu: Mentsu[] = [];
-  let idx = 0;
-
-  while (idx < remaining.length) {
-    const tile = remaining[idx];
-    const suit = getTileSuit(tile);
-    const num = getTileNumber(tile);
-
-    // 刻子チェック
-    if (
-      idx + 2 < remaining.length &&
-      remaining[idx + 1] === tile &&
-      remaining[idx + 2] === tile
-    ) {
-      mentsu.push({ type: 'koutsu', tiles: [tile, tile, tile] });
-      remaining.splice(idx, 3);
-      idx = 0;
-      continue;
-    }
-
-    // 順子チェック（数牌のみ）
-    if (suit !== 'honor' && num !== null && num < 8) {
-      let found = false;
-      for (let i = idx + 1; i < remaining.length; i++) {
-        if (
-          getTileSuit(remaining[i]) === suit &&
-          getTileNumber(remaining[i]) === num + 1
-        ) {
-          for (let j = i + 1; j < remaining.length; j++) {
-            if (
-              getTileSuit(remaining[j]) === suit &&
-              getTileNumber(remaining[j]) === num + 2
-            ) {
-              mentsu.push({
-                type: 'shuntsu',
-                tiles: [tile, remaining[i], remaining[j]],
-              });
-              remaining.splice(j, 1);
-              remaining.splice(i, 1);
-              remaining.splice(idx, 1);
-              idx = 0;
-              found = true;
-              break;
-            }
-          }
-          if (found) break;
-        }
-      }
-      if (found) continue;
-    }
-
-    idx++;
-  }
-
-  // すべてメンツに分割できたか
-  return remaining.length === 0 ? mentsu : null;
+function isValuePair(tile: TileType, context: WinContext): boolean {
+  const normalized = normalizeTile(tile);
+  const windMap: Record<WinContext['roundWind'], TileType> = {
+    ton: TileType.TON,
+    nan: TileType.NAN,
+    shaa: TileType.SHAA,
+    pei: TileType.PEI,
+  };
+  const roundWindTile = windMap[context.roundWind];
+  const seatWindTile = windMap[context.seatWind];
+  return (
+    normalized === TileType.HAKU ||
+    normalized === TileType.HATSU ||
+    normalized === TileType.CHUN ||
+    normalized === roundWindTile ||
+    normalized === seatWindTile
+  );
 }
 
 /** 役判定：リーチ */
 function detectRiichi(context: WinContext): boolean {
-  return context.isRiichi;
+  return context.isMenzen && context.isRiichi;
 }
 
 /** 役判定：タンヤオ */
 function detectTanyao(hand: readonly TileType[]): boolean {
   return hand.every((tile) => {
-    const num = getTileNumber(tile);
-    return num === null || (num >= 2 && num <= 8);
+    const normalized = normalizeTile(tile);
+    const num = getTileNumber(normalized);
+    return num !== null && num >= 2 && num <= 8;
   });
 }
 
 /** 役判定：平和 */
 function detectPinfu(
-  mentsu: Mentsu[],
+  decomposition: DecomposedHand,
   hand: readonly TileType[],
-  jantou: TileType
+  context: WinContext
 ): boolean {
-  // 全て順子か確認
-  const isAllShuntsu = mentsu.every((m) => m.type === 'shuntsu');
-  if (!isAllShuntsu) return false;
+  if (!context.isMenzen) return false;
+  if (decomposition.mentsu.some((m) => m.type !== 'shuntsu')) return false;
+  if (isValuePair(decomposition.jantou, context)) return false;
 
-  // 雀頭が中張牌か確認
-  const jantouNum = getTileNumber(jantou);
-  if (jantouNum === null || jantouNum < 2 || jantouNum > 8) return false;
-
-  return true;
+  const waitTypes = getWaitTypes(
+    decomposition,
+    hand,
+    context.winningTile
+  );
+  return waitTypes.has('ryanmen');
 }
 
 /** 役判定：一盃口 */
-function detectIipekou(mentsu: Mentsu[]): boolean {
+function detectIipeikou(mentsu: readonly Mentsu[]): boolean {
   const shuntsu = mentsu.filter((m) => m.type === 'shuntsu');
   const seen = new Set<string>();
 
   for (const m of shuntsu) {
-    const key = m.tiles.map(normalizeTile).sort().join(',');
+    const key = [...m.tiles].sort().join(',');
     if (seen.has(key)) return true;
     seen.add(key);
   }
@@ -173,25 +87,68 @@ function detectIipekou(mentsu: Mentsu[]): boolean {
 }
 
 /** 役判定：役牌 */
-function detectYakuhai(hand: readonly TileType[]): string[] {
-  const yakuList: string[] = [];
-  const yakuhaiTiles: { tile: TileType; id: string }[] = [
-    { tile: TileType.HAKU, id: 'yakuhai_haku' },
-    { tile: TileType.HATSU, id: 'yakuhai_hatsu' },
-    { tile: TileType.CHUN, id: 'yakuhai_chun' },
-  ];
+function detectYakuhai(
+  decomposition: DecomposedHand,
+  context: WinContext
+): { ids: string[]; bonusHan: number } {
+  const ids: string[] = [];
+  let bonusHan = 0;
 
-  for (const { tile, id } of yakuhaiTiles) {
-    if (hand.filter((t) => normalizeTile(t) === tile).length >= 3) {
-      yakuList.push(id);
+  const windMap: Record<WinContext['roundWind'], TileType> = {
+    ton: TileType.TON,
+    nan: TileType.NAN,
+    shaa: TileType.SHAA,
+    pei: TileType.PEI,
+  };
+
+  const roundWindTile = windMap[context.roundWind];
+  const seatWindTile = windMap[context.seatWind];
+
+  const tripletTiles = new Set<TileType>();
+  for (const m of decomposition.mentsu) {
+    if (m.type === 'koutsu' || m.type === 'kantsu') {
+      tripletTiles.add(normalizeTile(m.tiles[0]));
     }
   }
 
-  return yakuList;
+  if (tripletTiles.has(TileType.HAKU)) ids.push('yakuhai_haku');
+  if (tripletTiles.has(TileType.HATSU)) ids.push('yakuhai_hatsu');
+  if (tripletTiles.has(TileType.CHUN)) ids.push('yakuhai_chun');
+
+  if (
+    tripletTiles.has(TileType.TON) &&
+    (roundWindTile === TileType.TON || seatWindTile === TileType.TON)
+  ) {
+    ids.push('yakuhai_ton');
+  }
+  if (
+    tripletTiles.has(TileType.NAN) &&
+    (roundWindTile === TileType.NAN || seatWindTile === TileType.NAN)
+  ) {
+    ids.push('yakuhai_nan');
+  }
+  if (
+    tripletTiles.has(TileType.SHAA) &&
+    (roundWindTile === TileType.SHAA || seatWindTile === TileType.SHAA)
+  ) {
+    ids.push('yakuhai_shaa');
+  }
+  if (
+    tripletTiles.has(TileType.PEI) &&
+    (roundWindTile === TileType.PEI || seatWindTile === TileType.PEI)
+  ) {
+    ids.push('yakuhai_pei');
+  }
+
+  if (roundWindTile === seatWindTile && tripletTiles.has(roundWindTile)) {
+    bonusHan = 1;
+  }
+
+  return { ids, bonusHan };
 }
 
 /** 役判定：一気通貫 */
-function detectIkkitsuukan(mentsu: Mentsu[]): boolean {
+function detectIkkitsuukan(mentsu: readonly Mentsu[]): boolean {
   for (const suit of ['man', 'pin', 'sou'] as const) {
     const shuntsu = mentsu.filter(
       (m) =>
@@ -213,10 +170,9 @@ function detectIkkitsuukan(mentsu: Mentsu[]): boolean {
 }
 
 /** 役判定：三色同順 */
-function detectSanshokuDoujun(mentsu: Mentsu[]): boolean {
+function detectSanshokuDoujun(mentsu: readonly Mentsu[]): boolean {
   const shuntsu = mentsu.filter((m) => m.type === 'shuntsu');
 
-  // 3色の順子をグループ化
   const byNumber: Map<string, TileType[][]> = new Map();
   for (const m of shuntsu) {
     const firstNum = getTileNumber(m.tiles[0]);
@@ -239,47 +195,78 @@ function detectSanshokuDoujun(mentsu: Mentsu[]): boolean {
   return false;
 }
 
+/** 役判定：三色同刻 */
+function detectSanshokuDoukou(mentsu: readonly Mentsu[]): boolean {
+  const koutsu = mentsu.filter(
+    (m) => m.type === 'koutsu' || m.type === 'kantsu'
+  );
+  const bySuit: Record<'man' | 'pin' | 'sou', Set<number>> = {
+    man: new Set(),
+    pin: new Set(),
+    sou: new Set(),
+  };
+
+  for (const m of koutsu) {
+    const suit = getTileSuit(m.tiles[0]);
+    const num = getTileNumber(m.tiles[0]);
+    if (suit !== 'honor' && num !== null) {
+      bySuit[suit].add(num);
+    }
+  }
+
+  for (let num = 1; num <= 9; num += 1) {
+    if (bySuit.man.has(num) && bySuit.pin.has(num) && bySuit.sou.has(num)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 /** 役判定：対々和 */
-function detectToitoi(mentsu: Mentsu[]): boolean {
+function detectToitoi(mentsu: readonly Mentsu[]): boolean {
   return mentsu.every((m) => m.type === 'koutsu' || m.type === 'kantsu');
+}
+
+function countConcealedTriplets(
+  mentsu: readonly Mentsu[],
+  winningTile: TileType,
+  context: WinContext
+): number {
+  if (!context.isMenzen) return 0;
+  const normalizedWinning = normalizeTile(winningTile);
+  return mentsu.filter((m) => {
+    if (m.type !== 'koutsu' && m.type !== 'kantsu') return false;
+    if (context.isTsumo) return true;
+    return !m.tiles.includes(normalizedWinning);
+  }).length;
 }
 
 /** 役判定：三暗刻 */
 function detectSanankou(
-  mentsu: Mentsu[],
-  winningTile: TileType,
-  isTsumo: boolean
+  mentsu: readonly Mentsu[],
+  context: WinContext
 ): boolean {
-  if (!isTsumo) return false;
-
-  const ankou = mentsu.filter(
-    (m) =>
-      (m.type === 'koutsu' || m.type === 'kantsu') &&
-      !m.tiles.includes(winningTile)
+  const concealedTriplets = countConcealedTriplets(
+    mentsu,
+    context.winningTile,
+    context
   );
-
-  return ankou.length >= 3;
+  return concealedTriplets >= 3;
 }
 
 /** 役判定：チャンタ */
-function detectChanta(mentsu: Mentsu[], jantou: TileType): boolean {
-  // 雀頭に1or9
-  const jantouNum = getTileNumber(jantou);
-  if (jantouNum !== null && jantouNum !== 1 && jantouNum !== 9) return false;
-  if (getTileSuit(jantou) !== 'honor' && jantouNum === null) return false;
+function detectChanta(mentsu: readonly Mentsu[], jantou: TileType): boolean {
+  if (!isTerminalOrHonor(jantou)) return false;
+  let hasShuntsu = false;
 
-  // 全メンツに1or9
   for (const m of mentsu) {
-    const hasTerminal = m.tiles.some((t) => {
-      const num = getTileNumber(t);
-      return (
-        getTileSuit(t) === 'honor' || (num !== null && (num === 1 || num === 9))
-      );
-    });
+    if (m.type === 'shuntsu') hasShuntsu = true;
+    const hasTerminal = m.tiles.some((t) => isTerminalOrHonor(t));
     if (!hasTerminal) return false;
   }
 
-  return true;
+  return hasShuntsu;
 }
 
 /** 役判定：混一色 */
@@ -368,23 +355,29 @@ function detectKokushimusou(hand: readonly TileType[]): boolean {
 
 /** 役判定：四暗刻 */
 function detectSuuankou(
-  mentsu: Mentsu[],
-  winningTile: TileType,
-  isTsumo: boolean
+  mentsu: readonly Mentsu[],
+  decomposition: DecomposedHand,
+  hand: readonly TileType[],
+  context: WinContext
 ): boolean {
-  if (!isTsumo) return false;
-
-  const ankou = mentsu.filter(
-    (m) =>
-      (m.type === 'koutsu' || m.type === 'kantsu') &&
-      !m.tiles.includes(winningTile)
+  const concealedTriplets = countConcealedTriplets(
+    mentsu,
+    context.winningTile,
+    context
   );
+  if (concealedTriplets !== 4) return false;
+  if (context.isTsumo) return true;
 
-  return ankou.length === 4;
+  const waitTypes = getWaitTypes(
+    decomposition,
+    hand,
+    context.winningTile
+  );
+  return waitTypes.has('tanki');
 }
 
 /** 役判定：大三元 */
-function detectDaisangen(mentsu: Mentsu[]): boolean {
+function detectDaisangen(mentsu: readonly Mentsu[]): boolean {
   const sangenTiles: TileType[] = [
     TileType.HAKU,
     TileType.HATSU,
@@ -406,59 +399,47 @@ function detectDaisangen(mentsu: Mentsu[]): boolean {
 }
 
 /** 役判定：三槓子 */
-function detectSankantsu(mentsu: Mentsu[]): boolean {
+function detectSankantsu(mentsu: readonly Mentsu[]): boolean {
   const kantsu = mentsu.filter((m) => m.type === 'kantsu');
-  return kantsu.length === 3;
+  return kantsu.length >= 3;
 }
 
 /** 役判定：混老頭 */
-function detectHonroutou(hand: readonly TileType[], jantou: TileType): boolean {
-  const validTiles = [
-    TileType.MAN1,
-    TileType.MAN9,
-    TileType.PIN1,
-    TileType.PIN9,
-    TileType.SOU1,
-    TileType.SOU9,
-    TileType.TON,
-    TileType.NAN,
-    TileType.SHAA,
-    TileType.PEI,
-    TileType.HAKU,
-    TileType.HATSU,
-    TileType.CHUN,
-  ];
+function detectHonroutou(
+  mentsu: readonly Mentsu[],
+  jantou: TileType
+): boolean {
+  if (!isTerminalOrHonor(jantou)) return false;
+  if (mentsu.some((m) => m.type === 'shuntsu')) return false;
 
-  const jantouNum = getTileNumber(jantou);
-  if (jantouNum !== null && jantouNum !== 1 && jantouNum !== 9) return false;
-
-  for (const tile of hand) {
-    if (!validTiles.includes(normalizeTile(tile))) return false;
+  for (const m of mentsu) {
+    if (!m.tiles.every((t) => isTerminalOrHonor(t))) return false;
   }
 
   return true;
 }
 
 /** 役判定：純全帯 */
-function detectJunchan(mentsu: Mentsu[], jantou: TileType): boolean {
-  // 雀頭に1or9
+function detectJunchan(mentsu: readonly Mentsu[], jantou: TileType): boolean {
   const jantouNum = getTileNumber(jantou);
   if (jantouNum === null || (jantouNum !== 1 && jantouNum !== 9)) return false;
+  let hasShuntsu = false;
 
-  // 全メンツに1or9
   for (const m of mentsu) {
+    if (m.type === 'shuntsu') hasShuntsu = true;
     const hasTerminal = m.tiles.some((t) => {
       const num = getTileNumber(t);
       return num === 1 || num === 9;
     });
     if (!hasTerminal) return false;
+    if (m.tiles.some((t) => getTileSuit(t) === 'honor')) return false;
   }
 
-  return true;
+  return hasShuntsu;
 }
 
 /** 役判定：小三元 */
-function detectShousangen(mentsu: Mentsu[], jantou: TileType): boolean {
+function detectShousangen(mentsu: readonly Mentsu[], jantou: TileType): boolean {
   const sangenTiles: TileType[] = [
     TileType.HAKU,
     TileType.HATSU,
@@ -479,9 +460,36 @@ function detectShousangen(mentsu: Mentsu[], jantou: TileType): boolean {
   }
 
   let sangenCount = kotsuTiles.size;
-  if (jantouIsSangen) sangenCount++;
+  if (jantouIsSangen) sangenCount += 1;
 
   return sangenCount === 3 && jantouIsSangen;
+}
+
+function buildYakuResult(
+  yakuIds: Set<string>,
+  context: WinContext,
+  extraHan: number
+): YakuResult {
+  const yakuList = YAKU_DEFINITIONS.filter((y) => yakuIds.has(y.id));
+  let totalHan = 0;
+  let isYakuman = false;
+
+  for (const yaku of yakuList) {
+    if (yaku.isYakuman) {
+      isYakuman = true;
+      totalHan = Math.max(totalHan, 13);
+    } else {
+      totalHan += context.isMenzen ? yaku.han : yaku.hanNaki;
+    }
+  }
+
+  totalHan += extraHan;
+
+  return {
+    yakuList,
+    totalHan: Math.min(totalHan, 13),
+    isYakuman,
+  };
 }
 
 /**
@@ -495,122 +503,56 @@ export function detectYaku(
   context: WinContext
 ): YakuResult {
   const yakuIds = new Set<string>();
+  let extraHan = 0;
 
-  // 七対子の判定（メンツ分割不要）
-  if (detectChiitoitsu(hand)) {
+  if (detectChiitoitsu(hand) && context.isMenzen) {
     yakuIds.add('chiitoitsu');
-    const yakuList = YAKU_DEFINITIONS.filter((y) => yakuIds.has(y.id));
-    return {
-      yakuList,
-      totalHan: 2,
-      isYakuman: false,
-    };
+    return buildYakuResult(yakuIds, context, 0);
   }
 
-  // 国士無双の判定（メンツ分割不要）
-  if (detectKokushimusou(hand)) {
+  if (detectKokushimusou(hand) && context.isMenzen) {
     yakuIds.add('kokushimusou');
-    const yakuList = YAKU_DEFINITIONS.filter((y) => yakuIds.has(y.id));
-    return {
-      yakuList,
-      totalHan: 13,
-      isYakuman: true,
-    };
+    const result = buildYakuResult(yakuIds, context, 0);
+    return { ...result, isYakuman: true, totalHan: 13 };
   }
 
-  // 通常形の判定
-  const mentsu = splitMentsu(hand, context.winningTile);
-  if (!mentsu) {
-    // メンツ分割失敗時も基本的な役判定を試みる
+  const decompositions = decomposeHand(hand);
+  if (decompositions.length === 0) {
     if (detectRiichi(context)) yakuIds.add('riichi');
     if (detectTanyao(hand)) yakuIds.add('tanyao');
     if (detectHonitsu(hand)) yakuIds.add('honitsu');
     if (detectChinitsu(hand)) yakuIds.add('chinitsu');
-
-    // 役牌の判定
-    const yakuhai = detectYakuhai(hand);
-    yakuhai.forEach((id) => yakuIds.add(id));
-
-    if (yakuIds.size === 0) {
-      return { yakuList: [], totalHan: 0, isYakuman: false };
-    }
-
-    let totalHan = 0;
-    for (const yaku of YAKU_DEFINITIONS) {
-      if (yakuIds.has(yaku.id)) totalHan += yaku.han;
-    }
-
-    const yakuList = YAKU_DEFINITIONS.filter((y) => yakuIds.has(y.id));
-    return {
-      yakuList,
-      totalHan: Math.min(totalHan, 13),
-      isYakuman: false,
-    };
+    return buildYakuResult(yakuIds, context, 0);
   }
 
-  // 雀頭を特定
-  const handMap = new Map<TileType, number>();
-  for (const tile of hand) {
-    const normalized = normalizeTile(tile);
-    handMap.set(normalized, (handMap.get(normalized) ?? 0) + 1);
-  }
-
-  let jantou: TileType | null = null;
-  for (const [tile, count] of handMap) {
-    if (count >= 2) {
-      jantou = tile;
-      break;
-    }
-  }
-
-  if (!jantou) {
-    return { yakuList: [], totalHan: 0, isYakuman: false };
-  }
-
-  // 役の判定
   if (detectRiichi(context)) yakuIds.add('riichi');
   if (detectTanyao(hand)) yakuIds.add('tanyao');
-  if (detectPinfu(mentsu, hand, jantou)) yakuIds.add('pinfu');
-  if (detectIipekou(mentsu)) yakuIds.add('iipeikou');
-
-  const yakuhai = detectYakuhai(hand);
-  yakuhai.forEach((id) => yakuIds.add(id));
-
-  if (detectIkkitsuukan(mentsu)) yakuIds.add('ikkitsuukan');
-  if (detectSanshokuDoujun(mentsu)) yakuIds.add('sanshoku_doujun');
-  if (detectToitoi(mentsu)) yakuIds.add('toitoi');
-  if (detectSanankou(mentsu, context.winningTile, context.isTsumo))
-    yakuIds.add('sanankou');
-  if (detectChanta(mentsu, jantou)) yakuIds.add('chanta');
   if (detectHonitsu(hand)) yakuIds.add('honitsu');
   if (detectChinitsu(hand)) yakuIds.add('chinitsu');
-  if (detectJunchan(mentsu, jantou)) yakuIds.add('junchan');
-  if (detectSuuankou(mentsu, context.winningTile, context.isTsumo))
-    yakuIds.add('suuankou');
-  if (detectDaisangen(mentsu)) yakuIds.add('daisangen');
-  if (detectSankantsu(mentsu)) yakuIds.add('sankantsu');
-  if (detectHonroutou(hand, jantou)) yakuIds.add('honroutou');
-  if (detectShousangen(mentsu, jantou)) yakuIds.add('shousangen');
 
-  // 検出された役IDから役定義を取得
-  const yakuList = YAKU_DEFINITIONS.filter((y) => yakuIds.has(y.id));
+  for (const decomposition of decompositions) {
+    const { mentsu, jantou } = decomposition;
 
-  // 翻数を計算
-  let totalHan = 0;
-  let isYakuman = false;
+    if (detectPinfu(decomposition, hand, context)) yakuIds.add('pinfu');
+    if (context.isMenzen && detectIipeikou(mentsu)) yakuIds.add('iipeikou');
+    if (detectIkkitsuukan(mentsu)) yakuIds.add('ikkitsuukan');
+    if (detectSanshokuDoujun(mentsu)) yakuIds.add('sanshoku_doujun');
+    if (detectSanshokuDoukou(mentsu)) yakuIds.add('sanshoku_doukou');
+    if (detectToitoi(mentsu)) yakuIds.add('toitoi');
+    if (detectSanankou(mentsu, context)) yakuIds.add('sanankou');
+    if (detectChanta(mentsu, jantou)) yakuIds.add('chanta');
+    if (detectJunchan(mentsu, jantou)) yakuIds.add('junchan');
+    if (detectSuuankou(mentsu, decomposition, hand, context))
+      yakuIds.add('suuankou');
+    if (detectDaisangen(mentsu)) yakuIds.add('daisangen');
+    if (detectSankantsu(mentsu)) yakuIds.add('sankantsu');
+    if (detectHonroutou(mentsu, jantou)) yakuIds.add('honroutou');
+    if (detectShousangen(mentsu, jantou)) yakuIds.add('shousangen');
 
-  for (const yaku of yakuList) {
-    if (yaku.isYakuman) {
-      isYakuman = true;
-      totalHan = Math.max(totalHan, 13);
-    } else {
-      totalHan += yaku.han;
-    }
+    const yakuhai = detectYakuhai(decomposition, context);
+    yakuhai.ids.forEach((id) => yakuIds.add(id));
+    extraHan = Math.max(extraHan, yakuhai.bonusHan);
   }
 
-  return {
-    yakuList,
-    totalHan: Math.min(totalHan, 13),
-    isYakuman,
-  };
+  return buildYakuResult(yakuIds, context, extraHan);
 }

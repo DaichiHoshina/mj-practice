@@ -72,6 +72,7 @@ export interface WinContext {
   readonly winningTile: TileType;
   readonly isTsumo: boolean;
   readonly isDealer: boolean;
+  readonly isMenzen: boolean;
   readonly isRiichi: boolean;
   readonly isDoubleRiichi?: boolean;
   readonly isIppatsu?: boolean;

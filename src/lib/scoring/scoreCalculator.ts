@@ -11,12 +11,12 @@ function roundUp100(score: number): number {
 /**
  * スコアタイプを判定
  */
-function determineScoreType(han: number): ScoreType {
+function determineScoreType(han: number, baseScore: number): ScoreType {
   if (han >= 13) return 'kazoeYakuman';
   if (han >= 11) return 'sanbaiman';
   if (han >= 8) return 'baiman';
   if (han >= 6) return 'haneman';
-  if (han >= 5) return 'mangan';
+  if (han >= 5 || baseScore >= 2000) return 'mangan';
   return 'normal';
 }
 
@@ -144,7 +144,7 @@ export function calculateScore(
   const baseScore = fu * Math.pow(2, han + 2);
 
   // スコアタイプ判定
-  const scoreType = determineScoreType(han);
+  const scoreType = determineScoreType(han, baseScore);
 
   // 最終スコア計算
   let score: number;

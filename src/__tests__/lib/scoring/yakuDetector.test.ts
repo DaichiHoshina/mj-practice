@@ -12,6 +12,7 @@ describe('detectYaku', () => {
     winningTile: TileType.MAN1,
     isTsumo: false,
     isDealer: true,
+    isMenzen: true,
     isRiichi: false,
     roundWind: 'ton',
     seatWind: 'ton',
@@ -131,6 +132,33 @@ describe('detectYaku', () => {
         // Assert
         expect(result.yakuList.map((y) => y.id)).not.toContain('tanyao');
       });
+
+      it('字牌を含むと検出されない', () => {
+        // Arrange
+        const hand: readonly TileType[] = [
+          TileType.MAN2,
+          TileType.MAN3,
+          TileType.MAN4,
+          TileType.PIN2,
+          TileType.PIN3,
+          TileType.PIN4,
+          TileType.SOU2,
+          TileType.SOU3,
+          TileType.SOU4,
+          TileType.MAN5,
+          TileType.MAN6,
+          TileType.MAN7,
+          TileType.HAKU,
+          TileType.HAKU,
+        ];
+        const context = createContext({ winningTile: TileType.MAN7 });
+
+        // Act
+        const result = detectYaku(hand, context);
+
+        // Assert
+        expect(result.yakuList.map((y) => y.id)).not.toContain('tanyao');
+      });
     });
 
     describe('役牌', () => {
@@ -213,6 +241,33 @@ describe('detectYaku', () => {
 
         // Assert
         expect(result.yakuList.map((y) => y.id)).toContain('yakuhai_chun');
+      });
+
+      it('場風の刻子で検出される', () => {
+        // Arrange
+        const hand: readonly TileType[] = [
+          TileType.TON,
+          TileType.TON,
+          TileType.TON,
+          TileType.MAN2,
+          TileType.MAN3,
+          TileType.MAN4,
+          TileType.PIN2,
+          TileType.PIN3,
+          TileType.PIN4,
+          TileType.SOU2,
+          TileType.SOU3,
+          TileType.SOU4,
+          TileType.MAN5,
+          TileType.MAN5,
+        ];
+        const context = createContext({ roundWind: 'ton', seatWind: 'nan' });
+
+        // Act
+        const result = detectYaku(hand, context);
+
+        // Assert
+        expect(result.yakuList.map((y) => y.id)).toContain('yakuhai_ton');
       });
     });
 

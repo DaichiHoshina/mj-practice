@@ -27,40 +27,40 @@ describe('calculateScore', () => {
     });
   });
 
-  describe('満貫未満 - 4翻40符', () => {
-    it('4翻40符 子ロン → 10300', () => {
+  describe('満貫 - 4翻40符（基本点2000以上）', () => {
+    it('4翻40符 子ロン → 8000', () => {
       const result = calculateScore(40, 4, false, false);
-      expect(result.scoreType).toBe('normal');
-      expect(result.score).toBe(10300);
-      expect(result.payments.fromLoser).toBe(10300);
+      expect(result.scoreType).toBe('mangan');
+      expect(result.score).toBe(8000);
+      expect(result.payments.fromLoser).toBe(8000);
     });
 
-    it('4翻40符 子ツモ → 親5200, 子2600', () => {
+    it('4翻40符 子ツモ → 親4000, 子2000', () => {
       const result = calculateScore(40, 4, false, true);
-      expect(result.scoreType).toBe('normal');
-      expect(result.score).toBe(10400); // 5200 + 2600 * 2
-      expect(result.payments.fromDealer).toBe(5200);
-      expect(result.payments.fromNonDealer).toBe(2600);
+      expect(result.scoreType).toBe('mangan');
+      expect(result.score).toBe(8000);
+      expect(result.payments.fromDealer).toBe(4000);
+      expect(result.payments.fromNonDealer).toBe(2000);
     });
 
-    it('4翻40符 親ロン → 15400', () => {
+    it('4翻40符 親ロン → 12000', () => {
       const result = calculateScore(40, 4, true, false);
-      expect(result.scoreType).toBe('normal');
-      expect(result.score).toBe(15400);
-      expect(result.payments.fromLoser).toBe(15400);
+      expect(result.scoreType).toBe('mangan');
+      expect(result.score).toBe(12000);
+      expect(result.payments.fromLoser).toBe(12000);
     });
 
-    it('4翻40符 親ツモ → 各5200', () => {
+    it('4翻40符 親ツモ → 各4000', () => {
       const result = calculateScore(40, 4, true, true);
-      expect(result.scoreType).toBe('normal');
-      expect(result.score).toBe(15600); // 5200 * 3
-      expect(result.payments.fromNonDealer).toBe(5200);
+      expect(result.scoreType).toBe('mangan');
+      expect(result.score).toBe(12000);
+      expect(result.payments.fromNonDealer).toBe(4000);
     });
   });
 
   describe('スコアタイプ判定', () => {
-    it('4翻は normal', () => {
-      const result = calculateScore(40, 4, false, false);
+    it('4翻30符は normal', () => {
+      const result = calculateScore(30, 4, false, false);
       expect(result.scoreType).toBe('normal');
     });
 

@@ -11,6 +11,7 @@ describe('calculateFu', () => {
     winningTile: TileType.MAN2,
     isTsumo: false,
     isDealer: false,
+    isMenzen: true,
     isRiichi: false,
     roundWind: 'ton',
     seatWind: 'ton',

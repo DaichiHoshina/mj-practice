@@ -12,21 +12,6 @@ export default function Home() {
       </header>
 
       <div className={styles.features}>
-        <Link href="/efficiency" className={styles.card}>
-          <div className={styles.cardIcon}>
-            <svg viewBox="0 0 24 24">
-              <rect x="3" y="13" width="4" height="8" />
-              <rect x="10" y="8" width="4" height="13" />
-              <rect x="17" y="3" width="4" height="18" />
-            </svg>
-          </div>
-          <h2 className={styles.cardTitle}>牌効率計算</h2>
-          <p className={styles.cardDescription}>
-            手牌から向聴数と有効牌を自動計算。牌効率の基礎を学べます。
-          </p>
-          <div className={styles.cardBadge}>Phase 1</div>
-        </Link>
-
         <Link href="/quiz" className={styles.card}>
           <div className={styles.cardIcon}>
             <svg viewBox="0 0 24 24">

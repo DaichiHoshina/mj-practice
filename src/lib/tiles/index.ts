@@ -123,7 +123,22 @@ export const TILE_TO_FILENAME: Record<TileType, string> = {
  * @returns SVGファイルのパス (例: /tiles/Man1.svg)
  */
 export function getTilePath(tile: TileType): string {
-  const filename = TILE_TO_FILENAME[tile];
+  // z表記（1z-7z）を対応する字牌名に変換
+  let normalizedTile = tile;
+  if (typeof tile === 'string' && tile.endsWith('z')) {
+    const zMap: Record<string, TileType> = {
+      '1z': TileType.TON,
+      '2z': TileType.NAN,
+      '3z': TileType.SHAA,
+      '4z': TileType.PEI,
+      '5z': TileType.HAKU,
+      '6z': TileType.HATSU,
+      '7z': TileType.CHUN,
+    };
+    normalizedTile = zMap[tile] || tile;
+  }
+
+  const filename = TILE_TO_FILENAME[normalizedTile];
   const basePath = process.env.NODE_ENV === 'production' ? '/mj-practice' : '';
   return `${basePath}/tiles/${filename}`;
 }

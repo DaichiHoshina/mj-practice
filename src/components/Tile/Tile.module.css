@@ -6,9 +6,10 @@
   justify-content: center;
   position: relative;
   border-radius: 4px;
-  border: 1px solid var(--color-border);
+  border: none;
   transition: all var(--transition-base);
   user-select: none;
+  background: transparent;
 }
 
 /* サイズバリエーション */
@@ -38,11 +39,12 @@
 /* クリック可能な状態 */
 .tile.clickable {
   cursor: pointer;
+  border: 1px solid var(--color-border);
 }
 
 .tile.clickable:hover {
   border-color: var(--color-accent-hover);
-  box-shadow: 0 0 0 1px var(--color-accent-hover);
+  box-shadow: 0 0 0 2px var(--color-accent-hover);
 }
 
 .tile.clickable:active {
@@ -52,13 +54,13 @@
 /* 選択状態 */
 .tile.selected {
   background-color: var(--color-card-bg);
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 1px var(--color-accent);
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent);
 }
 
 .tile.selected:hover {
   border-color: var(--color-accent-hover);
-  box-shadow: 0 0 0 1px var(--color-accent-hover);
+  box-shadow: 0 0 0 2px var(--color-accent-hover);
 }
 
 /* 無効状態 */
@@ -66,12 +68,13 @@
   opacity: 0.4;
   cursor: not-allowed;
   filter: grayscale(100%);
+  border: 1px solid var(--color-border);
 }
 
 .tile.disabled:hover {
   transform: none;
-  border-width: 1px;
-  border-color: var(--color-border);
+  border: 1px solid var(--color-border);
+  box-shadow: none;
 }
 
 /* キーボードフォーカス */
