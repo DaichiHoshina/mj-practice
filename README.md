@@ -82,3 +82,7 @@ npm run test:coverage # カバレッジ付きテスト
 ## ライセンス
 
 MIT
+
+### 使用素材
+
+- **麻雀牌画像**: [riichi-mahjong-tiles](https://github.com/FluffyStuff/riichi-mahjong-tiles) by FluffyStuff (CC0 1.0 / Public Domain)
