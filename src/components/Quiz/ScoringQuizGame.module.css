@@ -150,17 +150,17 @@
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   .container {
-    gap: 1.5rem;
-    padding: 1rem 0.5rem;
+    gap: 12px;
+    padding: 12px;
   }
 
   .choices {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
+    gap: 8px;
   }
 
   .choiceButton {
-    padding: 1rem;
+    padding: 12px;
   }
 
   .score {
@@ -172,38 +172,12 @@
   }
 
   .feedbackContainer {
-    padding: 1rem;
+    gap: 12px;
+    padding: 12px;
   }
 
   .nextButton {
     min-width: auto;
     width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    gap: 1rem;
-    padding: 0.75rem;
-  }
-
-  .choices {
-    gap: 0.5rem;
-  }
-
-  .choiceButton {
-    padding: 0.75rem;
-  }
-
-  .score {
-    font-size: 1rem;
-  }
-
-  .label {
-    font-size: 0.75rem;
-  }
-
-  .feedbackContainer {
-    padding: 0.75rem;
   }
 }

@@ -86,3 +86,21 @@
   background-color: var(--color-success);
   color: var(--color-bg);
 }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .button {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .choiceId {
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 0.875rem;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+}

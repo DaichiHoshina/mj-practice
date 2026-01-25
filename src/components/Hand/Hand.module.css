@@ -67,24 +67,35 @@
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   .container {
-    padding: 1rem;
+    padding: 16px;
+  }
+
+  .header {
+    margin-bottom: 12px;
   }
 
   .title {
-    font-size: 1.25rem;
+    font-size: 18px;
   }
 
   .count {
-    font-size: 0.875rem;
+    font-size: 14px;
+  }
+
+  .hint {
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
   }
 
   .emptyMessage {
-    padding: 1.5rem 0.5rem;
-    font-size: 0.875rem;
+    padding: 24px 12px;
+    font-size: 14px;
   }
 
   .tileList {
-    gap: 0.375rem;
-    padding: 0.75rem;
+    gap: 8px;
+    padding: 12px;
+    min-height: 80px;
   }
 }

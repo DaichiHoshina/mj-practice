@@ -97,3 +97,39 @@ button:disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  :root {
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 20px;
+
+    /* Font Sizes */
+    --font-size-base: 14px;
+    --font-size-small: 12px;
+    --font-size-h1: 24px;
+    --font-size-h2: 18px;
+    --font-size-h3: 16px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: var(--font-size-h1);
+  }
+
+  h2 {
+    font-size: var(--font-size-h2);
+  }
+
+  p {
+    font-size: var(--font-size-base);
+  }
+}

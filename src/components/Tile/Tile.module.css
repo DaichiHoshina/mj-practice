@@ -83,3 +83,22 @@
 .tile.disabled:focus-visible {
   outline: 2px solid var(--color-text-muted);
 }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  /* タップ領域を維持しつつ、サイズを微調整 */
+  .tile.small {
+    width: 30px;
+    height: 42px;
+  }
+
+  .tile.medium {
+    width: 44px;
+    height: 62px;
+  }
+
+  .tile.large {
+    width: 60px;
+    height: 84px;
+  }
+}

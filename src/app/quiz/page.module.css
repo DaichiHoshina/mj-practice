@@ -24,3 +24,20 @@
   color: var(--color-text-secondary);
   line-height: 1.6;
 }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .main {
+    padding: 12px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .description {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+}

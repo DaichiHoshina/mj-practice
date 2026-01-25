@@ -283,7 +283,40 @@
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   .container {
-    padding: 16px;
+    padding: 12px;
+    margin-top: 12px;
+  }
+
+  .resultHeader {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .resultTitle {
+    font-size: 18px;
+  }
+
+  .selectedAnswer {
+    font-size: 12px;
+  }
+
+  .correctAnswer,
+  .yakuSection,
+  .fuSection,
+  .calculationSection,
+  .explanationSection {
+    margin-bottom: 12px;
+  }
+
+  .correctAnswer,
+  .calculation,
+  .explanation {
+    padding: 12px;
+  }
+
+  .sectionTitle {
+    margin-bottom: 12px;
+    font-size: 14px;
   }
 
   .answerDetails {
@@ -292,16 +325,37 @@
     gap: 12px;
   }
 
+  .scoreValue {
+    font-size: 20px;
+  }
+
   .yakuList {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .yakuItem,
+  .fuItem {
+    padding: 10px;
   }
 
   .formula {
     font-size: 12px;
   }
 
-  .scoreValue {
-    font-size: 20px;
+  .explanation {
+    line-height: 1.6;
+  }
+
+  .explanation h1 {
+    font-size: 18px;
+  }
+
+  .explanation h2 {
+    font-size: 16px;
+  }
+
+  .explanation h3 {
+    font-size: 14px;
   }
 }

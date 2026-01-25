@@ -107,3 +107,39 @@
 .error button:hover {
   background-color: var(--color-accent-hover);
 }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+
+  .choices {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .feedback {
+    margin-top: 12px;
+    padding: 12px;
+  }
+
+  .feedbackMessage {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .explanation {
+    padding: 12px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .explanationTitle {
+    margin-bottom: 8px;
+  }
+
+  .nextButton {
+    margin-top: 12px;
+  }
+}

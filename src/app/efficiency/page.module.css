@@ -83,23 +83,47 @@
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   .container {
-    padding: 16px;
+    padding: 12px;
   }
 
   .header {
-    padding: 16px;
+    padding: 16px 12px;
     margin-bottom: 24px;
   }
 
   .title {
     font-size: 24px;
+    margin-bottom: 8px;
   }
 
   .description {
     font-size: 14px;
   }
 
+  .instructions {
+    padding: 16px 12px;
+    margin-bottom: 24px;
+  }
+
+  .instructionsTitle {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .instructionsList {
+    padding-left: 20px;
+    font-size: 14px;
+  }
+
+  .instructionsList li {
+    margin: 6px 0;
+  }
+
+  .resetButton {
+    margin-top: 12px;
+  }
+
   .content {
-    gap: 16px;
+    gap: 12px;
   }
 }

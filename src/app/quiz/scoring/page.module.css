@@ -35,37 +35,21 @@
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   .main {
-    padding: 1rem 0.5rem;
+    padding: 12px;
   }
 
   .container {
-    padding: 1.5rem;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-
-  .description {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .main {
-    padding: 0.75rem;
-  }
-
-  .container {
-    padding: 1rem;
+    padding: 12px;
     border-radius: 8px;
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 24px;
+    margin-bottom: 12px;
   }
 
   .description {
-    font-size: 0.85rem;
+    font-size: 14px;
+    margin-bottom: 24px;
   }
 }

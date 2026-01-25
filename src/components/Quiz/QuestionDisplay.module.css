@@ -52,3 +52,32 @@
   border-radius: 8px;
   border: 1px solid var(--color-border);
 }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+
+  .header {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+  }
+
+  .title {
+    margin: 8px 0;
+    font-size: 16px;
+  }
+
+  .handContainer {
+    margin-top: 12px;
+  }
+
+  .handLabel {
+    margin-bottom: 8px;
+  }
+
+  .tiles {
+    padding: 12px;
+  }
+}
