@@ -514,11 +514,14 @@ function isBetterResult(
   bestScore: number
 ): boolean {
   if (!bestResult) return true;
+  // 最高得点を優先（点数が最も重要）
+  if (newScore > bestScore) return true;
+  if (newScore < bestScore) return false;
+  // 同点の場合、翻数で比較
   if (newResult.totalHan > bestResult.totalHan) return true;
-  if (newResult.totalHan === bestResult.totalHan) {
-    if (newFu > bestFu) return true;
-    if (newFu === bestFu && newScore > bestScore) return true;
-  }
+  if (newResult.totalHan < bestResult.totalHan) return false;
+  // 翻数も同じ場合、符で比較
+  if (newFu > bestFu) return true;
   return false;
 }
 
