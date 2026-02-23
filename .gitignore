@@ -45,3 +45,6 @@ next-env.d.ts
 
 # Serena
 .serena/
+
+# Scripts (temporary verification scripts)
+scripts/

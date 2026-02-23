@@ -106,12 +106,6 @@ test.describe('7枚待ちクイズ', () => {
   test('次の問題に進める', async ({ page }) => {
     await page.waitForSelector('[data-testid="machi-quiz-game"]');
 
-    // 最初の手牌を記録
-    const initialHand = await page
-      .locator('[data-testid="question-hand"] img')
-      .first()
-      .getAttribute('src');
-
     // 適当に牌を選択して回答
     await page
       .locator('[data-testid="candidate-tiles"] button')
