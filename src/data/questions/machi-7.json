@@ -3,369 +3,383 @@
     {
       "id": "7machi-01",
       "hand": [
+        "1m",
         "2m",
         "3m",
         "4m",
-        "5m",
         "5m",
         "6m",
         "7m"
       ],
       "correctAnswers": [
-        "2m",
-        "5m",
-        "8m"
+        "1m",
+        "4m",
+        "7m"
       ],
       "difficulty": "medium",
       "pattern": "二度受け",
-      "explanation": "234と567の2つの順子候補。両面が2つ+内部待ちで7枚待ち"
+      "explanation": "123と567の2面子から3通りの単騎待ち"
     },
     {
       "id": "7machi-02",
       "hand": [
+        "1m",
+        "2m",
+        "3m",
         "3m",
         "4m",
         "5m",
-        "6m",
-        "6m",
-        "7m",
-        "8m"
+        "6m"
       ],
       "correctAnswers": [
         "3m",
-        "6m",
-        "9m"
+        "6m"
       ],
       "difficulty": "medium",
       "pattern": "二度受け",
-      "explanation": "345と678の2つの順子候補で7枚待ち"
+      "explanation": "2通りの単騎待ち"
     },
     {
       "id": "7machi-03",
       "hand": [
+        "1m",
+        "1m",
+        "1m",
+        "3m",
         "4m",
         "5m",
-        "6m",
-        "7m",
-        "7m",
-        "8m",
-        "9m"
+        "6m"
       ],
       "correctAnswers": [
-        "4m",
-        "7m"
+        "2m",
+        "3m",
+        "6m"
       ],
       "difficulty": "medium",
       "pattern": "二度受け",
-      "explanation": "456と789の2つの順子候補で7枚待ち"
+      "explanation": "3通りの単騎待ち"
     },
     {
       "id": "7machi-04",
       "hand": [
         "1m",
+        "1m",
+        "1m",
         "2m",
         "3m",
         "4m",
-        "4m",
-        "5m",
         "6m"
       ],
       "correctAnswers": [
-        "1m",
-        "4m",
-        "7m"
+        "5m",
+        "6m"
       ],
       "difficulty": "medium",
       "pattern": "二度受け",
-      "explanation": "123と456の2つの順子候補で7枚待ち"
+      "explanation": "2通りの単騎待ち"
     },
     {
       "id": "7machi-05",
       "hand": [
-        "2m",
+        "1m",
+        "1m",
+        "1m",
         "3m",
-        "4m",
-        "4m",
         "5m",
         "5m",
-        "6m"
+        "5m"
       ],
       "correctAnswers": [
         "2m",
-        "5m"
+        "3m",
+        "4m"
       ],
       "difficulty": "medium",
       "pattern": "三面待ち+刻子候補",
-      "explanation": "234の三面待ち+4の刻子で7枚待ち"
+      "explanation": "3通りの単騎待ち"
     },
     {
       "id": "7machi-06",
       "hand": [
+        "1m",
+        "1m",
+        "1m",
+        "3m",
         "3m",
         "4m",
-        "5m",
-        "5m",
-        "6m",
-        "6m",
-        "7m"
+        "5m"
       ],
       "correctAnswers": [
+        "2m",
         "3m",
         "6m"
       ],
       "difficulty": "medium",
       "pattern": "三面待ち+刻子候補",
-      "explanation": "345の三面待ち+5の刻子で7枚待ち"
+      "explanation": "3通りの単騎待ち"
     },
     {
       "id": "7machi-07",
       "hand": [
+        "1m",
+        "2m",
+        "2m",
+        "2m",
+        "3m",
         "4m",
-        "5m",
-        "6m",
-        "6m",
-        "7m",
-        "7m",
-        "8m"
+        "5m"
       ],
       "correctAnswers": [
-        "4m",
-        "7m"
+        "1m",
+        "3m",
+        "6m"
       ],
       "difficulty": "medium",
       "pattern": "三面待ち+刻子候補",
-      "explanation": "456の三面待ち+6の刻子で7枚待ち"
+      "explanation": "3通りの単騎待ち"
     },
     {
       "id": "7machi-08",
       "hand": [
-        "5m",
-        "6m",
-        "7m",
-        "7m",
-        "8m",
-        "8m",
-        "9m"
+        "1m",
+        "1m",
+        "1m",
+        "2m",
+        "3m",
+        "4m",
+        "5m"
       ],
       "correctAnswers": [
+        "2m",
+        "3m",
         "5m",
-        "8m"
+        "6m"
       ],
       "difficulty": "medium",
       "pattern": "三面待ち+刻子候補",
-      "explanation": "567の三面待ち+7の刻子で7枚待ち"
+      "explanation": "4通りの単騎待ち"
     },
     {
       "id": "7machi-09",
       "hand": [
         "1m",
+        "1m",
+        "1m",
         "2m",
         "3m",
         "3m",
-        "4m",
-        "4m",
-        "5m"
+        "4m"
       ],
       "correctAnswers": [
-        "1m",
-        "4m"
+        "2m",
+        "3m",
+        "5m"
       ],
       "difficulty": "medium",
       "pattern": "三面待ち+刻子候補",
-      "explanation": "123の三面待ち+3の刻子で7枚待ち"
+      "explanation": "3通りの単騎待ち"
     },
     {
       "id": "7machi-10",
       "hand": [
+        "1m",
+        "2m",
+        "2m",
+        "2m",
+        "2m",
         "3m",
-        "4m",
-        "5m",
-        "5m",
-        "5m",
-        "6m",
-        "7m"
+        "4m"
       ],
       "correctAnswers": [
-        "2m",
-        "5m",
-        "8m"
+        "1m",
+        "3m",
+        "4m"
       ],
       "difficulty": "hard",
       "pattern": "ノベタン+刻子",
-      "explanation": "345のノベタン+5の刻子形で7枚待ち"
+      "explanation": "3通りの単騎待ち"
     },
     {
       "id": "7machi-11",
       "hand": [
-        "4m",
-        "5m",
-        "6m",
-        "6m",
-        "6m",
-        "7m",
-        "8m"
+        "1m",
+        "1m",
+        "1m",
+        "2m",
+        "2m",
+        "3m",
+        "4m"
       ],
       "correctAnswers": [
+        "2m",
         "3m",
-        "6m",
-        "9m"
+        "5m"
       ],
       "difficulty": "hard",
       "pattern": "ノベタン+刻子",
-      "explanation": "456のノベタン+6の刻子形で7枚待ち"
+      "explanation": "3通りの単騎待ち"
     },
     {
       "id": "7machi-12",
       "hand": [
-        "5m",
-        "6m",
-        "7m",
-        "7m",
-        "7m",
-        "8m",
-        "9m"
+        "1m",
+        "1m",
+        "1m",
+        "2m",
+        "3m",
+        "3m",
+        "3m"
       ],
       "correctAnswers": [
-        "4m",
-        "7m"
+        "1m",
+        "2m",
+        "3m",
+        "4m"
       ],
       "difficulty": "hard",
       "pattern": "ノベタン+刻子",
-      "explanation": "567のノベタン+7の刻子形で7枚待ち"
+      "explanation": "4通りの単騎待ち"
     },
     {
       "id": "7machi-13",
       "hand": [
+        "1m",
+        "1m",
+        "2m",
+        "2m",
         "2m",
         "3m",
-        "4m",
-        "4m",
-        "4m",
-        "5m",
-        "6m"
+        "3m"
       ],
       "correctAnswers": [
         "1m",
-        "4m",
-        "7m"
+        "2m",
+        "3m"
       ],
       "difficulty": "hard",
       "pattern": "ノベタン+刻子",
-      "explanation": "234のノベタン+4の刻子形で7枚待ち"
+      "explanation": "3通りの単騎待ち"
     },
     {
       "id": "7machi-14",
       "hand": [
         "1m",
+        "1m",
+        "1m",
+        "2m",
         "2m",
         "3m",
-        "3m",
-        "3m",
-        "4m",
-        "5m"
+        "3m"
       ],
       "correctAnswers": [
+        "1m",
+        "2m",
         "3m",
-        "6m"
+        "4m"
       ],
       "difficulty": "hard",
       "pattern": "ノベタン+刻子",
-      "explanation": "123のノベタン+3の刻子形で7枚待ち"
+      "explanation": "4通りの単騎待ち"
     },
     {
       "id": "7machi-15",
       "hand": [
-        "2m",
+        "1m",
+        "1m",
+        "1m",
+        "1m",
         "2m",
         "3m",
-        "4m",
-        "4m",
-        "5m",
-        "5m"
+        "3m"
       ],
       "correctAnswers": [
-        "3m",
-        "6m"
+        "2m",
+        "3m"
       ],
       "difficulty": "hard",
       "pattern": "四枚使い",
-      "explanation": "2と5の対子候補+連続形で7枚待ち"
+      "explanation": "2通りの単騎待ち"
     },
     {
       "id": "7machi-16",
       "hand": [
-        "3m",
-        "3m",
-        "4m",
-        "5m",
-        "5m",
-        "6m",
-        "6m"
+        "1m",
+        "1m",
+        "2m",
+        "2m",
+        "2m",
+        "2m",
+        "3m"
       ],
       "correctAnswers": [
-        "4m",
-        "7m"
+        "1m",
+        "3m",
+        "4m"
       ],
       "difficulty": "hard",
       "pattern": "四枚使い",
-      "explanation": "3と6の対子候補+連続形で7枚待ち"
+      "explanation": "3通りの単騎待ち"
     },
     {
       "id": "7machi-17",
       "hand": [
-        "4m",
+        "1m",
+        "1m",
+        "1m",
+        "2m",
+        "2m",
+        "2m",
+        "3m"
+      ],
+      "correctAnswers": [
+        "1m",
+        "2m",
+        "3m",
+        "4m"
+      ],
+      "difficulty": "hard",
+      "pattern": "四枚使い",
+      "explanation": "4通りの単騎待ち"
+    },
+    {
+      "id": "7machi-18",
+      "hand": [
+        "2m",
+        "3m",
         "4m",
         "5m",
         "6m",
-        "6m",
         "7m",
-        "7m"
+        "8m"
       ],
       "correctAnswers": [
+        "2m",
         "5m",
         "8m"
       ],
       "difficulty": "hard",
       "pattern": "四枚使い",
-      "explanation": "4と7の対子候補+連続形で7枚待ち"
+      "explanation": "234と678の2面子から3通りの単騎待ち"
     },
     {
-      "id": "7machi-18",
+      "id": "7machi-19",
       "hand": [
-        "5m",
+        "3m",
+        "4m",
         "5m",
         "6m",
         "7m",
-        "7m",
         "8m",
-        "8m"
+        "9m"
       ],
       "correctAnswers": [
+        "3m",
         "6m",
         "9m"
       ],
       "difficulty": "hard",
       "pattern": "四枚使い",
-      "explanation": "5と8の対子候補+連続形で7枚待ち"
-    },
-    {
-      "id": "7machi-19",
-      "hand": [
-        "1m",
-        "1m",
-        "2m",
-        "3m",
-        "3m",
-        "4m",
-        "4m"
-      ],
-      "correctAnswers": [
-        "2m",
-        "5m"
-      ],
-      "difficulty": "hard",
-      "pattern": "四枚使い",
-      "explanation": "1と4の対子候補+連続形で7枚待ち"
+      "explanation": "345と789の2面子から3通りの単騎待ち"
     }
   ]
 }
