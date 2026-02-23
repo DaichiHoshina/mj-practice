@@ -143,16 +143,16 @@ export function MachiQuizGame({ difficulty }: MachiQuizGameProps) {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="machi-quiz-game">
       <div className={styles.header}>
-        <p className={styles.progress}>
+        <p className={styles.progress} data-testid="progress-bar">
           問題 {currentIndex + 1} / {questions.length}
         </p>
       </div>
 
       <div className={styles.questionArea}>
         <h3>この手牌の待ち牌は？（{requiredCount}種類）</h3>
-        <div className={styles.hand}>
+        <div className={styles.hand} data-testid="question-hand">
           <Hand hand={currentQuestion.hand} />
         </div>
         {currentQuestion.pattern && (
@@ -164,7 +164,7 @@ export function MachiQuizGame({ difficulty }: MachiQuizGameProps) {
         <p className={styles.selectedCount}>
           選択済み: {selectedTiles.length}種類
         </p>
-        <div className={styles.candidates}>
+        <div className={styles.candidates} data-testid="candidate-tiles">
           {candidates.map((tile) => {
             const isSelected = selectedTiles.includes(tile);
             const isCorrectAnswer = uniqueCorrectAnswers.includes(tile);
