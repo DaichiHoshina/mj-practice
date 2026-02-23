@@ -265,6 +265,9 @@ describe('machiLoader', () => {
 
     it('返却される問題はシャッフルされる（元の配列と異なる順序の可能性）', async () => {
       // Arrange
+      // NOTE: これは確率的テスト（probabilistic test）です。
+      // 20要素を5回シャッフルして全て同じ順序になる確率は (1/20!)^4 ≈ 0 ですが、
+      // 理論上はゼロではないため、極めて稀にfalse positiveの可能性があります。
       const manyQuestions: MachiQuestion[] = Array.from(
         { length: 20 },
         (_, i) => ({
@@ -428,8 +431,12 @@ describe('machiLoader', () => {
       expect(result).toBe(false);
     });
 
-    it('空配列でtrueを返す（every()は空配列でtrue）', () => {
+    it('空配列でtrueを返す（仕様: 空選択は部分一致の特殊ケースとして正解扱い）', () => {
       // Arrange
+      // NOTE: ユーザーが何も選択していない状態（空配列）は、
+      // 「選択した全ての牌が正解に含まれる」という条件を満たすため、
+      // Array.every()の仕様上trueとなる。
+      // これは部分一致を許可する設計の自然な帰結。
       const selected: TileType[] = [];
       const correct = [TileType.MAN1, TileType.MAN4, TileType.MAN7] as const;
 

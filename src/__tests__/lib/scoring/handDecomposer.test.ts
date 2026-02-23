@@ -342,33 +342,34 @@ describe('decomposeHand', () => {
       expect(results.length).toBeGreaterThan(1);
     });
 
-    it('1112345678999m は複数パターンに分解できる', () => {
-      // Arrange: 1112345678999m（14枚）
+    it('111222333m 456p 東東 は複数パターンに分解できる', () => {
+      // Arrange: 111222333m 456p 東東（14枚）
+      // この手牌は複数の分解パターンが存在する：
+      // パターン1: 123m+123m+123m（順子×3） + 456p + 東東（雀頭）
+      // パターン2: 111m+222m+333m（刻子×3） + 456p + 東東（雀頭）
       const hand: readonly TileType[] = [
         TileType.MAN1,
         TileType.MAN1,
         TileType.MAN1,
         TileType.MAN2,
+        TileType.MAN2,
+        TileType.MAN2,
         TileType.MAN3,
-        TileType.MAN4,
-        TileType.MAN5,
-        TileType.MAN6,
-        TileType.MAN7,
-        TileType.MAN8,
-        TileType.MAN9,
-        TileType.MAN9,
-        TileType.MAN9,
-        TileType.MAN5, // 14枚目 → 5m重複で雀頭
+        TileType.MAN3,
+        TileType.MAN3,
+        TileType.PIN4,
+        TileType.PIN5,
+        TileType.PIN6,
+        TileType.TON,
+        TileType.TON,
       ];
-      // 実際: 1112345678999m + 5m = 14枚
-      // → 11m雀頭 + 123m+456m+789m+999m刻子
-      // → 99m雀頭 + 111m刻子+234m+567m+89mが足りない → 分解パターン検証
 
       // Act
       const results = decomposeHand(hand);
 
       // Assert
-      expect(results.length).toBeGreaterThanOrEqual(1);
+      // 複数の分解パターンが存在することを保証
+      expect(results.length).toBeGreaterThan(1);
       for (const decomp of results) {
         expect(decomp.mentsu).toHaveLength(4);
       }
